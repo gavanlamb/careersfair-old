@@ -81,6 +81,65 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="plugin\.gitignore" />
+    <Content Include="plugin\assets\css\custom.css" />
+    <Content Include="plugin\assets\css\lib\bootstrap-responsive.min.css" />
+    <Content Include="plugin\assets\css\lib\bootstrap.min.css" />
+    <Content Include="plugin\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="plugin\assets\img\glyphicons-halflings.png" />
+    <Content Include="plugin\assets\js\app.js" />
+    <Content Include="plugin\assets\js\collections\my-form-snippets.js" />
+    <Content Include="plugin\assets\js\collections\snippets.js" />
+    <Content Include="plugin\assets\js\helper\pubsub.js" />
+    <Content Include="plugin\assets\js\lib\backbone.js" />
+    <Content Include="plugin\assets\js\lib\bootstrap.js" />
+    <Content Include="plugin\assets\js\lib\build.js" />
+    <Content Include="plugin\assets\js\lib\jquery.js" />
+    <Content Include="plugin\assets\js\lib\require.js" />
+    <Content Include="plugin\assets\js\lib\text.js" />
+    <Content Include="plugin\assets\js\lib\underscore.js" />
+    <Content Include="plugin\assets\js\main-built.js" />
+    <Content Include="plugin\assets\js\main.js" />
+    <Content Include="plugin\assets\js\models\snippet.js" />
+    <Content Include="plugin\assets\js\templates\app\about.html" />
+    <Content Include="plugin\assets\js\templates\app\render.html" />
+    <Content Include="plugin\assets\js\templates\app\renderform.html" />
+    <Content Include="plugin\assets\js\templates\app\tab-nav.html" />
+    <Content Include="plugin\assets\js\templates\app\temp.html" />
+    <Content Include="plugin\assets\js\templates\popover\popover-checkbox.html" />
+    <Content Include="plugin\assets\js\templates\popover\popover-input.html" />
+    <Content Include="plugin\assets\js\templates\popover\popover-main.html" />
+    <Content Include="plugin\assets\js\templates\popover\popover-select.html" />
+    <Content Include="plugin\assets\js\templates\popover\popover-textarea-split.html" />
+    <Content Include="plugin\assets\js\templates\popover\popover-textarea.html" />
+    <Content Include="plugin\assets\js\templates\snippet\appendedcheckbox.html" />
+    <Content Include="plugin\assets\js\templates\snippet\appendedtext.html" />
+    <Content Include="plugin\assets\js\templates\snippet\button.html" />
+    <Content Include="plugin\assets\js\templates\snippet\buttondouble.html" />
+    <Content Include="plugin\assets\js\templates\snippet\buttondropdown.html" />
+    <Content Include="plugin\assets\js\templates\snippet\filebutton.html" />
+    <Content Include="plugin\assets\js\templates\snippet\formname.html" />
+    <Content Include="plugin\assets\js\templates\snippet\multiplecheckboxes.html" />
+    <Content Include="plugin\assets\js\templates\snippet\multiplecheckboxesinline.html" />
+    <Content Include="plugin\assets\js\templates\snippet\multipleradios.html" />
+    <Content Include="plugin\assets\js\templates\snippet\multipleradiosinline.html" />
+    <Content Include="plugin\assets\js\templates\snippet\passwordinput.html" />
+    <Content Include="plugin\assets\js\templates\snippet\prependedcheckbox.html" />
+    <Content Include="plugin\assets\js\templates\snippet\prependedtext.html" />
+    <Content Include="plugin\assets\js\templates\snippet\searchinput.html" />
+    <Content Include="plugin\assets\js\templates\snippet\selectbasic.html" />
+    <Content Include="plugin\assets\js\templates\snippet\selectmultiple.html" />
+    <Content Include="plugin\assets\js\templates\snippet\snippet-templates.js" />
+    <Content Include="plugin\assets\js\templates\snippet\textarea.html" />
+    <Content Include="plugin\assets\js\templates\snippet\textinput.html" />
+    <Content Include="plugin\assets\js\views\my-form-snippet.js" />
+    <Content Include="plugin\assets\js\views\my-form.js" />
+    <Content Include="plugin\assets\js\views\snippet.js" />
+    <Content Include="plugin\assets\js\views\tab-snippet.js" />
+    <Content Include="plugin\assets\js\views\tab.js" />
+    <Content Include="plugin\assets\js\views\temp-snippet.js" />
+    <Content Include="plugin\index-dev.html" />
+    <Content Include="plugin\index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +153,17 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="plugin\LICENSE" />
+    <Content Include="plugin\README.md" />
+    <Content Include="plugin\assets\js\data\buttons.json" />
+    <Content Include="plugin\assets\js\data\buttons.yaml" />
+    <Content Include="plugin\assets\js\data\input.json" />
+    <Content Include="plugin\assets\js\data\input.yaml" />
+    <Content Include="plugin\assets\js\data\parse.rb" />
+    <Content Include="plugin\assets\js\data\radio.json" />
+    <Content Include="plugin\assets\js\data\radio.yaml" />
+    <Content Include="plugin\assets\js\data\select.json" />
+    <Content Include="plugin\assets\js\data\select.yaml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
