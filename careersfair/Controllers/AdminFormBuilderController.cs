@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace careersfair.Controllers
 {
-    public class AdminHomeController : Controller
+    public class AdminFormBuilderController : Controller
     {
-        // GET: AdminHome
+        // GET: AdminFormBuilder
         public ActionResult Index()
         {
             return View();
