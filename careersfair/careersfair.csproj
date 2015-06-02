@@ -80,9 +80,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\fiservLogo.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Icon.png" />
     <Content Include="Plugin\FormBuilder\.gitignore" />
     <Content Include="Plugin\FormBuilder\assets\css\custom.css" />
     <Content Include="Plugin\FormBuilder\assets\css\lib\bootstrap-responsive.min.css" />
@@ -142,27 +148,34 @@
     <Content Include="Plugin\FormBuilder\assets\js\views\temp-snippet.js" />
     <Content Include="Plugin\FormBuilder\index-dev.html" />
     <Content Include="Plugin\FormBuilder\index.html" />
-    <Content Include="Plugin\Ribbon\bower.json" />
+    <Content Include="Content\bower.json" />
     <Content Include="Plugin\Ribbon\README.md" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Plugin\Ribbon\images\loader.gif" />
+    <Content Include="Content\images\loader.gif" />
     <Content Include="Plugin\Ribbon\index.htm" />
-    <Content Include="Plugin\Ribbon\js\jquery-2.0.0.min.js" />
-    <Content Include="Plugin\Ribbon\js\jquery.smartWizard.js" />
+    <Content Include="Scripts\jquery-2.0.0.min.js" />
+    <Content Include="Scripts\jquery.smartWizard.js" />
     <Content Include="Plugin\Ribbon\more_examples\services\service.php" />
     <Content Include="Plugin\Ribbon\more_examples\smartwizard2-ajax.htm" />
     <Content Include="Plugin\Ribbon\more_examples\smartwizard2-validation.php" />
-    <Content Include="Plugin\Ribbon\smartwizard-autostep.htm" />
-    <Content Include="Plugin\Ribbon\smartwizard2-ajax.htm" />
-    <Content Include="Plugin\Ribbon\smartwizard2-multiple.htm" />
-    <Content Include="Plugin\Ribbon\smartwizard2-validation.htm" />
-    <Content Include="Plugin\Ribbon\smartwizard2-vertical.htm" />
-    <Content Include="Plugin\Ribbon\styles\demo_style.css" />
-    <Content Include="Plugin\Ribbon\styles\smart_wizard.css" />
-    <Content Include="Plugin\Ribbon\styles\smart_wizard_vertical.css" />
+    <Content Include="Content\demo_style.css" />
+    <Content Include="Content\smart_wizard.css" />
+    <Content Include="Content\smart_wizard_vertical.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +205,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LayoutMenu.cshtml" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\AdminFormBuilder\AdminFormBuilder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
