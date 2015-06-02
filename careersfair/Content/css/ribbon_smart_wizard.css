@@ -14,7 +14,7 @@
   border: 0 solid #CCC;
   overflow:visible;
   float:left;
-  width:980px;
+  width:90%;
 }
 .swMain .stepContainer {
   display:block;
@@ -27,7 +27,6 @@
   clear:both;
   height:300px;
 }
-
 .swMain .stepContainer div.content {
   display:block;
   position: absolute;  
@@ -47,7 +46,6 @@
   width:968px;
   clear:both;
 }
-
 .swMain div.actionBar {
   display:block;
   position: relative; 
@@ -66,7 +64,6 @@
   -moz-border-radius  : 5px;
   left:0;
 }
-
 .swMain .stepContainer .StepTitle {
   display:block;
   position: relative;
@@ -102,7 +99,30 @@
   float: left;
 }
 /* Anchor Element Style */
-.swMain ul.anchor li a {
+.anchor {
+    height:50px;
+    background-color:pink;
+}
+a {
+    text-decoration:none;
+    text-align:center;
+    vertical-align:middle;
+    font-weight:100;
+    font-size:20px;
+    font-family:Arial;
+    line-height:50px;
+}
+.stepDesc {
+    width:50px;
+    height:50px;
+    border:1px solid orange;
+    border-radius:50%;
+    margin: 0 30px;
+}
+small {
+    clear:both;
+}
+/*.swMain ul.anchor li a {
   display:block;
   position:relative;
   float:left;
@@ -138,7 +158,7 @@
 }
 .swMain ul.anchor li a.selected{
   color:#F8F8F8;
-  background: #EA8511;  /* EA8511 */
+  background: #EA8511;*/  /* EA8511 *//*
   border: 1px solid #EA8511;
   cursor:text;
   -moz-box-shadow: 5px 5px 8px #888;
@@ -149,7 +169,6 @@
   color:#F8F8F8;  
   background: #EA8511;  
 }
-
 .swMain ul.anchor li a.done { 
   position:relative;
   color:#FFF;  
@@ -172,7 +191,6 @@
   color:#CCCCCC;  
   background: #F8F8F8;     
 }
-
 .swMain ul.anchor li a.error {
   color:#6c6c6c !important;  
   background: #f08f75 !important;
@@ -181,7 +199,6 @@
 .swMain ul.anchor li a.error:hover {
   color:#000 !important;       
 }
-
 .swMain .buttonNext {
   display:block;
   float:right;
@@ -235,10 +252,8 @@
   border: 1px solid #5A5655;
   -moz-border-radius  : 5px; 
   -webkit-border-radius: 5px;    
-}
-
+}*/
 /* Form Styles */
-
 .txtBox {
   border:1px solid #CCCCCC;
   color:#5A5655;
@@ -249,7 +264,6 @@
 .txtBox:focus {
   border:1px solid #EA8511;
 }
-
 .swMain .loader {
   position:relative;  
   display:none;

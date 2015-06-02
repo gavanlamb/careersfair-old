@@ -1,15 +1,13 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div>
-    <a href="/"><img src="~/Content/images/fiservLogo.png" /></a>
-    <nav>
-        <a href="/">HTML</a> |
-        <a href="/">CSS</a> |
-        <a href="/">JavaScript</a> |
-        <a href="/">jQuery</a>
-    </nav>
-</div>
+<header>
+    <a href="/" id="logo"><img src="~/Content/images/fiservLogo.png" /></a>
+@*    <nav>
+        <a href="/">Dashboard</a>
+        <a href="/">Forms</a>
+    </nav>*@
+</header>
 <div>
     @RenderBody()
 </div>

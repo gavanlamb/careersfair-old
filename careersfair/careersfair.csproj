@@ -105,6 +105,7 @@
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\menu.css" />
     <Content Include="Content\images\fiservLogo.png" />
     <Content Include="Content\css\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
