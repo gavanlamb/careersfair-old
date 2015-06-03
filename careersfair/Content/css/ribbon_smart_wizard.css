@@ -6,17 +6,58 @@
   http://www.techlaboratory.net
   http://tech-laboratory.blogspot.com
 */
-.swMain {
-  position:relative;
-  display:block;
-  margin:0;
-  padding:0;
-  border: 0 solid #CCC;
-  overflow:visible;
-  float:left;
-  width:90%;
+#ribbontable {
+    width:100%;
 }
-.swMain .stepContainer {
+.swMain {
+    position:relative;
+    display:block;
+    margin:0;
+    padding:0;
+    border: 0 solid #CCC;
+    overflow:visible;
+    float:left;
+    width:100%;
+}
+.anchor {
+    list-style-type: none;
+    width:100%;
+    height:52px;
+}
+.anchor li{
+    display: inline;
+}
+.anchor li a{
+    text-decoration: none;
+    width: 25%;
+    float:left;
+    font-family:Arial;
+    line-height:50px;
+    font-weight:100;
+    font-size:20px;
+}
+.anchor li a .stepDesc{
+    text-align:center;
+    width:50px;
+    height:50px;
+    border:1px solid orange;
+    border-radius:50%;
+    margin: 0 auto;
+}
+
+#step-1, #step-2, #step-3, #step-4{
+    background-color:pink;
+}
+
+.StepTitle{
+    font-family:Arial;
+    line-height:50px;
+    font-weight:100;
+    font-size:20px;
+}
+
+
+/*.swMain .stepContainer {
   display:block;
   position: relative;
   margin: 0;
@@ -89,6 +130,7 @@
   clear: both;
   border: 0 solid #CCCCCC;
   background: transparent; /*#EEEEEE */
+/*
 }
 .swMain ul.anchor li{ 
   position: relative; 
@@ -97,31 +139,7 @@
   padding: 0 3px;
   border: 0 solid #E0E0E0;
   float: left;
-}
-/* Anchor Element Style */
-.anchor {
-    height:50px;
-    background-color:pink;
-}
-a {
-    text-decoration:none;
-    text-align:center;
-    vertical-align:middle;
-    font-weight:100;
-    font-size:20px;
-    font-family:Arial;
-    line-height:50px;
-}
-.stepDesc {
-    width:50px;
-    height:50px;
-    border:1px solid orange;
-    border-radius:50%;
-    margin: 0 30px;
-}
-small {
-    clear:both;
-}
+}*/
 /*.swMain ul.anchor li a {
   display:block;
   position:relative;
@@ -158,7 +176,8 @@ small {
 }
 .swMain ul.anchor li a.selected{
   color:#F8F8F8;
-  background: #EA8511;*/  /* EA8511 *//*
+  background: #EA8511;*/  
+/* EA8511 *//*
   border: 1px solid #EA8511;
   cursor:text;
   -moz-box-shadow: 5px 5px 8px #888;
@@ -254,7 +273,7 @@ small {
   -webkit-border-radius: 5px;    
 }*/
 /* Form Styles */
-.txtBox {
+/*.txtBox {
   border:1px solid #CCCCCC;
   color:#5A5655;
   font:13px Verdana,Arial,Helvetica,sans-serif;
@@ -314,4 +333,4 @@ small {
 .swMain .msgBox .close:hover{
   color: #EA8511;
   border: 1px solid #EA8511;  
-}
+}*/

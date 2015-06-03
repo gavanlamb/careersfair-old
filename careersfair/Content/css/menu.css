@@ -1,12 +1,14 @@
 ﻿header {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     height: 66px;
 }
-
 #logo {
     display: inline-block;
     vertical-align: middle;
     height: 66px;
     width: 132px;
+}
+main {
+    width:100%;
 }
