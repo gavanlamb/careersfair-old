@@ -1,0 +1,62 @@
+﻿@{
+    Page.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" id="ribbontable">
+    <tr>
+        <td>
+            <div id="wizard" class="swMain">
+                <ul>
+                    <li>
+                        <a href="#step-1">
+                            @*<label class="stepNumber">1</label>*@
+                            <div class="stepDesc">1</div>
+                            @*<small>Name</small>*@
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#step-2">
+                            @*<label class="stepNumber">2</label>*@
+                            <div class="stepDesc">2</div>
+                            @*<small>Actions</small>*@
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#step-3">
+                            @*<label class="stepNumber">3</label>*@
+                            <div class="stepDesc">3</div>
+                            @*<small>Builder</small>*@
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#step-4">
+                            @*<label class="stepNumber">4</label>*@
+                            <div class="stepDesc">4</div>
+                            @*<small>Actions</small>*@
+                        </a>
+                    </li>
+                </ul>
+
+                <div id="step-1">
+                    <h2 class="StepTitle">Enter form name</h2>
+                    <form action="demo_form.asp">
+                        <input type="text" name="fname"><br>
+                    </form>
+                </div>
+
+                <div id="step-2">
+                    <h2 class="StepTitle">Before actions</h2>
+                </div>
+
+                <div id="step-3">
+                    <h2 class="StepTitle">Form builder</h2>
+                </div>
+
+                <div id="step-4">
+                    <h2 class="StepTitle">After actions</h2>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
