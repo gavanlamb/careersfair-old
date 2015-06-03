@@ -3,45 +3,30 @@
     Layout = "~/Views/Shared/_LayoutMenu.cshtml";
 }
 
-<table align="center" border="0" cellpadding="0" cellspacing="0">
+<table align="center" border="0" cellpadding="0" cellspacing="0" id="ribbontable">
     <tr>
         <td>
             <div id="wizard" class="swMain">
                 <ul>
                     <li>
-                        <a href="#step-1">
-                            @*<label class="stepNumber">1</label>*@
-                            <div class="stepDesc">1</div><br />
-                            <small>Name</small>
-                        </a>
+                        <a href="#step-1">1</a>
                     </li>
                     <li>
-                        <a href="#step-2">
-                            @*<label class="stepNumber">2</label>*@
-                            <div class="stepDesc">2</div><br />
-                            <small>Actions</small>
-                        </a>
+                        <a href="#step-2">2</a>
                     </li>
                     <li>
-                        <a href="#step-3">
-                            @*<label class="stepNumber">3</label>*@
-                            <div class="stepDesc">3</div><br />
-                            <small>Builder</small>
-                        </a>
+                        <a href="#step-3">3</a>
                     </li>
                     <li>
-                        <a href="#step-4">
-                            @*<label class="stepNumber">4</label>*@
-                            <div class="stepDesc">4</div><br />
-                            <small>Actions</small>
-                        </a>
+                        <a href="#step-4">4</a>
                     </li>
                 </ul>
 
                 <div id="step-1">
-                    <h2 class="StepTitle">Enter form name</h2>
-                    <form action="demo_form.asp">
-                        <input type="text" name="fname"><br>
+                    <h2 class="StepTitle">Form Name</h2>
+                    <form id="nameField" action="demo_form.asp">
+                        <input type="text" maxlength="45" onkeyup="validatephone(this);" name="fname" required><br>
+
                     </form>
                 </div>
 
@@ -51,37 +36,6 @@
 
                 <div id="step-3">
                     <h2 class="StepTitle">Form builder</h2>
-                    <div class="navbar navbar-fixed-top">
-                        <div class="navbar-inner">
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row clearfix">
-                            <div class="span6">
-                                <div class="clearfix">
-                                    <h2>Your Form</h2>
-                                    <hr>
-                                    <div id="build">
-                                        <form id="target" class="form-horizontal"></form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span6">
-                                <h2>Drag & Drop components</h2>
-                                <hr>
-                                <div class="tabbable">
-                                    <ul class="nav nav-tabs" id="formtabs"></ul>
-                                    <form class="form-horizontal" id="components">
-                                        <fieldset>
-                                            <div class="tab-content">
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script data-main="assets/js/main-built.js" src="assets/js/lib/require.js"></script>
                 </div>
 
                 <div id="step-4">

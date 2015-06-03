@@ -1,23 +1,22 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <title>@Page.Title</title>
-        @RenderSection("head", required: false)
-        @Styles.Render("~/Content/style")
-        @Scripts.Render("~/Bundles/ribbon")
-        @Scripts.Render("~/Bundles/formbuilder")
-        <script type="text/javascript">
-            $(document).ready(function(){
-                // Smart Wizard
-                $('#wizard').smartWizard();
-                function onFinishCallback(){
-                    $('#wizard').smartWizard('showMessage','Finish Clicked');
-                    //alert('Finish Clicked');
-                }
-            });
-        </script>
-    </head>
-    <body>
-        @RenderBody()
-    </body>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+    @Styles.Render("~/Content/style")
+    @Scripts.Render("~/Bundles/ribbon")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Smart Wizard
+            $('#wizard').smartWizard();
+            function onFinishCallback() {
+                $('#wizard').smartWizard('showMessage', 'Finish Clicked');
+                //alert('Finish Clicked');
+            }
+        });
+    </script>
+</head>
+<body>
+    @RenderBody()
+</body>
 </html>
