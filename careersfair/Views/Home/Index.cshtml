@@ -2,46 +2,40 @@
     Page.Title = "Index";
     Layout = "~/Views/Shared/_LayoutMenu.cshtml";
 }
+<head>
+      <title></title>
+    <link href="plugin/formbuilder/assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="plugin/formbuilder/assets/css/lib/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="plugin/formbuilder/assets/css/custom.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
+</head>
 <table align="center" border="0" cellpadding="0" cellspacing="0" id="ribbontable">
     <tr>
         <td>
             <div id="wizard" class="swMain">
                 <ul>
                     <li>
-                        <a href="#step-1">
-                            @*<label class="stepNumber">1</label>*@
-                            <div class="stepDesc">1</div>
-                            @*<small>Name</small>*@
-                        </a>
+                        <a href="#step-1">1</a>
                     </li>
                     <li>
-                        <a href="#step-2">
-                            @*<label class="stepNumber">2</label>*@
-                            <div class="stepDesc">2</div>
-                            @*<small>Actions</small>*@
-                        </a>
+                        <a href="#step-2">2</a>
                     </li>
                     <li>
-                        <a href="#step-3">
-                            @*<label class="stepNumber">3</label>*@
-                            <div class="stepDesc">3</div>
-                            @*<small>Builder</small>*@
-                        </a>
+                        <a href="#step-3">3</a>
                     </li>
                     <li>
-                        <a href="#step-4">
-                            @*<label class="stepNumber">4</label>*@
-                            <div class="stepDesc">4</div>
-                            @*<small>Actions</small>*@
-                        </a>
+                        <a href="#step-4">4</a>
                     </li>
                 </ul>
 
                 <div id="step-1">
-                    <h2 class="StepTitle">Enter form name</h2>
-                    <form action="demo_form.asp">
-                        <input type="text" name="fname"><br>
+                    <h2 class="StepTitle">Form Name</h2>
+                    <form id="nameField" action="demo_form.asp">
+                        <input type="text" maxlength="45" onkeyup="validatephone(this);" name="fname" required><br>
+
                     </form>
                 </div>
 
@@ -51,6 +45,53 @@
 
                 <div id="step-3">
                     <h2 class="StepTitle">Form builder</h2>
+                    
+                    <div class="navbar navbar-fixed-top">
+                        <div class="navbar-inner">
+                           
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row clearfix">
+
+                            <!-- Components -->
+                            <div class="span6">
+                                <h2>Drag & Drop components</h2>
+                                <hr>
+                                <div class="tabbable">
+                                    <ul class="nav nav-tabs" id="formtabs">
+                                        <!-- Tab nav -->
+                                    </ul>
+                                    <form class="form-horizontal" id="components">
+                                        <fieldset>
+                                            <div class="tab-content">
+                                                <!-- Tabs of snippets go here -->
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- / Components -->
+                            <!-- Building Form. -->
+                            <div class="span6">
+                                <div class="clearfix">
+                                    <h2>Your Form</h2>
+                                    <hr>
+                                    <div id="build">
+                                        <form id="target" class="form-horizontal"></form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / Building Form. -->
+
+
+
+                        </div>
+
+                        <script data-main="plugin/formbuilder/assets/js/main-built.js" src="plugin/formbuilder/assets/js/lib/require.js"></script>
+
+                    </div> <!-- /container -->
+
                 </div>
 
                 <div id="step-4">
