@@ -7,10 +7,15 @@ namespace careersfair.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            //Script bundle for the ribbon menu
-            bundles.Add(new ScriptBundle("~/Bundles/ribbon").Include("~/Scripts/jquery-2.0.0.min.js", "~/Scripts/jquery.smartWizard.js"));
-            //CSS bundle for the ribbon menu
-            bundles.Add(new StyleBundle("~/Content/style").Include("~/Content/css/ribbon_smart_wizard.css", "~/Content/css/menu.css", "~/Content/css/Site.css"));
+            //Bundles for Bootstrap
+            bundles.Add(new ScriptBundle("~/Bundles/Bootstrap").Include("~/Scripts/bootstrap.min.js"));
+            bundles.Add(new StyleBundle("~/Content/Bootstrap").Include("~/Content/css/bootstrap-theme.min.css", "~/Content/css/bootstrap334.min.css"));
+
+            //jquery
+            bundles.Add(new ScriptBundle("~/Bundles/JQuery").Include("~/Scripts/jquery-2.1.4.min.js"));
+
+            //jquery validation
+            bundles.Add(new ScriptBundle("~/Bundles/JQueryValidation").Include("~/Scripts/jquery.validate.min.js", "~/Scripts/jquery.validate.unobtrusive.min.js"));
         } 
     }
 }
