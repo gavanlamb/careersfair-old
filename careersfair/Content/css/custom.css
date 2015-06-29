@@ -1,5 +1,4 @@
 body {
-  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
   padding-bottom: 10px;
   position: relative;
 }
@@ -16,7 +15,7 @@ body {
 
 #target fieldset {
   border: 1px solid #ccc;
-  min-height: 200px;
+  min-height: 600px;
   padding: 5px;
   padding-bottom: 30px;
 }
@@ -33,13 +32,9 @@ textarea {
   resize: vertical;
 }
 
-.popover {
-  z-index: 9999999;
-}
 .popover .control-group {
   cursor: default;
 }
-
 .popover input {
   cursor: text;
 }
@@ -92,7 +87,7 @@ form .popover form {
 .target:after{
   float:left;
   content: " ";
-  height: 77px; 
+  height: 77px;
   margin-top: 3px;
   background: #f0f0f0;
   width: 100%;
@@ -111,4 +106,24 @@ form .popover form {
 #target fieldset{
  width: 100%;
  overflow: hidden;
+}
+
+
+.nav>li>a {
+  padding: 8px 13px;
+}
+
+.tab-pane {
+  padding-top: 20px;
+}
+
+
+.popover {
+  z-index: 2000;
+}
+
+
+.required-control .control-label:after {
+  content: " *";
+  color: #fc4c5e;
 }
