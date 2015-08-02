@@ -6,10 +6,9 @@ using System.Web.Mvc;
 
 namespace careersfair.Controllers
 {
-    public class DefaultController : Controller
+    public class AdminController : Controller
     {
-        // GET: Default
-        public ActionResult Index()
+        public ActionResult Admin()
         {
             return View();
         }
