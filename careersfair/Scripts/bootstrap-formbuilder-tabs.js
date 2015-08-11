@@ -8,6 +8,7 @@
             buttonEnablerDisabler();
             hideShowDivs();
             disableEnableLinks();
+            $("#next").prop("disabled", true);
         }
     );
     $("#navList li a").click(
@@ -46,6 +47,19 @@
     );
     $("#finish").click(
         function () {
+        }
+    );
+    
+    $("#namefield").keyup(
+        function () {
+             if (($(this).val() == '')) {
+                $("#next").prop("disabled", true);
+            }if (document.getElementById("#namefield-error").val() != '') {
+                $("#next").prop("disabled", true);
+            }
+            else {
+                $("#next").prop("disabled", false);
+            }
         }
     );
 
