@@ -21,7 +21,10 @@ namespace careersfair.Controllers
         {
             return View();
         }
-
+        public ActionResult Reset()
+        {
+            return View();
+        }
         [HttpPost]
         public ActionResult Login(Models.User user)
         {
@@ -44,5 +47,6 @@ namespace careersfair.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
+       
     }
 }
