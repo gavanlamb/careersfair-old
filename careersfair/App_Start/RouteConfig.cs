@@ -7,6 +7,12 @@ using System.Web.Routing;
 
 namespace careersfair
 {
+    /// <summary>
+    /// contains the default route information
+    /// Edited by: Gavan
+    /// Version: 2.0
+    /// Edit: set controller and action to Form and Create respectively
+    /// </summary>
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)

@@ -1,9 +1,8 @@
 -
   title  : Select Basic
-  fields : 
+  fields :
     id:
-      label  : ID / Name
-      type   : input
+      type   : hidden
       value  : selectbasic
     label:
       label  : Label Text
@@ -13,40 +12,87 @@
       label  : Options
       type   : textarea-split
       value  : ["Option one", "Option two"]
-    inputsize:
-      label: Input Size
-      type: select
-      value:
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
+    inputheight:
+      label  : Input Height
+      type   : select
+      value  :
         -
-          value    : input-mini
-          label    : Mini
-          selected : false
-        -
-          value    : input-small
+          value    : input-sm
           label    : Small
           selected : false
-        - 
-          value    : input-medium
-          label    : Medium
-          selected : false
         -
-          value    : input-large
-          label    : Large
-          selected : false
-        -
-          value    : input-xlarge
-          label    : Xlarge
+          value    : null
+          label    : Default
           selected : true
         -
-          value    : input-xxlarge
-          label    : Xxlarge
+          value    : input-lg
+          label    : Large
           selected : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  :
+        -
+          value    : col-md-1
+          label    : 1
+          selected : false
+        -
+          value    : col-md-2
+          label    : 2
+          selected : false
+        -
+          value    : col-md-3
+          label    : 3
+          selected : false
+        -
+          value    : col-md-4
+          label    : 4
+          selected : false
+        -
+          value    : col-md-5
+          label    : 5
+          selected : false
+        -
+          value    : col-md-6
+          label    : 6
+          selected : false
+        -
+          value    : col-md-7
+          label    : 7
+          selected : false
+        -
+          value    : col-md-8
+          label    : 8
+          selected : false
+        -
+          value    : col-md-9
+          label    : 9
+          selected : false
+        -
+          value    : col-md-10
+          label    : 10
+          selected : false
+        -
+          value    : col-md-11
+          label    : 11
+          selected : false
+        -
+          value    : col-md-12
+          label    : 12
+          selected : true
 -
   title  : Select Multiple
-  fields : 
+  fields :
     id:
-      label  : ID / Name
-      type   : input
+      type   : hidden
       value  : selectmultiple
     label:
       label  : Label Text
@@ -56,31 +102,79 @@
       label  : Options
       type   : textarea-split
       value  : ["Option one", "Option two"]
-    inputsize:
-      label: Input Size
-      type: select
-      value:
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
+    inputheight:
+      label  : Input Height
+      type   : select
+      value  :
         -
-          value    : input-mini
-          label    : Mini
-          selected : false
-        -
-          value    : input-small
+          value    : input-sm
           label    : Small
           selected : false
-        - 
-          value    : input-medium
-          label    : Medium
-          selected : false
         -
-          value    : input-large
-          label    : Large
-          selected : false
-        -
-          value    : input-xlarge
-          label    : Xlarge
+          value    : null
+          label    : Default
           selected : true
         -
-          value    : input-xxlarge
-          label    : Xxlarge
+          value    : input-lg
+          label    : Large
           selected : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  :
+        -
+          value    : col-md-1
+          label    : 1
+          selected : false
+        -
+          value    : col-md-2
+          label    : 2
+          selected : false
+        -
+          value    : col-md-3
+          label    : 3
+          selected : false
+        -
+          value    : col-md-4
+          label    : 4
+          selected : false
+        -
+          value    : col-md-5
+          label    : 5
+          selected : false
+        -
+          value    : col-md-6
+          label    : 6
+          selected : false
+        -
+          value    : col-md-7
+          label    : 7
+          selected : false
+        -
+          value    : col-md-8
+          label    : 8
+          selected : false
+        -
+          value    : col-md-9
+          label    : 9
+          selected : false
+        -
+          value    : col-md-10
+          label    : 10
+          selected : false
+        -
+          value    : col-md-11
+          label    : 11
+          selected : false
+        -
+          value    : col-md-12
+          label    : 12
+          selected : true

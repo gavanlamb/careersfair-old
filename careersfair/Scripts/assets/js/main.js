@@ -1,6 +1,10 @@
 require.config({
   baseUrl: "assets/js/lib/"
   , shim: {
+    '*': {
+        deps: ['module'],
+        exports: 'Backbone'
+    },
     'backbone': {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'

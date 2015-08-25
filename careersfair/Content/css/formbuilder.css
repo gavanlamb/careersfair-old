@@ -1,0 +1,340 @@
+/*CSS FOR THE FORM BUILDER*/
+#navList {
+    height: 62px;
+    width: 100%;
+    padding: 5px 0px;
+}
+#navList li{
+    list-style-type: none;
+    width:33%;
+    float:left;
+}
+#navList li a{
+    display:block;
+    width:50px;
+    height:50px;
+    text-decoration: none;
+    line-height:48px;
+    font-weight:100;
+    font-size:24px;
+    border-radius:50%;
+    text-align: center;
+    margin: 0 auto;
+    outline: 0;
+}
+#navList li a.selected {
+    color:white;
+    background: #ff6200;
+}
+#navList li a.enabled { 
+    color:white;
+    background: #8CC63F;
+}
+#navList li a.enabled:hover { 
+    color:darkslategrey;
+}
+#navList li a.disabled, 
+#navList li a.disabledtemp{ 
+    color:white; 
+    background:#ddd;
+}
+#navList li span {
+    text-decoration: none;
+    font-weight:200;
+    font-size:18px;
+    letter-spacing: 1px;
+}
+/*BUTTON STYLING*/
+.nav-button-row {
+    margin:5% 0 10% 0;
+}
+#next, 
+#finish,
+#previous {
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    border: 1px solid #ff6200;
+    border-radius: 50%;
+    outline: 0;
+    background-color:transparent;
+    padding:0;
+}
+#next,
+#finish {
+    float: right;
+    margin-right: 15%;
+}
+#previous {
+    float: left;
+    margin-left: 15%;
+}
+#next span,
+#previous span{
+    display: block;
+    height:48px;
+    width:48px;
+    text-align: center;
+    line-height:50px;
+    font-size:40px;
+    color:#ff6200;
+}
+#finish span,
+#finish span:before{
+    display: block;
+    text-align: center;
+    line-height:50px;
+    font-size:55px;
+    color:#ff6200;
+}
+#finish span,
+#next span {
+    margin-left:1px;
+}
+#previous span{
+    margin-left:-1px;
+}
+#finish:active,
+#previous:active,
+#next:active {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+/*STEP 1 - NAME FIELD STYLING*/
+#formNameInput {
+    width:70%;
+    margin:100px auto 5px auto;
+    padding:10px;
+    border-radius:0;
+    height:70px;
+    font-size:35px;
+    line-height:50px;
+    font-weight:100;
+    border:1px solid #ccc !important;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+#formNameInput:focus {
+    border:1px solid #ff6200 !important;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+#formNameInput-error{
+    height:20px;
+    display: block;
+    width:70%;
+    margin: 0 auto;
+    font-size:18px;
+    color:#ff6200;
+    font-weight:200;
+}
+/*FORM BUILDER CSS - STEP 2 IN THE CHAIN*/
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
+#formtabs {
+    font-size:20px;
+    font-weight:100;
+    margin-top: 41px;
+    border-bottom: solid 1px #ff6200;
+}
+#formtabs li a {
+    font-weight:200;
+    border-radius: 0;
+    border:none;
+    color: #ccc;
+}
+#formtabs li a:hover {
+    border-radius: 0;
+    background:none;
+    box-shadow: 0 -2px #ff6200 inset;
+}
+#formtabs .active a,
+#formtabs .active a:hover{
+    font-weight:300;
+    box-shadow: 0 -2px #ff6200 inset;
+    border-radius: 0;
+    color: #ff6200;
+    background:none;
+}
+#components {
+    min-height: 500px;
+}
+#target fieldset {
+    min-height: 500px;
+    padding: 5px;
+    width: 100%;
+    overflow: hidden;
+}
+#target{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.target{
+    float:left;
+    margin-top: 3px;
+    border: 1px solid #ff6200;
+    width: 100%;
+    background-color: #eee;
+}
+.temp{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    z-index: 999999;
+    top: 0;
+    overflow-x: hidden;
+    left: 0;
+}
+.temp form {
+    padding: 8px 4px;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 0px 30px #999;
+    -webkit-transition: -webkit-transform 0.1s ease-out;
+    overflow: hidden;
+}
+.component {
+    cursor: pointer;
+}
+input {
+    cursor: pointer;
+}
+textarea {
+    resize: vertical;
+}
+.popover {
+    border: 1px solid #ff6200;
+    border-radius:0;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width:250px !important;
+}
+.popover .popover-content form .controls input,
+.popover .popover-content form .controls textarea{
+    border: 1px solid #ccc;
+    border-radius:0;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding:6px 6px;
+}
+.popover .popover-content form .controls select {
+    border: 1px solid #ccc;
+    border-radius:0;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 3px 3px;
+}
+.popover .popover-content form .controls input:focus,
+.popover .popover-content form .controls select:focus,
+.popover .popover-content form .controls textarea:focus {
+    border: 1px solid #ff6200;
+}
+.popover .popover-content form .controls label {
+    font-weight:300;
+    color: black;
+}
+.popover .control-group {
+    cursor: default;
+}
+.popover input {
+    cursor: text;
+}
+.popover-title {
+    font-weight: 300;
+    font-size:18px;
+    letter-spacing:1px;
+    border-radius:0;
+    color:#ff6200;
+}
+.popover .popover-content form .controls label {
+    margin: 10px 0 0 0;
+}
+.popover .popover-content form .controls input[type=checkbox] {
+    opacity: 0;
+    position: absolute;   
+}
+.popover .popover-content form .controls input[type=checkbox], 
+form .controls .checkbox{
+    vertical-align: middle;
+    cursor: pointer;
+    vertical-align: middle;
+}
+form .controls > .checkbox{
+    position: relative;
+    padding-left:0;
+    min-height: 19px;
+    height: 19px;
+    color: black;
+}
+.popover .popover-content form .controls input[type=checkbox] + .checkbox:before{
+    content: '';
+    background: #fff;
+    border: 1px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    padding: 2px;
+    margin-top: -3px;
+    margin-right: 10px;
+    text-align: center;
+}
+.popover .popover-content form .controls input[type=checkbox]:checked + .checkbox:before {
+    background: #ff6200;
+}
+.popover.bottom > .arrow,
+.popover.bottom > .arrow:after {
+    border-bottom-color: #ff6200;
+}
+.popover #save,
+.popover #save:active,
+.popover #cancel,
+.popover #cancel:active {
+    display:inline-block;
+    font-weight:100;
+    border:solid 1px #ff6200;
+    border-radius:50%;
+    height:50px;
+    width:50px;
+    outline:0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding:0;
+    background-color:white;
+    margin-bottom:20px;
+}
+.popover #save,
+.popover #save:active {
+    float: right;
+    margin-right: 15%;
+}    
+.popover #cancel, 
+.popover #cancel:active{
+    float:left;
+    margin-left:15%;
+}
+.popover #save span,
+.popover #cancel span, 
+.popover #save span:before,
+.popover #cancel span:before {
+    display:block;
+    text-align:center;
+    line-height:50px;
+    font-size:55px;
+    color:#ff6200;
+}

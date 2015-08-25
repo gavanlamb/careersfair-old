@@ -5,6 +5,8 @@ using System.Web;
 using System.Data.Entity;
 using careersfair.Models;
 
+
+///TO BE DELETED WHEN WE PUBLISH, THIS IS FOR TESTING ONLY.
 namespace careersfair.DAL{
     public class FormInitializer : System.Data.Entity. DropCreateDatabaseIfModelChanges<FormContext>{
         protected override void Seed(FormContext context){

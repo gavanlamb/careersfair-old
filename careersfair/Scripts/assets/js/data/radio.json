@@ -2,15 +2,24 @@
   {
     "title": "Multiple Radios",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
+      "id": {
+        "type": "hidden",
         "value": "radios"
       },
       "label": {
         "label": "Label Text",
         "type": "input",
         "value": "Multiple Radios"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": "help"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       },
       "radios": {
         "label": "Radios",
@@ -25,15 +34,24 @@
   {
     "title": "Multiple Radios Inline",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
+      "id": {
+        "type": "hidden",
         "value": "radios"
       },
       "label": {
         "label": "Label Text",
         "type": "input",
         "value": "Inline Radios"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": "help"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       },
       "radios": {
         "label": "Radios",
@@ -50,15 +68,24 @@
   {
     "title": "Multiple Checkboxes",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
+      "id": {
+        "type": "hidden",
         "value": "checkboxes"
       },
       "label": {
         "label": "Label Text",
         "type": "input",
         "value": "Multiple Checkboxes"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": "help"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       },
       "checkboxes": {
         "label": "Checkboxes",
@@ -73,15 +100,24 @@
   {
     "title": "Multiple Checkboxes Inline",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
+      "id": {
+        "type": "hidden",
         "value": "checkboxes"
       },
       "label": {
         "label": "Label Text",
         "type": "input",
         "value": "Inline Checkboxes"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": "help"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       },
       "checkboxes": {
         "label": "Checkboxes",

@@ -1,7 +1,7 @@
 define([
        "jquery" , "underscore" , "backbone"
        , "models/snippet"
-       , "collections/snippets" 
+       , "collections/snippets"
        , "views/my-form-snippet"
 ], function(
   $, _, Backbone

@@ -5,128 +5,138 @@
         function () {
             navListLength = $("#navList li").length;
             index = 0;
-            buttonEnablerDisabler();
             hideShowDivs();
+            buttonEnablerDisabler();
             disableEnableLinks();
         }
     );
     $("#navList li a").click(
-        function () {
-            index = $("#navList li a").index(this);
-            if (inRange()) {
+        function (e) {
+            var tempIndex = $("#navList li a").index(this);
+            e.preventDefault();
+            if ($("#navList li a:eq(" + tempIndex + ")").hasClass("enabled")) {
+                index = tempIndex;
                 hideShowDivs();
                 buttonEnablerDisabler();
-            } else {
-                alert("Error");
+                disableEnableLinks();
             }
         }
     );
     $("#next").click(
         function () {
-            if (inRange()) {
-                increaseIndex();
+            if (index >= 0 && index < navListLength) {
+                ++index;
                 hideShowDivs();
                 buttonEnablerDisabler();
                 disableEnableLinks();
-            } else {
-                alert("Error");
-            }
+            } 
         }
     );
     $("#previous").click(
         function () {
-            if (inRange()) {
-                decreaseIndex();
+            if (index >= 0 && index < navListLength) {
+                --index;
                 hideShowDivs();
                 buttonEnablerDisabler();
-            } else {
-                alert("Error");
-            }
+                disableEnableLinks();
+            } 
         }
     );
-    $("#finish").click(
+    $('#formNameInput').keyup(
         function () {
+            var form = $('#formNameForm');
+            var nextButton = $('#next');
+            nextButton.button();
+            var validator = form.data('validator');
+            validator.settings.showErrors = function () {
+                var nrOfInvalids = this.numberOfInvalids();
+                var buttonVerb = (nrOfInvalids > 0) ? "disable" : "enable";
+                nextButton.button(buttonVerb);
+                if (buttonVerb == "disable") {
+                    disableTemp();
+                } else if (buttonVerb == "enable") {
+                    undoDisableTemp();
+                    $("#formNameBuild").text($("#formNameInput").val());
+                }
+                this.defaultShowErrors();
+            };
         }
-    );
-
+    ());
     //Disables links for all unexplored options
     function disableEnableLinks() {
         for (i = 0; i <= navListLength; i++) {
             var myAnchor = $("#navList li a:eq(" + i + ")");
-            if (i <= index) {
-                myAnchor.removeClass("disabled");
-                myAnchor.addClass("done");
+            if (i < index) {
+                if (myAnchor.hasClass("selected")) {
+                    myAnchor.removeClass("selected");   
+                }
+                if (!myAnchor.hasClass("enabled")) {
+                    myAnchor.addClass("enabled");
+                }
             } else if (i == index) {
-                myAnchor.removeClass("disabled");
+                if (myAnchor.hasClass("disabled")) {
+                    myAnchor.removeClass("disabled");
+                }
+                if (myAnchor.hasClass("enabled")) {
+                    myAnchor.removeClass("enabled");
+                }
                 myAnchor.addClass("selected");
             } else {
-                myAnchor.addClass("disabled");
+                if (myAnchor.hasClass("selected")) {
+                    myAnchor.removeClass("selected");
+                    myAnchor.addClass("enabled");
+                } else if (!myAnchor.hasClass("enabled")) {
+                    myAnchor.addClass("disabled");
+                }
             }
         }
     }
-    
     //Hides and shows the corresponding divs
     function hideShowDivs() {
         for (i = 0; i <= navListLength; i++) {
-            var $myDiv = $(".content:eq(" + i + ")");
+            var myDiv = $(".content:eq(" + i + ")");
             if (i == index) {
-                $myDiv.show();
+                myDiv.show();
             } else {
-                $myDiv.hide();
+                myDiv.hide();
             }
         }
     }
-
     //Enables and disables buttons 
     function buttonEnablerDisabler() {
-        if (isLast()) {
+        if (index == 0) {
+            $("#previous").hide();
+        } else {
+            $("#previous").show();
+        }
+        if (index == navListLength - 1) {
             $("#next").hide();
             $("#finish").show();
         } else {
             $("#next").show();
             $("#finish").hide();
         }
-        if (isFirst()) {
-            $("#previous").hide();
+        if ($("#navList li a:eq(" + (index + 1) + ")").hasClass("enabled") || $("#navList li a:eq(" + (index + 1) + ")").hasClass("selected")) {
+            $("#next").prop("disabled", false);
         } else {
-            $("#previous").show();
+            $("#next").prop("disabled", true);
         }
     }
 
-    //increase the index value by one
-    function increaseIndex() {
-        ++index;
-    }
-
-    //increase the index value by one
-    function decreaseIndex() {
-        --index;
-    }
-
-    //checks to see if the future tab is in range
-    function inRange() {
-        var ret = false;
-        if (index >= 0 && index < navListLength) {
-            ret = true;
+    function disableTemp() {
+        for (i = index + 1; i <= navListLength; i++) {
+            if ($("#navList li a:eq(" + (i) + ")").hasClass("enabled")) {
+                $("#navList li a:eq(" + (i) + ")").removeClass("enabled");
+                $("#navList li a:eq(" + (i) + ")").addClass("disabledtemp");
+            }
         }
-        return ret;
     }
-
-    //checks to see if the future tab is the last tab
-    function isLast() {
-        var ret = false;
-        if (index == navListLength - 1) {
-            ret = true;
+    function undoDisableTemp() {
+        for (i = index + 1; i <= navListLength; i++) {
+            if ($("#navList li a:eq(" + (i) + ")").hasClass("disabledtemp")) {
+                $("#navList li a:eq(" + (i) + ")").removeClass("disabledtemp");
+                $("#navList li a:eq(" + (i) + ")").addClass("enabled");
+            }
         }
-        return ret;
-    }
-
-    //checks to see if future tab is the first tab
-    function isFirst() {
-        var ret = false;
-        if (index == 0) {
-            ret = true;
-        }
-        return ret;
     }
 });
