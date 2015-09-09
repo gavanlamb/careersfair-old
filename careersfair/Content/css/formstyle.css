@@ -92,6 +92,7 @@ form input[type=checkbox]{
 .form-horizontal .checkbox:last-child{
     margin-bottom:0;
 }
+.radio label,
 .checkbox label {
     padding-left:15px;
 }
@@ -165,7 +166,12 @@ form input[type=radio]:after{
 form input[type=radio]:checked:after{
     background-color:#ff6200;
 }
-
+.other {
+    padding:0;
+}
+.otherinline {
+    padding: 10px 0 0 0;
+}
 .file-input, 
 .selfie-input{
   visibility:hidden;

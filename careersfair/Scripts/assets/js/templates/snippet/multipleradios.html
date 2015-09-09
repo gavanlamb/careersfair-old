@@ -13,6 +13,16 @@
                     </label>
                 </div>
                 <% }); %>
+                <% if(other){ %>
+                    <div class="radio">
+                        <label for="<%= id+'-'%>other">
+                            <input type="radio" name="<%= id %>" id="<%= id+'-'%>other" value="" <% if (required) { %> required<% } %>>Other<br/>
+                        </label>
+                    </div>
+                    <div class="<%= inputsize %> other">
+                        <input type="text" id="<%= id+'-'%>otherinput" name="<%= id+'-'%>otherinput" class="form-control <%= inputheight %> "/>
+                    </div>
+                <% } %>
             </div>
         </div>
         <div class="row">

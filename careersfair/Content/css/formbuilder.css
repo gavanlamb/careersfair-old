@@ -13,14 +13,20 @@
     display:block;
     width:50px;
     height:50px;
-    text-decoration: none;
-    line-height:48px;
-    font-weight:100;
-    font-size:24px;
     border-radius:50%;
-    text-align: center;
     margin: 0 auto;
+    text-decoration: none;
     outline: 0;
+}
+#navList li a span {
+    display:block;
+    width:50px;
+    height:50px;
+    font-size:25px;
+    line-height:49px;
+    text-align: center;
+    text-decoration: none;
+    font-weight:100;
 }
 #navList li a.selected {
     color:white;
@@ -273,6 +279,9 @@ form .controls .checkbox{
     vertical-align: middle;
     cursor: pointer;
     vertical-align: middle;
+}
+form .controls textarea {
+    min-height:100px !important;
 }
 form .controls > .checkbox{
     position: relative;

@@ -1,8 +1,5 @@
-define([
-    "jquery", "underscore", "backbone", "views/temp-snippet", "helper/pubsub", "text!templates/app/renderform.html"
-], function(
-    $, _, Backbone, TempSnippetView, PubSub, _renderForm
-) {
+define(["jquery", "underscore", "backbone", "views/temp-snippet", "helper/pubsub", "text!templates/app/renderform.html"],
+function($, _, Backbone, TempSnippetView, PubSub, _renderForm) {
     return Backbone.View.extend({
         tagName: "fieldset",
         initialize: function() {
@@ -16,9 +13,7 @@ define([
             this.$build = $("#build");
             this.renderForm = _.template(_renderForm);
             this.render();
-        }
-
-        ,
+        },
         render: function() {
             //Render Snippet Views
             this.$el.empty();
@@ -33,18 +28,14 @@ define([
             }));
             this.$el.appendTo("#build form");
             this.delegateEvents();
-        }
-
-        ,
+        },
         handleSnippetDrag: function(pointerEvent, snippetModel) {
             $("body").append(new TempSnippetView({
                 model: snippetModel
             }).render());
             this.collection.remove(snippetModel);
             PubSub.trigger("newTempPostRender", pointerEvent);
-        }
-
-        ,
+        },
         handleTempMove: function(pointerEvent) {
             $("div").remove(".target");
             if (pointerEvent.pageX >= this.$build.offset().left && pointerEvent.pageX < (this.$build.width() + this.$build.offset().left) &&
@@ -69,9 +60,7 @@ define([
             } else {
                 $("div").remove(".target");
             }
-        }
-
-        ,
+        },
         handleTempDrop: function(pointerEvent, model, index) {
             if (pointerEvent.pageX >= this.$build.offset().left && pointerEvent.pageX < (this.$build.width() + this.$build.offset().left) &&
                 pointerEvent.pageY >= this.$build.offset().top - 90 && pointerEvent.pageY < (this.$build.height() + this.$build.offset().top)) {
@@ -80,18 +69,25 @@ define([
                 this.collection.add(model, {
                     at: index
                 });
-                console.log(this.collection);
             } else {
                 $("div").remove(".target");
             }
-        }
-
-        ,
+        },
         handleDownAdd: function(model) {
+            if(model.has("id")){
+                var val= "";
+                for (var i = val.length; i < 31; i++){
+                    if(i < 1){
+                        stringSelect = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+                    }else{
+                        stringSelect = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                    }
+                    val += stringSelect.charAt(Math.floor(Math.random() * stringSelect.length));
+                }
+                model.setField("id", val);
+            }
             var length = this.collection.length;
-            this.collection.add(model, {
-                at: length
-            });
+            this.collection.add(model, {at: length});
         }
     })
 });

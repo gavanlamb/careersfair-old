@@ -24,37 +24,25 @@
     <script type="text/javascript"
         src="~/Scripts/assets/js/lib/require.js?v=3"
         data-main="@Scripts.Url("~/Scripts/assets/js/main-built")"></script>
-
-    <script>
-        $("[type=file]").on("change", function () {
-            // Name of file and placeholder
-            var file = this.files[0].name;
-            var dflt = $(this).attr("placeholder");
-            if ($(this).val() != "") {
-                $(this).next().text(file);
-            } else {
-                $(this).next().text(dflt);
-            }
-        });
-    </script>
 }
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <ul class="list-inline text-center" id="navList">
-                <li role="presentation"><a href="#name" aria-controls="name">1</a><span>NAME</span></li>
-                <li role="presentation"><a href="#builder" aria-controls="builder">2</a><span>CREATE</span></li>
-                <li role="presentation"><a href="#aactions" aria-controls="aactions">3</a><span>ACTIONS</span></li>
+                <li role="presentation"><a href="#name" aria-controls="name"><span>1</span></a><span>NAME</span></li>
+                <li role="presentation"><a href="#builder" aria-controls="builder"><span>2</span></a><span>CREATE</span></li>
+                <li role="presentation"><a href="#aactions" aria-controls="aactions"><span>3</span></a><span>ACTIONS</span></li>
             </ul>
         </div>
     </div>
     <div class="row content" id="name">
         <div class="col-lg-12">
-            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "formNameForm" }))
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "formNameForm", @onsubmit = "return false;"}))
             {
                 @Html.AntiForgeryToken()
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", id = "formNameInput" } })
                 @Html.ValidationMessageFor(model => model.Name, null, new { @id = "formNameInputValidationMessage" })
+                <input type="hidden" id="render">
             }
         </div>
     </div>
@@ -66,7 +54,6 @@
                     <form id="components" class="form-horizontal">
                         <fieldset>
                             <div class="tab-content"></div>
-                            <input type="hidden" id="render">
                         </fieldset>
                     </form>
                 </div>

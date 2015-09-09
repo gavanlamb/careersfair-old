@@ -5,9 +5,9 @@
         function () {
             navListLength = $("#navList li").length;
             index = 0;
-            hideShowDivs();
-            buttonEnablerDisabler();
-            disableEnableLinks();
+            sectionManager();
+            buttonManager();
+            linkManager();
         }
     );
     $("#navList li a").click(
@@ -16,9 +16,9 @@
             e.preventDefault();
             if ($("#navList li a:eq(" + tempIndex + ")").hasClass("enabled")) {
                 index = tempIndex;
-                hideShowDivs();
-                buttonEnablerDisabler();
-                disableEnableLinks();
+                sectionManager();
+                buttonManager();
+                linkManager();
             }
         }
     );
@@ -26,9 +26,9 @@
         function () {
             if (index >= 0 && index < navListLength) {
                 ++index;
-                hideShowDivs();
-                buttonEnablerDisabler();
-                disableEnableLinks();
+                sectionManager();
+                buttonManager();
+                linkManager();
             } 
         }
     );
@@ -36,9 +36,9 @@
         function () {
             if (index >= 0 && index < navListLength) {
                 --index;
-                hideShowDivs();
-                buttonEnablerDisabler();
-                disableEnableLinks();
+                sectionManager();
+                buttonManager();
+                linkManager();
             } 
         }
     );
@@ -51,19 +51,30 @@
             validator.settings.showErrors = function () {
                 var nrOfInvalids = this.numberOfInvalids();
                 var buttonVerb = (nrOfInvalids > 0) ? "disable" : "enable";
-                nextButton.button(buttonVerb);
                 if (buttonVerb == "disable") {
                     disableTemp();
                 } else if (buttonVerb == "enable") {
                     undoDisableTemp();
+                    enableNextMove();
                     $("#formNameBuild").text($("#formNameInput").val());
                 }
                 this.defaultShowErrors();
             };
         }
     ());
+    //Hides and shows the corresponding divs
+    function sectionManager() {
+        for (i = 0; i <= navListLength; i++) {
+            var myDiv = $(".content:eq(" + i + ")");
+            if (i == index) {
+                myDiv.show();
+            } else {
+                myDiv.hide();
+            }
+        }
+    }
     //Disables links for all unexplored options
-    function disableEnableLinks() {
+    function linkManager() {
         for (i = 0; i <= navListLength; i++) {
             var myAnchor = $("#navList li a:eq(" + i + ")");
             if (i < index) {
@@ -91,19 +102,24 @@
             }
         }
     }
-    //Hides and shows the corresponding divs
-    function hideShowDivs() {
-        for (i = 0; i <= navListLength; i++) {
-            var myDiv = $(".content:eq(" + i + ")");
-            if (i == index) {
-                myDiv.show();
-            } else {
-                myDiv.hide();
+    function disableTemp() {
+        for (i = index + 1; i <= navListLength; i++) {
+            if ($("#navList li a:eq(" + (i) + ")").hasClass("enabled")) {
+                $("#navList li a:eq(" + (i) + ")").removeClass("enabled");
+                $("#navList li a:eq(" + (i) + ")").addClass("disabledtemp");
+            }
+        }
+    }
+    function undoDisableTemp() {
+        for (i = index + 1; i <= navListLength; i++) {
+            if ($("#navList li a:eq(" + (i) + ")").hasClass("disabledtemp")) {
+                $("#navList li a:eq(" + (i) + ")").removeClass("disabledtemp");
+                $("#navList li a:eq(" + (i) + ")").addClass("enabled");
             }
         }
     }
     //Enables and disables buttons 
-    function buttonEnablerDisabler() {
+    function buttonManager() {
         if (index == 0) {
             $("#previous").hide();
         } else {
@@ -122,21 +138,13 @@
             $("#next").prop("disabled", true);
         }
     }
-
-    function disableTemp() {
-        for (i = index + 1; i <= navListLength; i++) {
-            if ($("#navList li a:eq(" + (i) + ")").hasClass("enabled")) {
-                $("#navList li a:eq(" + (i) + ")").removeClass("enabled");
-                $("#navList li a:eq(" + (i) + ")").addClass("disabledtemp");
-            }
+    function enableNextMove() {
+        if (index == (navListLength - 1)) {
+            $("#finish").prop("disabled", false);
+        } else if (index < (navListLength - 1)) {
+            $("#next").prop("disabled", false);
         }
-    }
-    function undoDisableTemp() {
-        for (i = index + 1; i <= navListLength; i++) {
-            if ($("#navList li a:eq(" + (i) + ")").hasClass("disabledtemp")) {
-                $("#navList li a:eq(" + (i) + ")").removeClass("disabledtemp");
-                $("#navList li a:eq(" + (i) + ")").addClass("enabled");
-            }
-        }
+        $("#navList li a:eq(" + (index+1) + ")").removeClass("disabled");
+        $("#navList li a:eq(" + (index+1) + ")").addClass("enabled");
     }
 });

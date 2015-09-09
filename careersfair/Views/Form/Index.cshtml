@@ -20,13 +20,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Structure)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BeforeAction)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AfterAction)
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -39,12 +32,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Structure)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BeforeAction)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AfterAction)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

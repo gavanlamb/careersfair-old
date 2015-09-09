@@ -1,8 +1,5 @@
-define([
-    "jquery", "underscore", "backbone", "models/snippet", "views/snippet", "helper/pubsub"
-], function(
-    $, _, Backbone, SnippetModel, SnippetView, PubSub
-) {
+define(["jquery", "underscore", "backbone", "models/snippet", "views/snippet", "helper/pubsub"],
+function($, _, Backbone, SnippetModel, SnippetView, PubSub) {
     return SnippetView.extend({
         events: {
             "click": "preventPropagation",
@@ -11,7 +8,6 @@ define([
         pointerDownHandler: function(pointerEvent) {
             pointerEvent.stopPropagation();
             pointerEvent.preventDefault();
-            //hide all popovers
             $(".popover").hide();
             PubSub.trigger("downAdd", new SnippetModel($.extend(true, {}, this.model.attributes)));
         },
