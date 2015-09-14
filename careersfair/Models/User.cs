@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Helpers;
 using System.Configuration;
 using System.Net;
+using System.Net.Mail;
 
 namespace careersfair.Models
 {
