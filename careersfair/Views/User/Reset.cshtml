@@ -1,32 +1,33 @@
 ﻿
-@model careersfair.Models.Reset
+
 @{
     ViewBag.Title = "Reset Password";
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 @using careersfair.Models
+@functions{
 
+}
 <!DOCTYPE html>
 
 <html>
 
 <head>
-    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true" />
-    <script type="text/javascript">
-        function finish() {
-            pageMethods.SendMail();
-        }
-        </script>
+  
+
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <title>Reset Password</title>
 </head>
 <body>
 
     <div>
-
-            <input type="submit" value="Reset Password" onclick="Button1_Click" />
+            @using (Html.BeginForm("ResetPassword", "User", FormMethod.Post)) { 
+            <input type="submit" id="btnSend" value="Send" />
+            }
+            <input type="submit" value="Reset Password" onclick="GetName()" />
 
 
 </div>
+
 </body>
 </html>

@@ -62,7 +62,8 @@ namespace careersfair.Models
                 }
             }
         }
-        protected void SendMail()
+        
+        protected static void SendMail()
         {
             // Gmail Address from where you send the mail
             var fromAddress = "sai.ancha194@gmail.com";
@@ -87,7 +88,8 @@ namespace careersfair.Models
             // Passing values to smtp object
             smtp.Send(fromAddress, toAddress, subject, body);
         }
-        protected void Button1_Click(object sender, EventArgs e)
+        [System.Web.Services.WebMethod]
+        public static void Button1_Click(object sender, EventArgs e)
         {
             try
             {
