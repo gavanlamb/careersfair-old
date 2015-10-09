@@ -1,0 +1,28 @@
+﻿@model careersfair.Models.FormResults
+@{
+    ViewBag.Title = "Thank You";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section stylesheet{
+    @Styles.Render("~/style/formdisabled")
+    @Styles.Render("~/style/ionicons")
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-12 col-md-8 col-lg-8 formDisabled">
+            <h2 align="center">Thank You</h2>
+            <h3>Follow us</h3>
+            <ul>
+                <li>
+                    <span class="ion-social-facebook-outline"></span>
+                </li>
+                <li>
+                    <span class="ion-social-linkedin-outline"></span>
+                </li>
+                <li>
+                    <span class="ion-social-twitter-outline"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

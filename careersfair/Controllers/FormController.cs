@@ -27,13 +27,12 @@ namespace careersfair.Controllers
     public class FormController : Controller
     {
         private careersfair.DAL.FormContext db = new careersfair.DAL.FormContext();
-        private const string rootFolder = "~/App_Data/";
-        const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         // GET: Forms
         public ActionResult Index()
         {
             return View(db.Form.ToList());
         }
+
 
         /// <summary>
         /// Returns the view to create a new form
@@ -44,6 +43,7 @@ namespace careersfair.Controllers
             return View();
         }
 
+
         // POST: Forms/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -53,6 +53,8 @@ namespace careersfair.Controllers
         {
             if (ModelState.IsValid)
             {
+                string rootFolder = "~/App_Data/";
+                string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
                 string formStorage = form.Name;
                 Regex rgx = new Regex("[^a-zA-Z0-9]");
                 formStorage = rgx.Replace(formStorage, "");
@@ -96,6 +98,7 @@ namespace careersfair.Controllers
             return PartialView("Delete", form);
         }
 
+
         // POST: Forms/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -122,6 +125,7 @@ namespace careersfair.Controllers
             }
             return PartialView("EnableDisable", form);
         }
+
 
         // POST: Forms/EnableDisable/5
         [HttpPost, ActionName("EnableDisable")]
@@ -156,55 +160,7 @@ namespace careersfair.Controllers
             }
             return View(form);
         }
-
-
-        // POST: Forms/ViewForm/5
-        [HttpPost]
-        public ActionResult SubmitForm(FormCollection collection)
-        {
-            string formId = collection["formID"];
-            string formStorage = collection["formStorage"];
-            dynamic formElementsArray = JsonConvert.DeserializeObject(collection["formElements"]);
-
-            string xml = string.Empty;
-            StringBuilder sb = new StringBuilder();
-            using (XmlWriter writer = XmlWriter.Create(sb))
-            {
-                writer.WriteStartDocument();
-                writer.WriteStartElement(formStorage);
-                foreach (var item in formElementsArray)
-                {
-                    string formElementId = item.id;
-                    string formElementType = item.type;
-
-                    if (formElementType == "file")
-                    {
-                        HttpPostedFileBase file = Request.Files[formElementId];
-                        if (file.ContentLength > 0) {
-                            var random = new Random();
-                            string uniqCode = new string(Enumerable.Repeat(chars, 3).Select(s => s[random.Next(s.Length)]).ToArray());
-                            var fileName = DateTime.Now.ToString("hhmmssffffff") + uniqCode + Path.GetExtension(file.FileName);
-                            uniqCode = "";
-                            var serverPath = Server.MapPath(rootFolder + "/" + formStorage + "/" + formElementId);
-                            Directory.CreateDirectory(serverPath);
-                            var path = Path.Combine(serverPath, fileName);
-                            file.SaveAs(path);
-                            writer.WriteElementString(formElementId, fileName);
-                        }
-                    }else if (collection.AllKeys.Contains(formElementId))
-                    {
-                        writer.WriteElementString(formElementId, collection[formElementId].ToString());
-                    }
-                }
-                writer.WriteEndElement();
-                writer.WriteEndDocument();
-            }
-            
-            xml = sb.ToString();
-            Debug.WriteLine(xml);
-            return RedirectToAction("Index");
-        }
-
+        
 
         /// <summary>
         /// Called from the model in order to validate whether the name is unique 
@@ -223,7 +179,6 @@ namespace careersfair.Controllers
             }
             return ret;
         }
-
 
 
         /// <summary>
