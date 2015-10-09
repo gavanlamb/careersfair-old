@@ -60,10 +60,18 @@ form .input-group-addon {
     font-weight:300;
 }
 form input[type=text],
+form input[type=datetime-local],
+form input[type=date],
+form input[type=email],
+form input[type=month],
+form input[type=number],
+form input[type=tel],
+form input[type=time],
+form input[type=week],
+form input[type=checkbox],
 form textarea, 
 form select,
-form .input-group-addon,
-form input[type=checkbox]{
+form .input-group-addon{
     border-radius:0 !important;
     background-color:white !important;
     outline:0 !important;
@@ -165,6 +173,21 @@ form input[type=radio]:after{
 }
 form input[type=radio]:checked:after{
     background-color:#ff6200;
+}
+.hiddenfield {
+    display:block;
+}
+.hiddenfield:before{
+    display: block!important;
+    border: 1px solid #ff6200!important;
+    background-color: #ccc!important;
+    content: "HIDDEN FIELD"!important;
+    color: white!important;
+    height:50px!important;
+    line-height:50px!important;
+    font-size:50px!important;
+    text-align:center;
+    margin: 0 15px;
 }
 .other {
     padding:0;

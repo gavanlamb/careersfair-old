@@ -1,0 +1,189 @@
+-
+  title  : ID
+  fields :
+    id:
+      value: "id"
+    label:
+      value: "ID"
+    use:
+      value: true
+-
+  title  : First name
+  fields :
+    id:
+      value: "first-name"
+    label:
+      value: "First name"
+    use:
+      value: true
+-
+  title  : Last name
+  fields :
+    id:
+      value: "last-name"
+    label:
+      value: "Last name"
+    use:
+      value: true
+-
+  title  : Maiden Name
+  fields :
+    id:
+      value: "maiden-name"
+    label:
+      value: "Maiden name"
+    use:
+      value: true
+-
+  title  : Formatted Name
+  fields :
+    id:
+      value: "formatted-name"
+    label:
+      value: "Formatted name"
+    use:
+      value: true
+-
+  title  : First name(phonetic)
+  fields :
+    id:
+      value: "phonetic-first-name"
+    label:
+      value: "First name(phonetic)"
+    use:
+      value: true
+-
+  title  : Last name(phonetic)
+  fields :
+    id:
+      value: "phonetic-last-name"
+    label:
+      value: "Last name(phonetic)"
+    use:
+      value: true
+-
+  title  : Formatted name(phonetic)
+  fields :
+    id:
+      value: "formatted-phonetic-name"
+    label:
+      value: "Formatted name(phonetic)"
+    use:
+      value: true
+-
+  title  : Members headline
+  fields :
+    id:
+      value: "headline"
+    label:
+      value: "Members headline"
+    use:
+      value: true
+-
+  title  : Users location
+  fields :
+    id:
+      value: "location"
+    label:
+      value: "Users location"
+    use:
+      value: true
+-
+  title  : Industry
+  fields :
+    id:
+      value: "industry"
+    label:
+      value: "Industry"
+    use:
+      value: true
+-
+  title  : Most recent shared item
+  fields :
+    id:
+      value: "current-share"
+    label:
+      value: "Most recent shared item"
+    use:
+      value: true
+-
+  title  : Number of Linkedin connections
+  fields :
+    id:
+      value: "num-connections"
+    label:
+      value: "Number of Linkedin connections"
+    use:
+      value: true
+-
+  title  : Summary of professional profile
+  fields :
+    id:
+      value: "summary"
+    label:
+      value: "Summary of professional profile"
+    use:
+      value: true
+-
+  title  : Specialities
+  fields :
+    id:
+      value: "specialties"
+    label:
+      value: "Specialities"
+    use:
+      value: true
+-
+  title  : Current position
+  fields :
+    id:
+      value: "positions"
+    label:
+      value: "Current position"
+    use:
+      value: true
+-
+  title  : Formatted picture
+  fields :
+    id:
+      value: "picture-url"
+    label:
+      value: "Formatted picture"
+    use:
+      value: true
+-
+  title  : Unformatted picture
+  fields :
+    id:
+      value: "picture-urls::(original)"
+    label:
+      value: "Unformatted picture"
+    use:
+      value: true
+-
+  title  : Link to profile
+  fields :
+    id:
+      value: "site-standard-profile-request"
+    label:
+      value: "Link to profile"
+    use:
+      value: true
+-
+  title  : Programmatic profile access
+  fields :
+    id:
+      value: "api-standard-profile-request"
+    label:
+      value: "Programmatic profile access"
+    use:
+      value: true
+-
+  title  : Public profile
+  fields :
+    id:
+      value: "public-profile-url"
+    label:
+      value: "Public profile"
+    use:
+      value: true

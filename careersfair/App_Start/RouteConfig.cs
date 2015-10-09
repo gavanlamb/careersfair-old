@@ -23,6 +23,11 @@ namespace careersfair
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Form", action = "Create", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "ViewForms",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Form", action = "ViewForm", id = UrlParameter.Optional }
+            );
         }
     }
 }

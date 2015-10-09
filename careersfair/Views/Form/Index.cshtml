@@ -2,43 +2,69 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TableName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Structure)
-        </th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TableName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Structure)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+@section stylesheet{
+    @Styles.Render("~/style/formindex")
+    @Styles.Render("~/style/ionicons")
 }
+@section scripts{
+    @Scripts.Render("~/script/deleteform")
+}
+<h2>All forms</h2>
+@foreach (var item in Model)
+{
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 formIndexItem">
+        <h1>@Html.DisplayFor(modelItem => item.Name)</h1>
 
-</table>
+        <ul class="formActionsList">
+            @if (item.Linkedin != null)
+            {
+                <li><span class="ion-social-linkedin"></span></li>
+            }
+        </ul>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 dataButtons">
+                <a class="btn" href='@Url.Action("Delete", "FormResults", new { id = item.ID })' data-modal="">
+                    <span class="ion-ios-trash-outline"></span>
+                </a>
+
+                <a class="btn" href="@Url.Action("", "", new { id = item.ID })" data-modal="">
+                    <span class="ion-ios-cloud-download-outline"></span>
+                </a>
+
+                <a class="btn" href="@Url.Action("", "", new { id = item.ID })" data-modal="">
+                    <span class="ion-ios-list-outline"></span>
+                </a>
+
+                <a class="btn" href="@Url.Action("", "", new { id = item.ID })">
+                    <span class="ion-ios-barcode-outline"></span>
+                </a>
+                @if (item.Enabled)
+                {
+                    <a class="btn" href="@Url.Action("EnableDisable", "Form", new { id = item.ID })" data-modal="">
+                        <span class="ion-ios-locked-outline"></span>
+                    </a>
+                }
+                else
+                {
+                    <a class="btn" href="@Url.Action("EnableDisable", "Form", new { id = item.ID })" data-modal="">
+                        <span class="ion-ios-unlocked-outline"></span>
+                    </a>
+                }
+            </div>
+            @*<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 formButtons">
+                    <a class="btn" href="@Url.Action("Delete", "form", new { id = item.ID })" data-modal="">
+                        <span class="ion-ios-trash-outline"></span>
+                    </a>
+                </div>*@
+        </div>
+    </div>
+}
+<div id="myModal" class="modal fade in">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="myModalContent"></div>
+        </div>
+    </div>
+</div>

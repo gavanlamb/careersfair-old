@@ -7,20 +7,23 @@ using careersfair.Models;
 
 
 ///TO BE DELETED WHEN WE PUBLISH, THIS IS FOR TESTING ONLY.
-namespace careersfair.DAL{
-    public class FormInitializer : System.Data.Entity. DropCreateDatabaseIfModelChanges<FormContext>{
-        protected override void Seed(FormContext context){
+namespace careersfair.DAL
+{
+    public class FormInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<FormContext>
+    {
+        protected override void Seed(FormContext context)
+        {
             var forms = new List<Form>{
-                new Form{Name="AUT 2011",TableName="aut2011",Structure="structure"},
-                new Form{Name="AUT 2012",TableName="aut2012",Structure="structure"},
-                new Form{Name="AUT 2013",TableName="aut2013",Structure="structure"},
-                new Form{Name="AUT 2014",TableName="aut2014",Structure="structure"},
-                new Form{Name="AUT 2015",TableName="aut2015",Structure="structure"},
-                new Form{Name="AUT 2016",TableName="aut2016",Structure="structure"},
-                new Form{Name="AUT 2017",TableName="aut2017",Structure="structure"},
-                new Form{Name="AUT 2018",TableName="aut2018",Structure="structure"},
-                new Form{Name="AUT 2019",TableName="aut2019",Structure="structure"},
-                new Form{Name="AUT 2020",TableName="aut2020",Structure="structure"}
+                new Form{Name="AUT 2011",HTML="structure",Enabled=true},
+                new Form{Name="AUT 2012",HTML="structure",Enabled=true},
+                new Form{Name="AUT 2013",HTML="structure",Enabled=true},
+                new Form{Name="AUT 2014",HTML="structure",Enabled=true},
+                new Form{Name="AUT 2015",HTML="structure",Enabled=true},
+                new Form{Name="AUT 2016",HTML="structure",Enabled=true},
+                new Form{Name="AUT 2017",HTML="structure",Enabled=true},
+                new Form{Name="AUT 2018",HTML="structure",Enabled=true},
+                new Form{Name="AUT 2019",HTML="structure",Enabled=true},
+                new Form{Name="AUT 2020",HTML="structure",Enabled=true}
             };
             forms.ForEach(f => context.Form.Add(f));
             context.SaveChanges();

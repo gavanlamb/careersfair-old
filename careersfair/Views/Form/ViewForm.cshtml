@@ -1,0 +1,51 @@
+﻿@model careersfair.Models.Form
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model.Enabled)
+{
+    ViewBag.Title = Model.Name;
+    @section stylesheet{
+        @Styles.Render("~/style/formstyle")
+        @Styles.Render("~/style/ionicons")
+    }
+    @section scripts{
+        @Scripts.Render("~/script/jqueryui")
+        @Scripts.Render("~/script/jqueryvalidation")
+    }
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <h2>@Html.DisplayFor(model => model.Name)</h2>
+                @using (Html.BeginForm("SubmitForm", "Form", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <input type="hidden" value="@Model.ID" name="formID" />
+                    <input type="hidden" value="@Model.Elements" name="formElements" />
+                    <input type="hidden" value="@Model.Storage" name="formStorage" />
+                    @Html.Raw(Model.HTML)
+                    <button type="submit" class="btn" value="Upload">
+                        <span class="ion-ios-checkmark-empty"></span>
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    ViewBag.Title = "Disabled Form";
+    @section stylesheet{
+        @Styles.Render("~/style/formdisabled")
+        @Styles.Render("~/style/ionicons")
+    }
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-12 col-md-8 col-lg-8 formDisabled">
+                <h2 align="center">Sorry, that form is locked</h2>
+                <div>
+                    <span class="ion-ios-locked-outline"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

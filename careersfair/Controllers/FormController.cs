@@ -8,6 +8,14 @@ using System.Web;
 using System.Web.Mvc;
 using careersfair.DAL;
 using careersfair.Models;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using System.Web.Script.Serialization;
+using System.Xml;
+using System.Text;
+using System.IO;
 
 namespace careersfair.Controllers
 {
@@ -19,25 +27,12 @@ namespace careersfair.Controllers
     public class FormController : Controller
     {
         private careersfair.DAL.FormContext db = new careersfair.DAL.FormContext();
+        private const string rootFolder = "~/App_Data/";
+        const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         // GET: Forms
         public ActionResult Index()
         {
             return View(db.Form.ToList());
-        }
-
-        // GET: Forms/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Form form = db.Form.Find(id);
-            if (form == null)
-            {
-                return HttpNotFound();
-            }
-            return View(form);
         }
 
         /// <summary>
@@ -54,10 +49,30 @@ namespace careersfair.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,TableName,Structure,BeforeAction,AfterAction")] Form form)
+        public ActionResult Create([Bind(Include = "Name,HTML,Elements,Linkedin")] Form form)
         {
             if (ModelState.IsValid)
             {
+                string formStorage = form.Name;
+                Regex rgx = new Regex("[^a-zA-Z0-9]");
+                formStorage = rgx.Replace(formStorage, "");
+
+                var random = new Random();
+                formStorage += new string(Enumerable.Repeat(chars, 5).Select(s => s[random.Next(s.Length)]).ToArray());
+
+                dynamic formElementsArray = JsonConvert.DeserializeObject(form.Elements);
+                foreach (var item in formElementsArray)
+                {
+                    string formElementType = item.type;
+                    if (formElementType == "file")
+                    {
+                        string formElementId = item.id;
+                        var path = Server.MapPath(rootFolder + "/" + formStorage + "/" + formElementId);
+                        Directory.CreateDirectory(path);
+                    }
+                }
+                form.Storage = formStorage;
+                form.Enabled = true;
                 db.Form.Add(form);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -65,36 +80,6 @@ namespace careersfair.Controllers
             return View(form);
         }
 
-        // GET: Forms/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Form form = db.Form.Find(id);
-            if (form == null)
-            {
-                return HttpNotFound();
-            }
-            return View(form);
-        }
-
-        // POST: Forms/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,TableName,Structure,BeforeAction,AfterAction")] Form form)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry<Form>(form).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(form);
-        }
 
         // GET: Forms/Delete/5
         public ActionResult Delete(int? id)
@@ -108,7 +93,7 @@ namespace careersfair.Controllers
             {
                 return HttpNotFound();
             }
-            return View(form);
+            return PartialView("Delete", form);
         }
 
         // POST: Forms/Delete/5
@@ -119,6 +104,104 @@ namespace careersfair.Controllers
             Form form = db.Form.Find(id);
             db.Form.Remove(form);
             db.SaveChanges();
+            return Json(new { success = true });
+        }
+
+
+        // GET: Forms/EnableDisable/5
+        public ActionResult EnableDisable(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Form form = db.Form.Find(id);
+            if (form == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView("EnableDisable", form);
+        }
+
+        // POST: Forms/EnableDisable/5
+        [HttpPost, ActionName("EnableDisable")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EnableDisableConfirmed(int id)
+        {
+            Form form = db.Form.Find(id);
+            if (form.Enabled)
+            {
+                form.Enabled = false;
+            }
+            else
+            {
+                form.Enabled = true;
+            }
+            db.SaveChanges();
+            return Json(new { success = true });
+        }
+
+
+        // GET: Forms/ViewForm/5
+        public ActionResult ViewForm(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Form form = db.Form.Find(id);
+            if (form == null)
+            {
+                return HttpNotFound();
+            }
+            return View(form);
+        }
+
+
+        // POST: Forms/ViewForm/5
+        [HttpPost]
+        public ActionResult SubmitForm(FormCollection collection)
+        {
+            string formId = collection["formID"];
+            string formStorage = collection["formStorage"];
+            dynamic formElementsArray = JsonConvert.DeserializeObject(collection["formElements"]);
+
+            string xml = string.Empty;
+            StringBuilder sb = new StringBuilder();
+            using (XmlWriter writer = XmlWriter.Create(sb))
+            {
+                writer.WriteStartDocument();
+                writer.WriteStartElement(formStorage);
+                foreach (var item in formElementsArray)
+                {
+                    string formElementId = item.id;
+                    string formElementType = item.type;
+
+                    if (formElementType == "file")
+                    {
+                        HttpPostedFileBase file = Request.Files[formElementId];
+                        if (file.ContentLength > 0) {
+                            var random = new Random();
+                            string uniqCode = new string(Enumerable.Repeat(chars, 3).Select(s => s[random.Next(s.Length)]).ToArray());
+                            var fileName = DateTime.Now.ToString("hhmmssffffff") + uniqCode + Path.GetExtension(file.FileName);
+                            uniqCode = "";
+                            var serverPath = Server.MapPath(rootFolder + "/" + formStorage + "/" + formElementId);
+                            Directory.CreateDirectory(serverPath);
+                            var path = Path.Combine(serverPath, fileName);
+                            file.SaveAs(path);
+                            writer.WriteElementString(formElementId, fileName);
+                        }
+                    }else if (collection.AllKeys.Contains(formElementId))
+                    {
+                        writer.WriteElementString(formElementId, collection[formElementId].ToString());
+                    }
+                }
+                writer.WriteEndElement();
+                writer.WriteEndDocument();
+            }
+            
+            xml = sb.ToString();
+            Debug.WriteLine(xml);
             return RedirectToAction("Index");
         }
 
@@ -128,16 +211,20 @@ namespace careersfair.Controllers
         /// </summary>
         /// <param name="name">Name of the form to check</param>
         /// <returns>JSON boolean - true if the name has been taken</returns>
+        [HttpPost]
         public JsonResult IsNameExists(string name)
         {
+            string nameLoc = name.Trim();
             JsonResult ret = Json(true, JsonRequestBehavior.AllowGet);
-            int result = db.Form.Where(c => c.Name.ToLower() == name.ToLower()).Count();
+            int result = db.Form.Where(c => c.Name.ToLower() == nameLoc.ToLower()).Count();
             if (result > 0)
             {
                 ret = Json(false, JsonRequestBehavior.AllowGet);
             }
             return ret;
         }
+
+
 
         /// <summary>
         /// Dispose the database connection

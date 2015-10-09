@@ -20,39 +20,43 @@ namespace careersfair.App_Start
             //********************************************
             bundles.Add(
                 new ScriptBundle("~/script/bootstrap")
-                    .Include("~/Scripts/bootstrap.min.js")); 
+                    .Include("~/Scripts/library/bootstrap.min.js"));
             
             bundles.Add(
+                new ScriptBundle("~/script/deleteform")
+                    .Include("~/Scripts/app/deleteform.js"));
+
+            bundles.Add(
                 new ScriptBundle("~/script/formbuildertabs")
-                    .Include("~/Scripts/bootstrap-formbuilder-tabs.js"));
+                    .Include("~/Scripts/app/bootstrap-formbuilder-tabs.js"));
             
             bundles.Add(
                 new ScriptBundle("~/script/jquery_1102")
-                    .Include("~/Scripts/jquery-1.10.2.min.js"));
+                    .Include("~/Scripts/library/jquery-1.10.2.min.js"));
 
             bundles.Add(
                 new ScriptBundle("~/script/jquery_200")
-                    .Include("~/Scripts/jquery-2.0.0.min.js"));
+                    .Include("~/Scripts/library/jquery-2.0.0.min.js"));
 
             bundles.Add(
                 new ScriptBundle("~/script/jquery")
-                    .Include("~/Scripts/jquery-2.1.4.min.js"));
+                    .Include("~/Scripts/library/jquery-2.1.4.min.js"));
 
             bundles.Add(
                 new ScriptBundle("~/script/jqueryvalidation")
-                    .Include("~/Scripts/jquery.validate.*"));
+                    .Include("~/Scripts/library/jquery.validate.*"));
 
             bundles.Add(
                 new ScriptBundle("~/script/jqueryui")
-                    .Include("~/Scripts/jquery-ui-1.11.4.js"));
+                    .Include("~/Scripts/library/jquery-ui-1.11.4.js"));
 
             bundles.Add(
                 new ScriptBundle("~/script/jqueryajax")
-                    .Include("~/Scripts/jquery.unobtrusive-ajax.js"));
+                    .Include("~/Scripts/library/jquery.unobtrusive-ajax.js"));
 
             bundles.Add(
                 new ScriptBundle("~/script/modernizr")
-                    .Include("~/Scripts/modernizr-2.6.2.js"));
+                    .Include("~/Scripts/library/modernizr-2.6.2.js"));
 
 
             //*****************************************
@@ -74,10 +78,20 @@ namespace careersfair.App_Start
                 new StyleBundle("~/style/ionicons")
                     .Include("~/Content/css/ionicons.css"));
 
-            //CSS bundle for formbuilder
+            //CSS bundle for form create page
             bundles.Add(
-                new StyleBundle("~/style/formbuilder")
-                    .Include("~/Content/css/formbuilder.css"));
+                new StyleBundle("~/style/formcreate")
+                    .Include("~/Content/css/formcreate.css"));
+
+            //CSS bundle for form index page
+            bundles.Add(
+                new StyleBundle("~/style/formdisabled")
+                    .Include("~/Content/css/formdisabled.css"));
+
+            //CSS bundle for form index page
+            bundles.Add(
+                new StyleBundle("~/style/formindex")
+                    .Include("~/Content/css/formindex.css"));
 
             //CSS bundle for formstyle
             bundles.Add(

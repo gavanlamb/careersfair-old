@@ -1,0 +1,56 @@
+-
+  title  : File upload
+  fields :
+    id:
+      type   : hidden
+      value  : filebutton
+    type:
+      type   : hidden
+      value  : file
+    linkedin:
+      type   : hidden
+      value  : false
+    label:
+      label  : Label Text
+      type   : input
+      value  : File upload
+    buttontext:
+      label  : Button Text
+      type   : input
+      value  : File upload
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+    filesize:
+      label  : File size(max)
+      type   : input
+      value  : 2
+-
+  title  : Selfie upload
+  fields :
+    id:
+      type   : hidden
+      value  : filebutton
+    type:
+      type   : hidden
+      value  : file
+    linkedin:
+      type   : hidden
+      value  : false
+    label:
+      label  : Label Text
+      type   : input
+      value  : Selfie upload
+    buttontext:
+      label  : Button Text
+      type   : input
+      value  : Selfie
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+    filesize:
+      label  : File size(max)
+      type   : input
+      value  : 2
