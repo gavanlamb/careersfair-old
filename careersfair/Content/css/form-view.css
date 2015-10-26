@@ -1,0 +1,20 @@
+﻿#linkedinbutton {
+    margin-top:30px;
+    text-align:center;
+}
+#submit {
+    margin-top:-50px;
+}
+#submit, 
+.next {
+    margin-right:15px;
+}
+.next span {
+    margin-left: 4px;
+}
+.previous {
+    margin-left:15px;
+}
+.previous  span {
+    margin-left: -4px;
+}

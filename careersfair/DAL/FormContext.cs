@@ -13,19 +13,19 @@ namespace careersfair.DAL
     /// </summary>
     public class FormContext : DbContext
     {
-        public DbSet<Form> form;
-
-        public FormContext() : base("FormDBContext") { }
+        public FormContext()
+            : base("FormContext")
+        {
+            Database.SetInitializer(new CreateDatabaseIfNotExists<FormContext>());
+        }
 
         /// <summary>
         /// The form context of base, base contains the name of the connection string
         /// </summary>
         public DbSet<Form> Form { get; set; }
+
         public DbSet<FormResults> FormResults { get; set; }
 
-        /// <summary>
-        /// The DbSet array for form model, the items that entity framework must deal with
-        /// </summary>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

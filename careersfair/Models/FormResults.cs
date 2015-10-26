@@ -13,6 +13,10 @@ namespace careersfair.Models
         [Column(TypeName = "xml")]
         public string Results { get; set; }
 
+        [InverseProperty("ID")]
+        [ForeignKey("Form")]
+        public int FormId { get; set; }
+
         public virtual Form Form { get; set; }
     }
 }

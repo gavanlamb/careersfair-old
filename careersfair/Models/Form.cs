@@ -19,8 +19,6 @@ namespace careersfair.Models
 
         public int ID { get; set; }
 
-
-        [Remote("IsNameExists", "Form", ErrorMessage = "Form already exists", HttpMethod = "POST")]
         [Required(ErrorMessage = "A form name is required")]
         [StringLength(30, MinimumLength = 3, ErrorMessage = "The name must be between 3 and 30 characters long")]
         public string Name { get; set; }
@@ -40,16 +38,8 @@ namespace careersfair.Models
 
         public bool Enabled { get; set; }
 
-
-
-
-
-
-
-
         [HiddenInput(DisplayValue = false)]
         public string Linkedin { get; set; }
-
 
         public virtual ICollection<FormResults> FormResults { get; set; }
     }

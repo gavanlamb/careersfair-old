@@ -44,6 +44,9 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="dotless.Core">
+      <HintPath>..\packages\dotless.1.5.2-beta1\lib\dotless.Core.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -52,15 +55,39 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MessagingToolkit.QRCode">
+      <HintPath>..\packages\MessagingToolkit.QRCode.1.3.0\lib\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.IO">
+      <Private>True</Private>
+      <HintPath>..\packages\System.IO.4.0.10-beta-22816\lib\net45\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.0.0-beta-22816\lib\net45\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Runtime.4.0.20-beta-22816\lib\net45\System.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encoding">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Text.Encoding.4.0.10-beta-22816\lib\net45\System.Text.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Threading.Tasks.4.0.10-beta-22816\lib\net45\System.Threading.Tasks.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -78,6 +105,9 @@
     </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization.Less">
+      <HintPath>..\packages\System.Web.Optimization.Less.1.3.4\lib\net40\System.Web.Optimization.Less.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -112,18 +142,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\formcreate.css" />
-    <Content Include="Content\css\formindex.css" />
-    <Content Include="Content\css\formdisabled.css" />
-    <Content Include="Content\css\formstyle.css" />
-    <Content Include="Content\css\ionicons.css" />
-    <Content Include="Content\css\ionicons.min.css" />
+    <Content Include="Content\css\form-view.css" />
+    <Content Include="Content\css\form.css" />
+    <Content Include="Content\css\form-create.css" />
+    <Content Include="Content\css\form-index.css" />
+    <Content Include="Content\css\form-style.css" />
+    <Content Include="Content\css\formresults-details.css" />
+    <Content Include="Content\css\formresults-thankyou.css" />
     <Content Include="Content\css\main.css" />
-    <Content Include="Content\fonts\ionicons.svg" />
-    <Content Include="Content\images\arrow-down.png" />
-    <Content Include="Content\images\arrow-left.png" />
-    <Content Include="Content\images\arrow-right.png" />
-    <Content Include="Content\images\arrow-up.png" />
+    <Content Include="Content\fonts\ionicons.svg">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\images\fiserv.png" />
     <Content Include="Content\themes\base\accordion.css" />
@@ -168,6 +197,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\app\assets\js\collections\collection.js" />
     <Content Include="Scripts\app\assets\js\data\buttons.json" />
     <Content Include="Scripts\app\assets\js\data\input.json" />
     <Content Include="Scripts\app\assets\js\data\page.json" />
@@ -182,7 +212,14 @@
     <Content Include="Content\fonts\ionicons.eot" />
     <Content Include="Content\fonts\ionicons.ttf" />
     <Content Include="Content\fonts\ionicons.woff" />
+    <Content Include="Content\ionicons\ionicons.less" />
+    <Content Include="Content\ionicons\_ionicons-variables.less" />
+    <Content Include="Content\ionicons\_ionicons-icons.less" />
+    <Content Include="Content\ionicons\_ionicons-font.less" />
     <None Include="Properties\PublishProfiles\test.pubxml" />
+    <Content Include="Scripts\app\assets\js\data\linkedin.json" />
+    <Content Include="Scripts\app\assets\js\data\yaml\linkedin.yaml" />
+    <Content Include="Scripts\app\assets\js\jquery.min.map" />
     <None Include="Scripts\library\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\images\loader.gif" />
     <Content Include="Content\css\bootstrap-theme.css" />
@@ -204,9 +241,12 @@
     <Content Include="Scripts\app\assets\js\main-built.js" />
     <Content Include="Scripts\app\assets\js\main.js" />
     <Content Include="Scripts\app\assets\js\models\snippet.js" />
+    <Content Include="Scripts\app\assets\js\router\snippet.js" />
     <Content Include="Scripts\app\assets\js\templates\app\renderform.html" />
+    <Content Include="Scripts\app\assets\js\templates\app\tab-nav-actions.html" />
     <Content Include="Scripts\app\assets\js\templates\app\tab-nav.html" />
     <Content Include="Scripts\app\assets\js\templates\app\temp.html" />
+    <Content Include="Scripts\app\assets\js\templates\app\textbox.html" />
     <Content Include="Scripts\app\assets\js\templates\popover\popover-checkbox.html" />
     <Content Include="Scripts\app\assets\js\templates\popover\popover-hidden.html" />
     <Content Include="Scripts\app\assets\js\templates\popover\popover-input.html" />
@@ -216,8 +256,9 @@
     <Content Include="Scripts\app\assets\js\templates\popover\popover-textarea.html" />
     <Content Include="Scripts\app\assets\js\templates\snippet\appendedcheckbox.html" />
     <Content Include="Scripts\app\assets\js\templates\snippet\appendedtext.html" />
-    <Content Include="Scripts\app\assets\js\templates\snippet\filebutton.html" />
+    <Content Include="Scripts\app\assets\js\templates\snippet\fileupload.html" />
     <Content Include="Scripts\app\assets\js\templates\snippet\heading.html" />
+    <Content Include="Scripts\app\assets\js\templates\snippet\hiddentextinput.html" />
     <Content Include="Scripts\app\assets\js\templates\snippet\multiplecheckboxes.html" />
     <Content Include="Scripts\app\assets\js\templates\snippet\multiplecheckboxesinline.html" />
     <Content Include="Scripts\app\assets\js\templates\snippet\multipleradios.html" />
@@ -229,16 +270,25 @@
     <Content Include="Scripts\app\assets\js\templates\snippet\prependedtext.html" />
     <Content Include="Scripts\app\assets\js\templates\snippet\selectbasic.html" />
     <Content Include="Scripts\app\assets\js\templates\snippet\selectmultiple.html" />
+    <Content Include="Scripts\app\assets\js\templates\snippet\selfieupload.html" />
     <Content Include="Scripts\app\assets\js\templates\snippet\snippet-templates.js" />
     <Content Include="Scripts\app\assets\js\templates\snippet\textarea.html" />
     <Content Include="Scripts\app\assets\js\templates\snippet\textinput.html" />
     <Content Include="Scripts\app\assets\js\views\module.js" />
     <Content Include="Scripts\app\assets\js\views\my-form-snippet.js" />
     <Content Include="Scripts\app\assets\js\views\my-form.js" />
+    <Content Include="Scripts\app\assets\js\views\select-group.js" />
+    <Content Include="Scripts\app\assets\js\views\select-item.js" />
+    <Content Include="Scripts\app\assets\js\views\select.js" />
     <Content Include="Scripts\app\assets\js\views\snippet.js" />
+    <Content Include="Scripts\app\assets\js\views\tab-email.js" />
+    <Content Include="Scripts\app\assets\js\views\tab-linkedin.js" />
     <Content Include="Scripts\app\assets\js\views\tab-snippet.js" />
     <Content Include="Scripts\app\assets\js\views\tab.js" />
     <Content Include="Scripts\app\assets\js\views\temp-snippet.js" />
+    <Content Include="Scripts\app\button.js" />
+    <Content Include="Scripts\app\formToWizard.js" />
+    <Content Include="Scripts\app\linkedin.js" />
     <Content Include="Scripts\library\bootstrap.js" />
     <Content Include="Scripts\library\bootstrap.min.js" />
     <Content Include="Scripts\app\bootstrap-formbuilder-tabs.js" />
@@ -246,7 +296,7 @@
     <Content Include="Scripts\library\cldr\event.js" />
     <Content Include="Scripts\library\cldr\supplemental.js" />
     <Content Include="Scripts\library\cldr\unresolved.js" />
-    <Content Include="Scripts\app\deleteform.js" />
+    <Content Include="Scripts\app\popup.js" />
     <Content Include="Scripts\library\globalize.js" />
     <Content Include="Scripts\library\globalize\currency.js" />
     <Content Include="Scripts\library\globalize\date.js" />
@@ -270,6 +320,8 @@
     <Content Include="Scripts\library\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\library\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\library\modernizr-2.6.2.js" />
+    <Content Include="Scripts\library\validatr.js" />
+    <Content Include="Scripts\library\validatr.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -278,7 +330,6 @@
     </Content>
     <Content Include="Views\Form\ViewForm.cshtml" />
     <Content Include="Views\Form\Delete.cshtml" />
-    <Content Include="Views\FormResults\Delete.cshtml" />
     <Content Include="Views\FormResults\Details.cshtml" />
     <Content Include="Views\Form\EnableDisable.cshtml" />
     <Content Include="Views\FormResults\ThankYou.cshtml" />
@@ -292,7 +343,6 @@
     <Compile Include="Controllers\FormController.cs" />
     <Compile Include="Controllers\FormResultsController.cs" />
     <Compile Include="DAL\FormContext.cs" />
-    <Compile Include="DAL\FormInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -308,7 +358,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LayoutMenu.cshtml" />
     <Content Include="Views\Form\Create.cshtml" />
-    <Content Include="Scripts\library\jquery-2.1.4.min.map" />
+    <Content Include="Scripts\library\jquery.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Form\Index.cshtml" />
     <None Include="Web.Debug.config">
@@ -323,6 +373,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -349,6 +402,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

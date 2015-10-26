@@ -5,7 +5,6 @@
     var formDetails;
     var typingTimer;
     var doneTypingInterval;
-    var $input = $("#builderFormName");
     $("body").init(function () {
         //var setup
         navListLength = $("#navList li").length;
@@ -19,7 +18,6 @@
         linkManager();
         structureCallValidator();
     });
-
     $("#navList li a").click(function (e) {
         var tempIndex = $("#navList li a").index(this);
         e.preventDefault();
@@ -46,12 +44,14 @@
             linkManager();
         }
     });
-    $input.on("keyup", function () {
-        clearTimeout(typingTimer);
-        typingTimer = setTimeout(checkValidBuilderFormName, doneTypingInterval);
-    });
-    $input.on("keydown", function () {
-        clearTimeout(typingTimer);
+    $("#builderFormName").keyup(function () {
+        if (form.validate().element(this)) {
+            undoDisableTemp();
+            enableNextMove();
+            $("#builderFormNameH1").text($("#builderFormName").val());
+        } else {
+            disableTemp();
+        }
     });
     function structureCallValidator() {
         var tempVal = $("#builderFormStructure").val();
@@ -67,15 +67,6 @@
                     tempVal = $("#builderFormStructure").val();
                 }
             }, doneTypingInterval);
-    }
-    function checkValidBuilderFormName() {
-        if (form.validate().element($input)) {
-            undoDisableTemp();
-            enableNextMove();
-            $("#builderFormNameH1").text($("#builderFormName").val());
-        } else {
-            disableTemp();
-        }
     }
     function sectionManager() {
         for (i = 0; i <= navListLength; i++) {

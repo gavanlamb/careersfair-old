@@ -1,25 +1,43 @@
 ﻿@model careersfair.Models.Form
 <div class="modal-header">
-
     <a class="close" data-dismiss="modal" aria-hidden="true">
         <span class="ion-ios-close-empty"></span>
     </a>
-    <h2 class="modal-title">Delete Form</h2>
+    <h2 class="modal-title">Delete</h2>
 </div>
-<div class="modal-body">
-    <p>Are you sure you want to delete @Html.DisplayFor(model => model.Name)?</p>
-</div>
-<div class="modal-footer">
-    @using (Html.BeginForm())
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if (Model.FormResults.Count() > 0)
     {
-        @Html.AntiForgeryToken()
+        <div class="modal-body">
+            <p>What would you like to delete for form @Html.DisplayFor(model => model.Name)?</p>
+            <div class="radio-div">
+                <span class="radio">
+                    <input type="radio" name="deleteradio" id="deleteradio1" value="formdata">
+                    <label class="radiolabel" for="deleteradio1">Form & Data</label>
+                </span>
+                <span class="radio">
+                    <input type="radio" name="deleteradio" id="deleteradio2" value="data">
+                    <label class="radiolabel" for="deleteradio2">Data Only</label>
+                </span>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="modal-body">
+            <p>Are you sure you would like to delete @Html.DisplayFor(model => model.Name)?</p>
+        </div>
+    }
+    <div class="modal-footer">
         <div class="form-actions no-color">
-            <a class="btn" data-dismiss="modal">
+            <button class="btn pull-left" data-dismiss="modal">
                 <span class="ion-ios-close-empty"></span>
-            </a>
-            <button class="btn" type="submit" value="Yes">
+            </button>
+            <button class="btn pull-right" type="submit" value="Yes">
                 <span class="ion-ios-checkmark-empty"></span>
             </button>
         </div>
-    }
-</div>
+    </div>
+}

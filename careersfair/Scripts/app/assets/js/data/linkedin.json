@@ -17,7 +17,7 @@
     "title": "First name",
     "fields": {
       "id": {
-        "value": "first-name"
+        "value": "firstName"
       },
       "label": {
         "value": "First name"
@@ -31,7 +31,7 @@
     "title": "Last name",
     "fields": {
       "id": {
-        "value": "last-name"
+        "value": "lastName"
       },
       "label": {
         "value": "Last name"
@@ -45,7 +45,7 @@
     "title": "Maiden Name",
     "fields": {
       "id": {
-        "value": "maiden-name"
+        "value": "maidenName"
       },
       "label": {
         "value": "Maiden name"
@@ -59,7 +59,7 @@
     "title": "Formatted Name",
     "fields": {
       "id": {
-        "value": "formatted-name"
+        "value": "formattedName"
       },
       "label": {
         "value": "Formatted name"
@@ -70,10 +70,24 @@
     }
   },
   {
+    "title": "Email address",
+    "fields": {
+      "id": {
+        "value": "emailAddress"
+      },
+      "label": {
+        "value": "Email address"
+      },
+      "use": {
+        "value": true
+      }
+    }
+  },
+  {
     "title": "First name(phonetic)",
     "fields": {
       "id": {
-        "value": "phonetic-first-name"
+        "value": "phoneticFirstName"
       },
       "label": {
         "value": "First name(phonetic)"
@@ -87,7 +101,7 @@
     "title": "Last name(phonetic)",
     "fields": {
       "id": {
-        "value": "phonetic-last-name"
+        "value": "phoneticLastName"
       },
       "label": {
         "value": "Last name(phonetic)"
@@ -101,7 +115,7 @@
     "title": "Formatted name(phonetic)",
     "fields": {
       "id": {
-        "value": "formatted-phonetic-name"
+        "value": "formattedPhoneticName"
       },
       "label": {
         "value": "Formatted name(phonetic)"
@@ -157,7 +171,7 @@
     "title": "Most recent shared item",
     "fields": {
       "id": {
-        "value": "current-share"
+        "value": "currentShare"
       },
       "label": {
         "value": "Most recent shared item"
@@ -171,7 +185,7 @@
     "title": "Number of Linkedin connections",
     "fields": {
       "id": {
-        "value": "num-connections"
+        "value": "numConnections"
       },
       "label": {
         "value": "Number of Linkedin connections"
@@ -227,7 +241,7 @@
     "title": "Formatted picture",
     "fields": {
       "id": {
-        "value": "picture-url"
+        "value": "pictureUrl"
       },
       "label": {
         "value": "Formatted picture"
@@ -241,13 +255,13 @@
     "title": "Unformatted picture",
     "fields": {
       "id": {
-        "value": "picture-urls::(original)"
+        "value": "pictureUrls"
       },
       "label": {
         "value": "Unformatted picture"
       },
       "use": {
-        "value": true
+        "value": false
       }
     }
   },
@@ -255,7 +269,7 @@
     "title": "Link to profile",
     "fields": {
       "id": {
-        "value": "site-standard-profile-request"
+        "value": "siteStandardProfileRequest"
       },
       "label": {
         "value": "Link to profile"
@@ -269,7 +283,7 @@
     "title": "Programmatic profile access",
     "fields": {
       "id": {
-        "value": "api-standard-profile-request"
+        "value": "apiStandardProfileRequest"
       },
       "label": {
         "value": "Programmatic profile access"
@@ -283,7 +297,7 @@
     "title": "Public profile",
     "fields": {
       "id": {
-        "value": "public-profile-url"
+        "value": "publicProfileUrl"
       },
       "label": {
         "value": "Public profile"

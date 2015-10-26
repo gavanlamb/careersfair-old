@@ -35,10 +35,6 @@
             selected : false
 -
     title  : Page Break
-    fields :
-      linkedin:
-        type   : hidden
-        value  : false
 -
     title  : Paragraph
     fields :

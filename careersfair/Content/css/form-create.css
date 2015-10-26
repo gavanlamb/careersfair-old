@@ -1,0 +1,522 @@
+body {
+    position: relative;
+}
+
+@media (max-width: 979px) {
+    body {
+        padding-top: 0px;
+    }
+}
+
+/*CSS FOR THE FORM BUILDER*/
+#navList {
+    height: 80px;
+    width: 100%;
+    padding: 5px 0px;
+}
+
+    #navList li {
+        list-style-type: none;
+        width: 33%;
+        float: left;
+    }
+
+        #navList li a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto;
+            text-decoration: none;
+            outline: 0;
+        }
+
+        #navList li span {
+            text-decoration: none;
+            font-weight: 200;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        #navList li a span {
+            font-size: 30px;
+            line-height: 50px;
+            vertical-align: middle;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 200;
+        }
+
+        #navList li a.selected {
+            color: white;
+            background: #ff6200;
+        }
+
+        #navList li a.enabled {
+            color: white;
+            background: #8CC63F;
+        }
+
+            #navList li a.enabled:hover {
+                color: black;
+            }
+
+        #navList li a.disabled,
+        #navList li a.disabledtemp {
+            color: white;
+            background: #ddd;
+        }
+
+/*BUTTON STYLING*/
+.nav-button-row {
+    padding: 50px 10px;
+    height: 150px;
+    width: 70%;
+    margin: auto;
+}
+
+#next span {
+    margin-left: 4px;
+}
+
+#previous span {
+    margin-left: -4px;
+}
+
+.popover .popover-button-row .btn span::before,
+#finish span::before {
+    margin-top: 0px;
+    display: block;
+    font-size: 60px!important;
+}
+
+
+/*STEP 1 - NAME FIELD STYLING*/
+#builderFormName {
+    width: 70%;
+    margin: 100px auto 5px auto;
+    padding: 10px;
+    border-radius: 0;
+    height: 70px;
+    font-size: 35px;
+    line-height: 50px;
+    font-weight: 100;
+    border: 1px solid #ccc !important;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#builderFormName::-ms-clear {
+    display: none!important;
+}
+
+#builderFormName:focus {
+    border: 1px solid #ff6200 !important;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#builderFormName-error {
+    height: 20px;
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #ff6200;
+    font-weight: 200;
+}
+
+
+/*FORM BUILDER CSS - STEP 2 IN THE CHAIN*/
+#builderFormStructure-error {
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #ff6200;
+    font-weight: 200;
+}
+
+#formbuildertabs {
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 41px;
+    border-bottom: solid 1px #ff6200;
+}
+
+    #formbuildertabs .active a,
+    #formbuildertabs .active a:hover {
+        font-weight: 300;
+        box-shadow: 0 -2px #ff6200 inset;
+        border-radius: 0;
+        color: #ff6200;
+        background: none;
+    }
+
+    #formbuildertabs li a {
+        font-weight: 200;
+        border-radius: 0;
+        border: none;
+        color: #ccc;
+    }
+
+        #formbuildertabs li a:hover {
+            border-radius: 0;
+            background: none;
+            box-shadow: 0 -2px #ff6200 inset;
+        }
+
+#components {
+    min-height: 500px;
+}
+
+#target {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+    #target fieldset {
+        min-height: 500px;
+        padding: 5px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+
+.target {
+    float: left;
+    margin: 0 0 40px 0;
+    border: 1px solid #ff6200;
+    width: 100%;
+    background-color: #eee;
+}
+
+.temp {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    z-index: 999999;
+    top: 0;
+    overflow-x: hidden;
+    left: 0;
+}
+
+    .temp form {
+        padding: 8px 4px;
+        position: absolute;
+        background: white;
+        box-shadow: 0px 0px 30px #999;
+        -webkit-transition: -webkit-transform 0.1s ease-out;
+        overflow: hidden;
+    }
+
+.component {
+    cursor: pointer;
+}
+
+.popover {
+    cursor: auto;
+    border: 1px solid #ff6200;
+    border-radius: 0;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 250px !important;
+}
+
+    .popover .arrow,
+    .popover .arrow:after {
+        border-bottom-color: #ff6200 !important;
+    }
+
+    .popover .popover-title {
+        font-weight: 300;
+        font-size: 18px;
+        letter-spacing: 1px;
+        border-radius: 0;
+        color: #ff6200;
+    }
+
+    .popover .popover-content label {
+        font-weight: 300;
+        color: black;
+        margin: 10px 0 0 0;
+    }
+
+    .popover .popover-content input,
+    .popover .popover-content textarea,
+    .popover .popover-content select {
+        border: 1px solid #ccc;
+        border-radius: 0;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .popover .popover-content input,
+    .popover .popover-content textarea {
+        padding: 6px 6px;
+    }
+
+    .popover .popover-content select {
+        padding: 3px 3px;
+    }
+
+    .popover .popover-content textarea {
+        resize: vertical;
+        min-height: 100px !important;
+    }
+
+        .popover .popover-content input:focus,
+        .popover .popover-content select:focus,
+        .popover .popover-content textarea:focus {
+            border: 1px solid #ff6200;
+        }
+
+    .popover .popover-content input[type=checkbox],
+    .popover .popover-content .checkbox {
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    .popover .popover-content input[type=checkbox] {
+        opacity: 0;
+        position: absolute;
+    }
+        .popover .popover-content input[type=checkbox] + .checkbox:before {
+            content: '';
+            background: #fff;
+            border: 1px solid #ddd;
+            display: inline-block;
+            vertical-align: middle;
+            width: 18px;
+            height: 18px;
+            padding: 2px;
+            margin-top: -3px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .popover .popover-content input[type=checkbox]:checked + .checkbox:before {
+            background: #ff6200;
+        }
+
+    .popover .popover-content .checkbox {
+        position: relative;
+        padding-left: 0;
+        min-height: 19px;
+        height: 19px;
+        color: black;
+    }
+
+    .popover .popover-button-row {
+        padding: 0 0 10px 0;
+        height: 60px;
+        width: 75%;
+        margin: auto;
+    }
+
+#builderFormStructure-error {
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #ff6200;
+    font-weight: 200;
+}
+
+#builderFormStructure-error {
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #ff6200;
+    font-weight: 200;
+}
+
+@media (max-width: 767px) {
+    #formbuildertabs {
+        border: none;
+    }
+}
+
+/*Step 3 styling*/
+@media (min-width: 768px) {
+    .tabs-left {
+        margin-top: 40px;
+    }
+
+        .tabs-left #actionstabs {
+            height: 500px;
+            border-right: 1px #ff6200 solid;
+        }
+
+            .tabs-left #actionstabs li,
+            .tabs-left #actionstabs li.active {
+                font-size: 50px;
+                line-height: 50px;
+                list-style: none;
+                height: 25%;
+            }
+
+                .tabs-left #actionstabs li.active {
+                    border-right: 2px #ff6200 solid;
+                }
+
+                    .tabs-left #actionstabs li a,
+                    .tabs-left #actionstabs li.active a,
+                    .tabs-left #actionstabs li.active a:hover,
+                    .tabs-left #actionstabs li.active a:focus,
+                    .tabs-left #actionstabs li.active a:active {
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
+    .actionsheading {
+        display: block;
+    }
+
+    .actionsheadingrowindividual {
+        display: none;
+    }
+
+    .actionslinkedinselectgroup select {
+        height: 34px;
+        padding: 6px 12px;
+        border-radius: 0 !important;
+        background-color: white !important;
+        outline: 0 !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav-stacked > li {
+        float: left !important;
+        width: 25%;
+    }
+
+    .tabs-left {
+        margin-top: 10px;
+    }
+
+        .tabs-left #actionstabs {
+            border-bottom: 1px #ff6200 solid;
+            margin-bottom: 10px;
+        }
+
+            .tabs-left #actionstabs li {
+                margin-top: 0;
+            }
+
+                .tabs-left #actionstabs li.active {
+                    border-bottom: 2px #ff6200 solid;
+                }
+
+                .tabs-left #actionstabs li,
+                .tabs-left #actionstabs li.active {
+                    list-style: none;
+                }
+
+                    .tabs-left #actionstabs li a span,
+                    .tabs-left #actionstabs li.active a span {
+                        font-size: 40px;
+                        line-height: 50px;
+                    }
+
+    .actionsheading {
+        display: none;
+    }
+
+    .actionsheadingrowindividual {
+        display: block;
+    }
+
+        .actionsheadingrowindividual label {
+            display: block;
+            color: #ff6200;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 20px;
+            padding-top: 10px;
+        }
+
+    .actionslinkedinselectgroup select {
+        height: 45px;
+        font-size: 18px;
+        padding: 9px 12px;
+        border-radius: 0 !important;
+        background-color: white !important;
+        outline: 0 !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+}
+
+.tabs-left #actionstabs {
+    float: left;
+    padding: 0;
+}
+
+    .tabs-left #actionstabs li {
+        list-style: none;
+    }
+
+        .tabs-left #actionstabs li a,
+        .tabs-left #actionstabs li.active a,
+        .tabs-left #actionstabs li.active a:hover,
+        .tabs-left #actionstabs li.active a:focus,
+        .tabs-left #actionstabs li.active a:active {
+            display: block;
+            padding: 0;
+            color: #ff6200;
+            background: none;
+            background-color: transparent;
+        }
+
+            .tabs-left #actionstabs li a span {
+                display: block;
+                color: #ccc;
+                text-align: center;
+            }
+
+            .tabs-left #actionstabs li.active a span {
+                color: #ff6200;
+            }
+
+.tab-content#actionscontent {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+    .tab-content#actionscontent div {
+        padding: 0 !important;
+        float: left;
+    }
+
+.actionslinkedinselectgroup select {
+    border: 1px solid #ccc;
+    padding: 3px 3px;
+}
+.actionslinkedinselectgroup select:focus {
+    border: 1px solid #ff6200;
+    outline:none;
+}
+.actionslinkedinselectgroup select:last-of-type {
+    margin-bottom: 40px;
+}
+
+.actionsheading {
+    margin-top: 0;
+}
+
+.actionsheadingrow div {
+    padding: 0 !important;
+}

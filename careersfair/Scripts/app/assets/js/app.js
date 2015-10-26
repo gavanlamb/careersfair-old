@@ -1,5 +1,5 @@
-define(["jquery", "underscore", "backbone", "collections/snippets", "collections/my-form-snippets", "router/snippet", "views/tab", "views/my-form", "text!data/input.json", "text!data/radio.json", "text!data/select.json", "text!data/buttons.json", "text!data/page.json", "views/tab-linkedin", "bootstrap"],
-    function($, _, Backbone, SnippetsCollection, MyFormSnippetsCollection, SnippetRouter, TabView, MyFormView, inputJSON, radioJSON, selectJSON, buttonsJSON, pageJSON, TabLinkedInView) {
+define(["jquery", "underscore", "backbone", "collections/snippets", "collections/my-form-snippets", "router/snippet", "views/tab", "views/my-form", "text!data/input.json", "text!data/radio.json", "text!data/select.json", "text!data/buttons.json", "text!data/page.json", "views/tab-linkedin","views/tab-email", "bootstrap"],
+    function($, _, Backbone, SnippetsCollection, MyFormSnippetsCollection, SnippetRouter, TabView, MyFormView, inputJSON, radioJSON, selectJSON, buttonsJSON, pageJSON, TabLinkedInView, TabEmailView) {
         return {
             initialize: function() {
                 var router = new SnippetRouter();
@@ -33,11 +33,11 @@ define(["jquery", "underscore", "backbone", "collections/snippets", "collections
                     title: "Original",
                     collection: router.formelements
                 });
-                // new TabLinkedInView({
-                //     title: "ion-ios-email",
-                //     id: "Email",
-                //     collection: router.formelements
-                // });
+                new TabEmailView({
+                    title: "ion-ios-email",
+                    id: "Email",
+                    collection: router.formelements
+                });
                 // new TabLinkedInView({
                 //     title: "ion-ios-help",
                 //     id: "Incentives",

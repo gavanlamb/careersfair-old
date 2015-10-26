@@ -40,11 +40,6 @@
             "selected": true
           },
           {
-            "value": "hidden",
-            "label": "Hidden",
-            "selected": false
-          },
-          {
             "value": "datetime-local",
             "label": "Date time",
             "selected": false
@@ -112,62 +107,57 @@
         "type": "select",
         "value": [
           {
-            "value": "col-md-1",
-            "label": 1,
-            "selected": false
-          },
-          {
-            "value": "col-md-2",
+            "value": "col-xs-2 col-sm-2 col-md-2 col-lg-2",
             "label": 2,
             "selected": false
           },
           {
-            "value": "col-md-3",
+            "value": "col-xs-3 col-sm-3 col-md-3 col-lg-3",
             "label": 3,
             "selected": false
           },
           {
-            "value": "col-md-4",
+            "value": "col-xs-4 col-sm-4 col-md-4 col-lg-4",
             "label": 4,
             "selected": false
           },
           {
-            "value": "col-md-5",
+            "value": "col-xs-5 col-sm-5 col-md-5 col-lg-5",
             "label": 5,
             "selected": false
           },
           {
-            "value": "col-md-6",
+            "value": "col-xs-6 col-sm-6 col-md-6 col-lg-6",
             "label": 6,
             "selected": false
           },
           {
-            "value": "col-md-7",
+            "value": "col-xs-7 col-sm-7 col-md-7 col-lg-7",
             "label": 7,
             "selected": false
           },
           {
-            "value": "col-md-8",
+            "value": "col-xs-8 col-sm-8 col-md-8 col-lg-8",
             "label": 8,
             "selected": false
           },
           {
-            "value": "col-md-9",
+            "value": "col-xs-9 col-sm-9 col-md-9 col-lg-9",
             "label": 9,
             "selected": false
           },
           {
-            "value": "col-md-10",
+            "value": "col-xs-10 col-sm-10 col-md-10 col-lg-10",
             "label": 10,
             "selected": false
           },
           {
-            "value": "col-md-11",
+            "value": "col-xs-11 col-sm-11 col-md-11 col-lg-11",
             "label": 11,
             "selected": false
           },
           {
-            "value": "col-md-12",
+            "value": "col-xs-12 col-sm-12 col-md-12 col-lg-12",
             "label": 12,
             "selected": true
           }
@@ -288,62 +278,57 @@
         "type": "select",
         "value": [
           {
-            "value": "col-md-1",
-            "label": 1,
-            "selected": false
-          },
-          {
-            "value": "col-md-2",
+            "value": "col-xs-2 col-sm-2 col-md-2 col-lg-2",
             "label": 2,
             "selected": false
           },
           {
-            "value": "col-md-3",
+            "value": "col-xs-3 col-sm-3 col-md-3 col-lg-3",
             "label": 3,
             "selected": false
           },
           {
-            "value": "col-md-4",
+            "value": "col-xs-4 col-sm-4 col-md-4 col-lg-4",
             "label": 4,
             "selected": false
           },
           {
-            "value": "col-md-5",
+            "value": "col-xs-5 col-sm-5 col-md-5 col-lg-5",
             "label": 5,
             "selected": false
           },
           {
-            "value": "col-md-6",
+            "value": "col-xs-6 col-sm-6 col-md-6 col-lg-6",
             "label": 6,
             "selected": false
           },
           {
-            "value": "col-md-7",
+            "value": "col-xs-7 col-sm-7 col-md-7 col-lg-7",
             "label": 7,
             "selected": false
           },
           {
-            "value": "col-md-8",
+            "value": "col-xs-8 col-sm-8 col-md-8 col-lg-8",
             "label": 8,
             "selected": false
           },
           {
-            "value": "col-md-9",
+            "value": "col-xs-9 col-sm-9 col-md-9 col-lg-9",
             "label": 9,
             "selected": false
           },
           {
-            "value": "col-md-10",
+            "value": "col-xs-10 col-sm-10 col-md-10 col-lg-10",
             "label": 10,
             "selected": false
           },
           {
-            "value": "col-md-11",
+            "value": "col-xs-11 col-sm-11 col-md-11 col-lg-11",
             "label": 11,
             "selected": false
           },
           {
-            "value": "col-md-12",
+            "value": "col-xs-12 col-sm-12 col-md-12 col-lg-12",
             "label": 12,
             "selected": true
           }
@@ -464,62 +449,57 @@
         "type": "select",
         "value": [
           {
-            "value": "col-md-1",
-            "label": 1,
-            "selected": false
-          },
-          {
-            "value": "col-md-2",
+            "value": "col-xs-2 col-sm-2 col-md-2 col-lg-2",
             "label": 2,
             "selected": false
           },
           {
-            "value": "col-md-3",
+            "value": "col-xs-3 col-sm-3 col-md-3 col-lg-3",
             "label": 3,
             "selected": false
           },
           {
-            "value": "col-md-4",
+            "value": "col-xs-4 col-sm-4 col-md-4 col-lg-4",
             "label": 4,
             "selected": false
           },
           {
-            "value": "col-md-5",
+            "value": "col-xs-5 col-sm-5 col-md-5 col-lg-5",
             "label": 5,
             "selected": false
           },
           {
-            "value": "col-md-6",
+            "value": "col-xs-6 col-sm-6 col-md-6 col-lg-6",
             "label": 6,
             "selected": false
           },
           {
-            "value": "col-md-7",
+            "value": "col-xs-7 col-sm-7 col-md-7 col-lg-7",
             "label": 7,
             "selected": false
           },
           {
-            "value": "col-md-8",
+            "value": "col-xs-8 col-sm-8 col-md-8 col-lg-8",
             "label": 8,
             "selected": false
           },
           {
-            "value": "col-md-9",
+            "value": "col-xs-9 col-sm-9 col-md-9 col-lg-9",
             "label": 9,
             "selected": false
           },
           {
-            "value": "col-md-10",
+            "value": "col-xs-10 col-sm-10 col-md-10 col-lg-10",
             "label": 10,
             "selected": false
           },
           {
-            "value": "col-md-11",
+            "value": "col-xs-11 col-sm-11 col-md-11 col-lg-11",
             "label": 11,
             "selected": false
           },
           {
-            "value": "col-md-12",
+            "value": "col-xs-12 col-sm-12 col-md-12 col-lg-12",
             "label": 12,
             "selected": true
           }
@@ -645,62 +625,57 @@
         "type": "select",
         "value": [
           {
-            "value": "col-md-1",
-            "label": 1,
-            "selected": false
-          },
-          {
-            "value": "col-md-2",
+            "value": "col-xs-2 col-sm-2 col-md-2 col-lg-2",
             "label": 2,
             "selected": false
           },
           {
-            "value": "col-md-3",
+            "value": "col-xs-3 col-sm-3 col-md-3 col-lg-3",
             "label": 3,
             "selected": false
           },
           {
-            "value": "col-md-4",
+            "value": "col-xs-4 col-sm-4 col-md-4 col-lg-4",
             "label": 4,
             "selected": false
           },
           {
-            "value": "col-md-5",
+            "value": "col-xs-5 col-sm-5 col-md-5 col-lg-5",
             "label": 5,
             "selected": false
           },
           {
-            "value": "col-md-6",
+            "value": "col-xs-6 col-sm-6 col-md-6 col-lg-6",
             "label": 6,
             "selected": false
           },
           {
-            "value": "col-md-7",
+            "value": "col-xs-7 col-sm-7 col-md-7 col-lg-7",
             "label": 7,
             "selected": false
           },
           {
-            "value": "col-md-8",
+            "value": "col-xs-8 col-sm-8 col-md-8 col-lg-8",
             "label": 8,
             "selected": false
           },
           {
-            "value": "col-md-9",
+            "value": "col-xs-9 col-sm-9 col-md-9 col-lg-9",
             "label": 9,
             "selected": false
           },
           {
-            "value": "col-md-10",
+            "value": "col-xs-10 col-sm-10 col-md-10 col-lg-10",
             "label": 10,
             "selected": false
           },
           {
-            "value": "col-md-11",
+            "value": "col-xs-11 col-sm-11 col-md-11 col-lg-11",
             "label": 11,
             "selected": false
           },
           {
-            "value": "col-md-12",
+            "value": "col-xs-12 col-sm-12 col-md-12 col-lg-12",
             "label": 12,
             "selected": true
           }
@@ -821,62 +796,57 @@
         "type": "select",
         "value": [
           {
-            "value": "col-md-1",
-            "label": 1,
-            "selected": false
-          },
-          {
-            "value": "col-md-2",
+            "value": "col-xs-2 col-sm-2 col-md-2 col-lg-2",
             "label": 2,
             "selected": false
           },
           {
-            "value": "col-md-3",
+            "value": "col-xs-3 col-sm-3 col-md-3 col-lg-3",
             "label": 3,
             "selected": false
           },
           {
-            "value": "col-md-4",
+            "value": "col-xs-4 col-sm-4 col-md-4 col-lg-4",
             "label": 4,
             "selected": false
           },
           {
-            "value": "col-md-5",
+            "value": "col-xs-5 col-sm-5 col-md-5 col-lg-5",
             "label": 5,
             "selected": false
           },
           {
-            "value": "col-md-6",
+            "value": "col-xs-6 col-sm-6 col-md-6 col-lg-6",
             "label": 6,
             "selected": false
           },
           {
-            "value": "col-md-7",
+            "value": "col-xs-7 col-sm-7 col-md-7 col-lg-7",
             "label": 7,
             "selected": false
           },
           {
-            "value": "col-md-8",
+            "value": "col-xs-8 col-sm-8 col-md-8 col-lg-8",
             "label": 8,
             "selected": false
           },
           {
-            "value": "col-md-9",
+            "value": "col-xs-9 col-sm-9 col-md-9 col-lg-9",
             "label": 9,
             "selected": false
           },
           {
-            "value": "col-md-10",
+            "value": "col-xs-10 col-sm-10 col-md-10 col-lg-10",
             "label": 10,
             "selected": false
           },
           {
-            "value": "col-md-11",
+            "value": "col-xs-11 col-sm-11 col-md-11 col-lg-11",
             "label": 11,
             "selected": false
           },
           {
-            "value": "col-md-12",
+            "value": "col-xs-12 col-sm-12 col-md-12 col-lg-12",
             "label": 12,
             "selected": true
           }
@@ -997,62 +967,57 @@
         "type": "select",
         "value": [
           {
-            "value": "col-md-1",
-            "label": 1,
-            "selected": false
-          },
-          {
-            "value": "col-md-2",
+            "value": "col-xs-2 col-sm-2 col-md-2 col-lg-2",
             "label": 2,
             "selected": false
           },
           {
-            "value": "col-md-3",
+            "value": "col-xs-3 col-sm-3 col-md-3 col-lg-3",
             "label": 3,
             "selected": false
           },
           {
-            "value": "col-md-4",
+            "value": "col-xs-4 col-sm-4 col-md-4 col-lg-4",
             "label": 4,
             "selected": false
           },
           {
-            "value": "col-md-5",
+            "value": "col-xs-5 col-sm-5 col-md-5 col-lg-5",
             "label": 5,
             "selected": false
           },
           {
-            "value": "col-md-6",
+            "value": "col-xs-6 col-sm-6 col-md-6 col-lg-6",
             "label": 6,
             "selected": false
           },
           {
-            "value": "col-md-7",
+            "value": "col-xs-7 col-sm-7 col-md-7 col-lg-7",
             "label": 7,
             "selected": false
           },
           {
-            "value": "col-md-8",
+            "value": "col-xs-8 col-sm-8 col-md-8 col-lg-8",
             "label": 8,
             "selected": false
           },
           {
-            "value": "col-md-9",
+            "value": "col-xs-9 col-sm-9 col-md-9 col-lg-9",
             "label": 9,
             "selected": false
           },
           {
-            "value": "col-md-10",
+            "value": "col-xs-10 col-sm-10 col-md-10 col-lg-10",
             "label": 10,
             "selected": false
           },
           {
-            "value": "col-md-11",
+            "value": "col-xs-11 col-sm-11 col-md-11 col-lg-11",
             "label": 11,
             "selected": false
           },
           {
-            "value": "col-md-12",
+            "value": "col-xs-12 col-sm-12 col-md-12 col-lg-12",
             "label": 12,
             "selected": true
           }
@@ -1121,62 +1086,57 @@
         "type": "select",
         "value": [
           {
-            "value": "col-md-1",
-            "label": 1,
-            "selected": false
-          },
-          {
-            "value": "col-md-2",
+            "value": "col-xs-2 col-sm-2 col-md-2 col-lg-2",
             "label": 2,
             "selected": false
           },
           {
-            "value": "col-md-3",
+            "value": "col-xs-3 col-sm-3 col-md-3 col-lg-3",
             "label": 3,
             "selected": false
           },
           {
-            "value": "col-md-4",
+            "value": "col-xs-4 col-sm-4 col-md-4 col-lg-4",
             "label": 4,
             "selected": false
           },
           {
-            "value": "col-md-5",
+            "value": "col-xs-5 col-sm-5 col-md-5 col-lg-5",
             "label": 5,
             "selected": false
           },
           {
-            "value": "col-md-6",
+            "value": "col-xs-6 col-sm-6 col-md-6 col-lg-6",
             "label": 6,
             "selected": false
           },
           {
-            "value": "col-md-7",
+            "value": "col-xs-7 col-sm-7 col-md-7 col-lg-7",
             "label": 7,
             "selected": false
           },
           {
-            "value": "col-md-8",
+            "value": "col-xs-8 col-sm-8 col-md-8 col-lg-8",
             "label": 8,
             "selected": false
           },
           {
-            "value": "col-md-9",
+            "value": "col-xs-9 col-sm-9 col-md-9 col-lg-9",
             "label": 9,
             "selected": false
           },
           {
-            "value": "col-md-10",
+            "value": "col-xs-10 col-sm-10 col-md-10 col-lg-10",
             "label": 10,
             "selected": false
           },
           {
-            "value": "col-md-11",
+            "value": "col-xs-11 col-sm-11 col-md-11 col-lg-11",
             "label": 11,
             "selected": false
           },
           {
-            "value": "col-md-12",
+            "value": "col-xs-12 col-sm-12 col-md-12 col-lg-12",
             "label": 12,
             "selected": true
           }

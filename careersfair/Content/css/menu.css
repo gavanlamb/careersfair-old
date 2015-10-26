@@ -1,98 +1,82 @@
 ﻿/* CSS Document */
 /* The styling in this file is for all elements that show up commonly on the website as it should always be included. logo etc */
-.navbar,
-.navbar-collapse{
+nav.navbar{
     border: none !important;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
     border-radius: 0;
 }
-.navbar-collapse{
-    border:none;
-}
-.navbar-nav{
+
+nav .navbar-nav {
     margin-top: 0;
     margin-bottom: 0;
 }
-.navbar-brand{
-    line-height: 70px;
-    height: 70px;
+
+nav .navbar-brand {
+    line-height: 65px;
+    height: 65px;
     padding-bottom: 0;
     padding-top: 0;
 }
-#brand-image{
+
+nav #brand-image {
     height: 70px;
     padding: 10px 0 10px 0;
 }
-.navbar-nav li a,
-.navbar-nav li a:link,
-.navbar-nav li a:focus,
-.navbar-nav li a:visited,
-.navbar-nav li a:active{
-    font-weight:500;
-    letter-spacing: 1px;
-    line-height: 70px;
-    height: 70px;
-    padding: 0 10px;
-    text-shadow: none !important;
-}
-.navbar-nav li a:hover{
-    cursor: default;
-    color: #cccccc !important;
-}
-.navbar-nav .open .dropdown-menu{
-    padding: 0;
-    border: none;
-    border-radius: 0;
-}
-.navbar-nav .open .dropdown-menu > li > a,
-.navbar-nav .open .dropdown-menu > li > a:link,
-.navbar-nav .open .dropdown-menu > li > a:focus,
-.navbar-nav .open .dropdown-menu > li > a:visited,
-.navbar-nav .open .dropdown-menu > li > a:active,
-.navbar-nav .open .dropdown-menu > li > a:hover{
-    line-height: 50px;
+
+nav .navbar-nav li {
     height: 50px;
-    padding-bottom: 0;
-    padding-top: 0;
+    width: 50px;
+    margin: 10px 5px;
 }
-.navbar-nav .open .dropdown-menu > li > a:hover{
-    background:none !important;
-    border-radius: 0;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:link,
-.navbar-default .navbar-nav > .open > a:focus,
-.navbar-default .navbar-nav > .open > a:visited,
-.navbar-default .navbar-nav > .open > a:active,
-.navbar-default .navbar-nav > .open > a:hover{
-    background: none !important;
-    border: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-.navbar-default .navbar-toggle,
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus{
-    background: none  !important;
-    border: none;
-    line-height: 54px;
-    height: 54px;
-    margin: 8px 0;
-}
-.navbar-default .navbar-toggle .icon-bar{
-    background-color: white;
-    width: 30px;
-    height: 1px;
-    margin: 8px;
-}
-@media screen and (max-width: 768px) {
-    .navbar-nav .open .dropdown-menu{
-        background: none !important;
+
+    nav .navbar-nav li a,
+    nav .navbar-nav li a:link,
+    nav .navbar-nav li a:focus,
+    nav .navbar-nav li a:visited,
+    nav .navbar-nav li a:active {
+        line-height: 50px;
+        height: 50px;
+        padding: 0 0px;
+        text-shadow: none !important;
+        text-align:center;
     }
-    .navbar-collapse{
-        border-top: solid 1px rgba(255,255,255,0.2) !important;
+
+        nav .navbar-nav li a:hover {
+            cursor: default;
+            color: #cccccc !important;
+        }
+
+            nav .navbar-nav li a span,
+            nav .navbar-nav li a:link span,
+            nav .navbar-nav li a:focus span,
+            nav .navbar-nav li a:visited span,
+            nav .navbar-nav li a:active span,
+            nav .navbar-nav li a:hover span {
+                font-size: 40px;
+                color: #ff6200;
+            }
+
+                nav .navbar-nav li a span.ion-ios-home-outline,
+                nav .navbar-nav li a:link span.ion-ios-home-outline,
+                nav .navbar-nav li a:focus span.ion-ios-home-outline,
+                nav .navbar-nav li a:visited span.ion-ios-home-outline,
+                nav .navbar-nav li a:active span.ion-ios-home-outline,
+                nav .navbar-nav li a:hover span.ion-ios-home-outline {
+                    font-size: 30px;
+                    color: #ff6200;
+                }
+@media (max-width: 767px) {
+    .navbar-header {
+        display:inline-block;
+        float:left;
+    }
+    .navbar-right {
+        /*display:inline-block;*/
+        float:right;
+    }
+    .nav li {
+        float:left;
     }
 }

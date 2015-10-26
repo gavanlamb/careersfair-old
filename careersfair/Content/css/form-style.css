@@ -1,0 +1,345 @@
+﻿fieldset {
+    padding: 0px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 100;
+    color: #ff6200;
+}
+
+h1 {
+    line-height: 48px;
+    font-size: 48px;
+}
+
+h2 {
+    line-height: 43px;
+    font-size: 43px;
+}
+
+h3 {
+    line-height: 38px;
+    font-size: 38px;
+}
+
+h4 {
+    line-height: 33px;
+    font-size: 33px;
+}
+
+h5 {
+    line-height: 28px;
+    font-size: 28px;
+}
+
+h6 {
+    line-height: 23px;
+    font-size: 23px;
+}
+
+#formNameRule {
+    border-color: #ff6200;
+    margin-bottom: 0;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+    .form-group > div {
+        margin: 20px 0px;
+    }
+
+form .help-block {
+    font-weight: 200;
+    font-size: 14px;
+    margin-top: 0;
+    color: #ff6200;
+}
+
+form label {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+@media (max-width: 767px) {
+    form label {
+        font-size: 20px;
+    }
+}
+
+form .required-control .row > label:after {
+    content: "*";
+    color: red;
+}
+
+form .input-group-addon {
+    font-weight: 300;
+}
+
+form .input-group-addon {
+    font-weight: 300;
+}
+
+form input[type=text],
+form input[type=datetime-local],
+form input[type=date],
+form input[type=email],
+form input[type=month],
+form input[type=number],
+form input[type=tel],
+form input[type=time],
+form input[type=week],
+form input[type=checkbox],
+form input[type=radio],
+form textarea,
+form select,
+form .input-group-addon {
+    border-radius: 0 !important;
+    background-color: white !important;
+    outline: 0 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form select {
+    border: 1px solid #ccc;
+    padding: 3px 3px !important;
+}
+
+form input[type=text]::-ms-clear {
+    display: none !important;
+}
+
+form .other,
+form .otherinline {
+    clear: both;
+    float: left;
+}
+
+form input[type=checkbox],
+form input[type=radio] {
+    opacity: 0;
+    position: absolute;
+}
+
+form .checkbox-inline,
+form .checkbox,
+form .radio-inline,
+form .radio {
+    padding-left: 0;
+}
+
+
+    form .checkbox-inline,
+    form .radio-inline,
+    form .checkbox-inline + .checkbox-inline,
+    form .radio-inline + .radio-inline {
+        float: left;
+        padding-top: 0px !important;
+        margin: 0 30px 0 0;
+    }
+
+form .checkboxlabel,
+form .radiolabel {
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+    padding-left: 0;
+    min-height: 19px;
+    color: black;
+    font-weight: 300;
+}
+
+form input[type=checkbox] + .checkboxlabel:before,
+form input[type=radio] + .radiolabel:before {
+    content: '';
+    background: #fff;
+    border: 1px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    margin-top: -3px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+form input[type=radio] + .radiolabel:before {
+    border-radius: 50%;
+}
+
+form input[type=checkbox]:checked + .checkboxlabel:before,
+form input[type=radio]:checked + .radiolabel:before,
+form .checkbox-pend input[type=checkbox]:checked + .checkboxlabel:before {
+    background: #ff6200;
+}
+
+form .input-group-addon.checktext-group,
+form .input-group-addon.checktext-group.input-sm,
+form .input-group-addon.checktext-group.input-lg {
+    padding: 2px;
+}
+
+    form .input-group-addon.checktext-group .checkbox-pend,
+    form .input-group-addon.checktext-group.input-sm .checkbox-pend,
+    form .input-group-addon.checktext-group.input-lg .checkbox-pend {
+        float: left;
+        padding-top: 0px !important;
+        margin: 0;
+    }
+
+form .checkbox-pend input[type=checkbox] + .checkboxlabel:before {
+    content: '';
+    background: #fff;
+    border: 1px solid #ddd;
+    display: inline-block;
+    padding: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    text-align: center;
+}
+
+form .input-group-addon .checkbox-pend {
+    height: 26px;
+    width: 28px;
+}
+
+    form .input-group-addon .checkbox-pend .checkboxlabel {
+        margin: 0;
+    }
+
+        form .input-group-addon .checkbox-pend .checkboxlabel:before {
+            margin: 0;
+            vertical-align: middle;
+            width: 26px;
+            height: 26px;
+        }
+
+form .input-group-addon.input-sm .checkbox-pend {
+    height: 22px;
+    width: 22px;
+}
+
+    form .input-group-addon.input-sm .checkbox-pend .checkboxlabel {
+        margin: 0;
+    }
+
+        form .input-group-addon.input-sm .checkbox-pend .checkboxlabel:before {
+            margin: 0;
+            vertical-align: middle;
+            width: 22px;
+            height: 22px;
+        }
+
+form .input-group-addon.input-lg .checkbox-pend {
+    width: 36px;
+    height: 34px;
+}
+
+    form .input-group-addon.input-lg .checkbox-pend .checkboxlabel {
+        margin: 0;
+    }
+
+        form .input-group-addon.input-lg .checkbox-pend .checkboxlabel:before {
+            display: block;
+            margin: 0;
+            vertical-align: middle;
+            width: 34px;
+            height: 34px;
+        }
+
+.form-group.hiddenfield {
+    display: none;
+}
+.component .form-group.hiddenfield,
+#temp .form-group.hiddenfield{
+    display:block;
+}
+form .hiddenfield:before,
+form .hiddenfield:before {
+    display: block !important;
+    border: 1px solid #ff6200 !important;
+    background-color: #ccc !important;
+    content: "HIDDEN FIELD" !important;
+    color: white !important;
+    height: 50px !important;
+    line-height: 50px !important;
+    font-size: 50px !important;
+    text-align: center;
+    margin: 40px 15px;
+}
+
+form .other {
+    padding: 0;
+}
+
+form .otherinline {
+    padding: 10px 0 0 0;
+}
+
+form .file-label,
+form .file-label:hover,
+form .selfie-label,
+form .selfie-label:hover {
+    display: block;
+    margin: auto;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 300;
+    border-radius: 0;
+    color: #ff6200;
+    background: transparent;
+    outline: 0 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-align: center;
+}
+
+    form .file-label span,
+    form .selfie-label span {
+        display: block;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 40px;
+        color: #ff6200;
+        border-radius: 50%;
+        border: 1px solid #ff6200;
+        margin: auto;
+    }
+
+        form .file-label span:before,
+        form .selfie-label span:before {
+            font-size: 80px;
+            line-height: 100px;
+        }
+
+form label.file-name {
+    display: block;
+    font-weight: 300;
+    font-size: 12px;
+    text-align: center;
+}
+
+form .file-input,
+form .selfie-input {
+    visibility: hidden;
+    position: absolute;
+}
+
+form .paragraphElement {
+    margin: 20px 0px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+form .pageBreak {
+    margin: 20px 0px;
+}

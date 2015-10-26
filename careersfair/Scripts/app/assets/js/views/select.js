@@ -14,7 +14,7 @@ define(["jquery", "underscore", "backbone", "views/select-item"],
                     this.$el.append(
                         new SelectItem({
                             model: list
-                        }).render().el);
+                        }).render().$el);
                 }
             },
             addAll: function() {

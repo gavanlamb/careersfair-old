@@ -12,100 +12,94 @@
     Layout = "~/Views/Shared/_LayoutMenu.cshtml";
 }
 @section stylesheet{
-    @Styles.Render("~/style/formcreate")
-    @Styles.Render("~/style/formstyle")
+    @Styles.Render("~/style/form-create")
     @Styles.Render("~/style/ionicons")
 }
 @section scripts{
     @Scripts.Render("~/script/jqueryui")
     @Scripts.Render("~/script/jqueryvalidation")
     @Scripts.Render("~/script/formbuildertabs")
-    <script type="text/javascript"
-            src="~/Scripts/app/assets/js/lib/require.js?v=3"
-            data-main="@Scripts.Url("~/Scripts/app/assets/js/main-built")"></script>
+    <script data-main="@Scripts.Url("~/Scripts/app/assets/js/main-built")" src="~/Scripts/app/assets/js/lib/require.js?v=3"></script>
 }
-<div class="container">
-    @using (Html.BeginForm("Create", "Form", FormMethod.Post, new { @class = "form-horizontal", id = "builderForm" }))
-    {
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="list-inline text-center" id="navList">
-                    <li role="presentation">
-                        <a href="#name" aria-controls="name">
-                            <span>1</span>
-                        </a>
-                        <span>NAME</span>
-                    </li>
-                    <li role="presentation">
-                        <a href="#builder" aria-controls="builder">
-                            <span>2</span>
-                        </a>
-                        <span>CREATE</span>
-                    </li>
-                    <li role="presentation">
-                        <a href="#aactions" aria-controls="aactions">
-                            <span>3</span>
-                        </a>
-                        <span>ACTIONS</span>
-                    </li>
-                </ul>
-            </div>
+@using (Html.BeginForm("Create", "Form", FormMethod.Post, new { @class = "form-horizontal", id = "builderForm", autocomplete = "off", novalidate="true"}))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <ul class="list-inline text-center" id="navList">
+                <li role="presentation">
+                    <a href="#name" aria-controls="name">
+                        <span>1</span>
+                    </a>
+                    <span>NAME</span>
+                </li>
+                <li role="presentation">
+                    <a href="#builder" aria-controls="builder">
+                        <span>2</span>
+                    </a>
+                    <span>CREATE</span>
+                </li>
+                <li role="presentation">
+                    <a href="#aactions" aria-controls="aactions">
+                        <span>3</span>
+                    </a>
+                    <span>ACTIONS</span>
+                </li>
+            </ul>
         </div>
-
-        <div class="row content" id="name">
-            <div class="col-lg-12">
-                @Html.AntiForgeryToken()
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", id = "builderFormName" } })
-                @Html.ValidationMessageFor(model => model.Name)
-            </div>
+    </div>
+    <div class="row content" id="name">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", id = "builderFormName" } })
+            @Html.ValidationMessageFor(model => model.Name)
         </div>
-        <div class="row content" id="formbuilder">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="tabbable">
-                    <ul class="nav nav-tabs nav-justified" id="formbuildertabs"></ul>
-                    <div id="components">
-                        <fieldset>
-                            <div class="tab-content" id="formbuildercontent"></div>
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="clearfix">
-                    <h1 id="builderFormNameH1"></h1>
-                    @Html.EditorFor(model => model.HTML, new { htmlAttributes = new { @class = "form-control", id = "builderFormStructure" } })
-                    @Html.ValidationMessageFor(model => model.HTML)
-                    @Html.EditorFor(model => model.Elements, new { htmlAttributes = new { @class = "form-control", id = "builderFormTableStructure" } })
-                    <hr id="formNameRule">
-                    <div id="build">
-                        <div id="target">
-                        </div>
-                    </div>
+    </div>
+    <div class="row content" id="formbuilder">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="tabbable">
+                <ul class="nav nav-tabs nav-justified" id="formbuildertabs"></ul>
+                <div id="components">
+                    <fieldset>
+                        <div class="tab-content" id="formbuildercontent"></div>
+                    </fieldset>
                 </div>
             </div>
         </div>
-        <div class="row content" id="actions">
-            <div class="col-lg-12">
-                <div class="tabbable tabs-left">
-                    <ul class="nav nav-pills nav-stacked col-xs-12 col-sm-2 col-md-2 col-lg-2 " id="actionstabs"></ul>
-                    @Html.EditorFor(model => model.Linkedin, new { htmlAttributes = new { @class = "form-control", id = "actionslinkedin" } })
-                    <div class="tab-content col-xs-12 col-sm-10 col-md-10 col-lg-10" id="actionscontent">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="clearfix">
+                <h1 id="builderFormNameH1"></h1>
+                @Html.EditorFor(model => model.HTML, new { htmlAttributes = new { @class = "form-control", id = "builderFormStructure" } })
+                @Html.ValidationMessageFor(model => model.HTML)
+                @Html.EditorFor(model => model.Elements, new { htmlAttributes = new { @class = "form-control", id = "builderFormTableStructure" } })
+                <hr id="formNameRule">
+                <div id="build">
+                    <div id="target">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 text-center nav-button-row">
-                <button type="button" id="previous" class="btn">
-                    <span class="ion-ios-arrow-left"></span>
-                </button>
-                <button type="button" id="next" class="btn">
-                    <span class="ion-ios-arrow-right"></span>
-                </button>
-                <button type="submit" id="finish" value="Create" class="btn">
-                    <span class="ion-ios-checkmark-empty"></span>
-                </button>
+    </div>
+    <div class="row content" id="actions">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="tabbable tabs-left">
+                <ul class="nav nav-pills nav-stacked col-xs-12 col-sm-1 col-md-1 col-lg-1" id="actionstabs"></ul>
+                @Html.EditorFor(model => model.Linkedin, new { htmlAttributes = new { @class = "form-control", id = "actionslinkedin" } })
+                <div class="tab-content col-xs-12 col-sm-11 col-md-11 col-lg-11" id="actionscontent">
+                </div>
             </div>
         </div>
-    }
-</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center nav-button-row">
+            <button type="button" id="previous" class="btn pull-left">
+                <span class="ion-ios-arrow-left"></span>
+            </button>
+            <button type="button" id="next" class="btn pull-right">
+                <span class="ion-ios-arrow-right"></span>
+            </button>
+            <button type="submit" id="finish" value="Create" class="btn pull-right">
+                <span class="ion-ios-checkmark-empty"></span>
+            </button>
+        </div>
+    </div>
+}

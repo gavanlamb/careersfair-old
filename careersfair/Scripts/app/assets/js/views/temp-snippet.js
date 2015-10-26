@@ -14,8 +14,10 @@ define(["jquery", "views/snippet", "text!templates/app/temp.html", "helper/pubsu
             },
             postRender: function(pointerEvent) {
                 this.tempForm = this.$el.find("form")[0];
+                this.thisWidth = this.$el.width();
+                this.containerWidth = this.$el.find(".container")[0].clientWidth;
                 this.halfHeight = Math.floor(this.tempForm.clientHeight / 2);
-                this.halfWidth = Math.floor(this.tempForm.clientWidth / 2);
+                this.halfWidth = Math.floor((this.tempForm.clientWidth  + (this.thisWidth - this.containerWidth)) / 2);
                 this.centerOnEvent(pointerEvent);
             },
             events: {

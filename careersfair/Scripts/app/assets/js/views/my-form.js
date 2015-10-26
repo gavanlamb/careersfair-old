@@ -69,14 +69,14 @@ define(["jquery", "underscore", "backbone", "views/temp-snippet", "helper/pubsub
                         if (eventY > $(myFormBits[0]).offset().top - $(myFormBits[0]).height() && eventY < $(myFormBits[0]).offset().top) {
                             $("#build #target fieldset .component").eq(i).before('<div class="target"></div>');
                             i = $(myFormBits).length;
-                        } else if (eventY > $(myFormBits[i]).offset().top && eventY < $(myFormBits[i]).offset().top + $(myFormBits[i]).height()) {
+                        } else if (eventY > $(myFormBits[i]).offset().top && eventY < $(myFormBits[i]).offset().top + $(myFormBits[i]).height() + parseInt($(myFormBits[i]).css("margin-bottom"))) {
                             $("#build #target fieldset .component").eq(i).after('<div class="target"></div>');
                         } else if (eventY > $(myFormBits[$(myFormBits).length - 1]).offset().top) {
                             $("#build #target fieldset .component").eq($(myFormBits).length - 1).after('<div class="target"></div>');
                             i = $(myFormBits).length;
                         }
                     }
-                    if ($(myFormBits).length === 0) {;
+                    if ($(myFormBits).length === 0) {
                         $("#build #target fieldset").prepend('<div class="target"></div>');
                     }
                     $("#target .target").height($(".temp form").height());
@@ -98,6 +98,7 @@ define(["jquery", "underscore", "backbone", "views/temp-snippet", "helper/pubsub
                 }
             },
             handleDownAdd: function(model) {
+                $("body").css("paddingBottom", "");
                 if (model.getField("id") != false) {
                     var val = "";
                     for (var i = val.length; i < 31; i++) {

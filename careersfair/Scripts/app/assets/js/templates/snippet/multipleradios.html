@@ -1,24 +1,22 @@
 <!-- Multiple Radios -->
 <div class="form-group <% if(required) {%> required-control <% } %>">
-    <div class="col-md-12">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="row">
-            <% if(label.length > 0) { %><label class="col-md-12" for="<%= id %>"><%= label %> </label> <% } %>
+            <% if(label.length > 0) { %><label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="<%= id %>"><%= label %> </label> <% } %>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <% _.each(radios, function(radio, i){ %>
-                <div class="radio">
-                    <label for="<%= id+'-'+i %>">
-                        <input type="<%= type %>" name="<%= id %>" id="<%= id+'-'+i %>" value="<%= radio %>" <% if (required && i < 1) { %> required <% } %>><%= radio %>
-                    </label>
-                </div>
+                <span class="radio">
+                    <input type="<%= type %>" name="<%= id %>" id="<%= id+'-'+i %>" value="<%= radio %>" <% if (required && i < 1) { %> required <% } %>>
+                    <label class="radiolabel" for="<%= id+'-'+i %>"><%= radio %></label>
+                </span>
                 <% }); %>
                 <% if(other){ %>
-                    <div class="radio">
-                        <label for="<%= id+'-'%>other">
-                            <input type="<%= type %>" name="<%= id %>" id="<%= id+'-'%>other" value="" <% if (required) { %> required<% } %>>Other<br/>
-                        </label>
-                    </div>
+                    <span class="radio">
+                        <input type="<%= type %>" name="<%= id %>" id="<%= id+'-'%>other" value="" <% if (required) { %> required<% } %>>
+                        <label class="radiolabel" for="<%= id+'-'%>other">Other</label>
+                    </span>
                     <div class="<%= inputsize %> other">
                         <input type="text" id="<%= id+'-'%>otherinput" name="<%= id+'-'%>otherinput" class="form-control <%= inputheight %> "/>
                     </div>
@@ -26,7 +24,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <% if(helptext.length > 0) { %><span class="help-block"><%= helptext %></span><% } %>
             </div>
         </div>

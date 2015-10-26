@@ -24,13 +24,8 @@
         "type": "input",
         "value": "File upload"
       },
-      "helptext": {
-        "label": "Help Text",
-        "type": "input",
-        "value": "help"
-      },
       "filesize": {
-        "label": "File size(max)",
+        "label": "File size(max) MB",
         "type": "input",
         "value": 2
       }
@@ -61,13 +56,8 @@
         "type": "input",
         "value": "Selfie"
       },
-      "helptext": {
-        "label": "Help Text",
-        "type": "input",
-        "value": "help"
-      },
       "filesize": {
-        "label": "File size(max)",
+        "label": "File size(max) MB",
         "type": "input",
         "value": 2
       }

@@ -32,46 +32,39 @@ namespace careersfair.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FormResults formResults = db.FormResults.Find(id);
-            if (formResults == null)
+            var form = db.Form.Find(id);
+            dynamic formElementsArray = JsonConvert.DeserializeObject(form.Elements);
+            DataTable table = GetResultsTable((int)id);
+            List<string> ColumnNames = new List<string>();
+            foreach (DataColumn col in table.Columns)
             {
-                return HttpNotFound();
+                string columnName = col.ColumnName;
+                foreach (var item in formElementsArray)
+                {
+                    string formElementId = item.id;
+                    string formElementLabel = item.label;
+
+                    if (columnName == formElementId)
+                    {
+                        ColumnNames.Add(formElementLabel);
+                    }
+                }
             }
-            return View(formResults);
+            ViewBag.ColumnNames = ColumnNames;
+            return View(table);
         }
 
-        // POST: FormResults/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Results")] FormResults formResults)
+        private DataTable GetResultsTable(int id)
         {
-            if (ModelState.IsValid)
+            var results = db.FormResults.Where(u => u.FormId == id);
+            DataSet dataSet = new DataSet();
+            foreach (var item in results)
             {
-                db.FormResults.Add(formResults);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                StringReader stringReader = new StringReader(item.Results);
+                dataSet.ReadXml(stringReader);
             }
-
-            return View(formResults);
+            return dataSet.Tables[0];
         }
-
-        // GET: FormResults/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            FormResults formResults = db.FormResults.Find(id);
-            if (formResults == null)
-            {
-                return HttpNotFound();
-            }
-            return View(formResults);
-        }
-
 
         // POST: Forms/ViewForm/5
         [HttpPost]
@@ -80,8 +73,7 @@ namespace careersfair.Controllers
             string formId = collection["formID"];
             string formStorage = collection["formStorage"];
             dynamic formElementsArray = JsonConvert.DeserializeObject(collection["formElements"]);
-            
-            string rootFolder = "~/App_Data/";
+
             string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
             string xml = string.Empty;
@@ -104,7 +96,7 @@ namespace careersfair.Controllers
                             string uniqCode = new string(Enumerable.Repeat(chars, 3).Select(s => s[random.Next(s.Length)]).ToArray());
                             var fileName = DateTime.Now.ToString("hhmmssffffff") + uniqCode + Path.GetExtension(file.FileName);
                             uniqCode = "";
-                            var serverPath = Server.MapPath(rootFolder + "/" + formStorage + "/" + formElementId);
+                            var serverPath = Server.MapPath(FormController.rootStorageFolder + "/" + formStorage + "/" + formElementId);
                             Directory.CreateDirectory(serverPath);
                             var path = Path.Combine(serverPath, fileName);
                             file.SaveAs(path);
@@ -119,26 +111,15 @@ namespace careersfair.Controllers
                 writer.WriteEndElement();
                 writer.WriteEndDocument();
             }
-
-            xml = sb.ToString();
-            FormResults formResults = new FormResults();
-            formResults.Results = xml;
-            formResults.Form = db.Form.Find(Int32.Parse(formId));
-
-            db.FormResults.Add(formResults);
+            var a = new FormResults
+            {
+                Results = sb.ToString(),
+                FormId = Int32.Parse(formId)
+            };
+            db.FormResults.Add(a);
             db.SaveChanges();
 
-            return RedirectToAction("Index");
-        }
-        // POST: FormResults/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            FormResults formResults = db.FormResults.Find(id);
-            db.FormResults.Remove(formResults);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ThankYou");
         }
 
         protected override void Dispose(bool disposing)
