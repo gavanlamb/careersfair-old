@@ -9,29 +9,54 @@ using System.Net;
 using System.Net.Mail;
 using System.Data;
 using System.Data.SqlClient;
+using careersfair.Models;
 
 
 namespace careersfair.Controllers
 {
     public class UserController : Controller
     {
+        
         //
         // GET: /User/
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
-        [HttpGet]
+        
         public ActionResult Login()
         {
             return View();
         }
-        public ActionResult Reset()
+        [Authorize]
+        public ActionResult Successful()
         {
             return View();
-            
         }
+       [Authorize]
+        public ActionResult ChangePassword(){
+        return View();
+        }
+        [HttpPost]
+        public ActionResult changePassword(Models.ChangePassword changepw)
+        {
+            if (ModelState.IsValid)
+            {
+                if (changepw.Successful(changepw.OldPassword, changepw.NewPassword))
+                {
+                    return View("Successful");
+                }
+                else { 
+                    return Content("Incorrect Old Password!"); 
+                }
+               
+            }
+            return View();
+        }
+      
+   
         [HttpPost]
         public ActionResult Login(Models.User user)
         {
@@ -52,19 +77,35 @@ namespace careersfair.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "User");
         }
-        public ActionResult ResetPassword()
+      
+
+          
+            
+        
+        public ActionResult Reset()
         {
-             // Gmail Address from where you send the mail
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[8];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+
+            var randomPassword = new String(stringChars);
+            String encodedPassword = Helpers.SHA1.Encode(randomPassword);
+            // Gmail Address from where you send the mail
             String fromAddress = "sai.ancha194@gmail.com";
             // any address where the email will be sending
             String toAddress = "sai.ancha194gmail.com";
             //Password of your gmail address
-            const string fromPassword = "lollollol1";
+            const string fromPassword = "Lollol111";
             // Passing the values and make a email formate to display
             string subject = "Fiserv Admin password Reset";
-            string body = "Your Password has been Reset. Your new password is fiserv.";
+            string body = "Your Password has been Reset. Your new password is: "+ randomPassword ;
 
             // smtp settings
             var smtp = new System.Net.Mail.SmtpClient();
@@ -78,19 +119,23 @@ namespace careersfair.Controllers
             }
             // Passing values to smtp object
             smtp.Send("sai.ancha194@gmail.com", "sai.ancha194@gmail.com", subject, body);
-
-           // string connectionString = @"Data Source=(LocalDB)\v11.0;Initial Catalog=Database1;Integrated Security=True;";
+            // string connectionString = @"Data Source=(LocalDB)\v11.0;Initial Catalog=Database1;Integrated Security=True;";
             String connString = (@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\GitHub\careersfair\careersfair\App_Data\Database1.mdf;Integrated Security=True");
-            SqlConnection connection = new SqlConnection( connString);
+            SqlConnection connection = new SqlConnection(connString);
             SqlCommand command = new SqlCommand("SELECT * FROM System_Users", connection);
             command.Connection.Open();
 
-            string querystr = "UPDATE System_Users SET Password='9918287aee6b3451d3d81429658a1a0bb5a30971'";
+            string querystr = "UPDATE System_Users SET Password= @encodedPassword";
             SqlCommand query = new SqlCommand(querystr, connection);
+            query.Parameters.AddWithValue("@encodedPassword", encodedPassword);
             query.ExecuteNonQuery();
             command.Connection.Close();
             return View();
+            
+        }
+
+            
+           
         }
        
     }
-}
