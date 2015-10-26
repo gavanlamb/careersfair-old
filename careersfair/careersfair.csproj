@@ -255,6 +255,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\User\Successful.cshtml" />
     <Content Include="Views\User\Logout.cshtml" />
+    <Content Include="Views\User\Menu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

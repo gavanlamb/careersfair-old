@@ -79,6 +79,11 @@ namespace careersfair.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login", "User");
         }
+        [Authorize]
+        public ActionResult Menu()
+        {
+            return View();
+        }
       
 
           
