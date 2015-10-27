@@ -139,6 +139,13 @@ namespace careersfair.App_Start
                 )
             );
 
+            //CSS bundle for formstyle
+            bundles.Add(
+                new StyleBundle("~/style/form-disabled").Include(
+                    "~/Content/css/form-disabled.css"
+                )
+            );
+            
             //*****************************************
             //***************LESS BUNDLES**************
             //*****************************************

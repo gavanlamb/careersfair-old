@@ -1,5 +1,6 @@
 ﻿// Setup an event listener to make an API call once auth is complete
 function onLinkedInLoad() {
+    $('a[id*=li_ui_li_gen_]').css({ marginBottom: '20px' }).html('<img src="/Content/images/Linkedin_signin.png" height="41" width="215" border="0" />');
     IN.Event.on(IN, "auth", getProfileData);
 }
 

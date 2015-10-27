@@ -12,10 +12,9 @@ define(["jquery", "underscore", "backbone", "views/snippet", "views/temp-snippet
             $(".popover").remove();
             that.$el.popover("show");
             var bodyHeight = $("body").height();
-            var buildHeight = $("#build").height();
             var windowHeight = $(window).height();
             var componentTop = $(pointerEvent.target).closest(".component").offset().top;
-            if ((componentTop + windowHeight) > bodyHeight) {
+            if ((componentTop + windowHeight) > bodyHeight && that.model.get("title") != "Page Break") {
                 var paddingSize = (componentTop + windowHeight) - bodyHeight;
                 $("body").css("paddingBottom", paddingSize + "px");
             }

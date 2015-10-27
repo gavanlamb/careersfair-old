@@ -13,6 +13,8 @@ using System.Xml;
 using Newtonsoft.Json;
 using System.IO;
 using System.Diagnostics;
+using System.IO.Compression;
+using System.Text.RegularExpressions;
 
 namespace careersfair.Controllers
 {
@@ -26,7 +28,7 @@ namespace careersfair.Controllers
         }
 
         // GET: FormResults/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Data(int? id)
         {
             if (id == null)
             {
@@ -34,9 +36,9 @@ namespace careersfair.Controllers
             }
             var form = db.Form.Find(id);
             dynamic formElementsArray = JsonConvert.DeserializeObject(form.Elements);
-            DataTable table = GetResultsTable((int)id);
+            DataTable dt = GetResultsTable((int)id);
             List<string> ColumnNames = new List<string>();
-            foreach (DataColumn col in table.Columns)
+            foreach (DataColumn col in dt.Columns)
             {
                 string columnName = col.ColumnName;
                 foreach (var item in formElementsArray)
@@ -51,7 +53,122 @@ namespace careersfair.Controllers
                 }
             }
             ViewBag.ColumnNames = ColumnNames;
-            return View(table);
+            ViewBag.FormName = form.Name;
+            return View(dt);
+        }
+
+        // GET: FormResults/Details/5
+        public ActionResult DownloadData(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var form = db.Form.Find(id);
+
+            Regex rgx = new Regex("[^a-zA-Z0-9]");
+            string formName = rgx.Replace(form.Name, "");
+            string formElements = form.Elements;
+            string formStorage = form.Storage;
+
+            var archive = Server.MapPath("~/archive.zip");
+            var temp = Server.MapPath("~/temp");
+            var formStorageDirectoy = Server.MapPath(FormController.rootStorageFolder + formStorage);
+            var dataFile = Path.Combine(temp, formName + ".csv");
+
+            DataTable dt = GetResultsTable((int)id);
+            IEnumerable<string> columnNames = new string[] { };
+            dynamic formElementsArray = JsonConvert.DeserializeObject(formElements);
+
+            if (System.IO.File.Exists(archive))
+            {
+                System.IO.File.Delete(archive);
+            }
+            if (Directory.Exists(temp)) {
+                Directory.Delete(temp, true);
+            }
+            Directory.CreateDirectory(temp);
+            StreamWriter sw = new StreamWriter(dataFile);
+            for (int i = 0; i < dt.Columns.Count; i++)
+            {
+                string columnName = dt.Columns[i].ColumnName;
+                foreach (var item in formElementsArray)
+                {
+                    string formElementId = item.id;
+                    string formElementLabel = item.label;
+                    if (columnName == formElementId)
+                    {
+                        string value = formElementLabel;
+                        if (value.Contains(','))
+                        {
+                            value = String.Format("\"{0}\"", value);
+                            sw.Write(value);
+                        }
+                        else
+                        {
+                            sw.Write(value);
+                        }
+                        if (i < dt.Columns.Count - 1)
+                        {
+                            sw.Write(",");
+                        }
+                    }
+                }
+            }
+            sw.Write(sw.NewLine); foreach (DataRow dr in dt.Rows)
+            {
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    if (!Convert.IsDBNull(dr[i]))
+                    {
+                        string value = dr[i].ToString();
+                        if (value.Contains(','))
+                        {
+                            value = String.Format("\"{0}\"", value);
+                            sw.Write(value);
+                        }
+                        else
+                        {
+                            sw.Write(dr[i].ToString());
+                        }
+                    }
+                    if (i < dt.Columns.Count - 1)
+                    {
+                        sw.Write(",");
+                    }
+                }
+                sw.Write(sw.NewLine);
+            }
+            sw.Close();
+            foreach (var item in formElementsArray)
+            {
+                string formElementId = item.id;
+                string formElementType = item.type;
+                string formElementLabel = item.label;
+                formElementLabel = rgx.Replace(formElementLabel, "");
+                if (formElementType.ToLower() == "file")
+                {
+                    var formElementDirector = Path.Combine(formStorageDirectoy, formElementId);
+                    if (Directory.Exists(formElementDirector))
+                    {
+                        if (Directory.EnumerateFiles(formElementDirector, "*", SearchOption.AllDirectories).Any())
+                        {
+                            foreach (var file in Directory.GetFiles(formElementDirector))
+                            {
+                                var tempElementFolder = Path.Combine(temp, formElementLabel + "_files");
+                                Directory.CreateDirectory(tempElementFolder);
+                                System.IO.File.Copy(file, Path.Combine(tempElementFolder, Path.GetFileName(file)), true);
+                            }
+                        }
+                    }
+                }
+            }
+            ZipFile.CreateFromDirectory(temp, archive);
+            if (Directory.Exists(temp))
+            {
+                Directory.Delete(temp, true);
+            }
+            return File(archive, "application/zip", formName + "_data.zip");
         }
 
         private DataTable GetResultsTable(int id)
@@ -101,6 +218,9 @@ namespace careersfair.Controllers
                             var path = Path.Combine(serverPath, fileName);
                             file.SaveAs(path);
                             writer.WriteElementString(formElementId, fileName);
+                        }
+                        else {
+                            writer.WriteElementString(formElementId,null);
                         }
                     }
                     else if (collection.AllKeys.Contains(formElementId))

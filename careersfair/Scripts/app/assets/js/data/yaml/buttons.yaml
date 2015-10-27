@@ -14,14 +14,9 @@
       label  : Label Text
       type   : input
       value  : File upload
-    buttontext:
-      label  : Button Text
-      type   : input
-      value  : File upload
     filesize:
-      label  : File size(max) MB
-      type   : input
-      value  : 2
+      type   : hidden
+      value  : 20485760
 -
   title  : Selfie upload
   fields :
@@ -38,11 +33,6 @@
       label  : Label Text
       type   : input
       value  : Selfie upload
-    buttontext:
-      label  : Button Text
-      type   : input
-      value  : Selfie
     filesize:
-      label  : File size(max) MB
-      type   : input
-      value  : 2
+      type   : hidden
+      value  : 20485760

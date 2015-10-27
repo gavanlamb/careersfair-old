@@ -1,7 +1,9 @@
 ﻿fieldset {
     padding: 0px !important;
 }
-
+#form fieldset {
+    padding: 15px !important;
+}
 h1, h2, h3, h4, h5, h6 {
     font-weight: 100;
     color: #ff6200;
@@ -46,7 +48,7 @@ h6 {
     margin-bottom: 0;
 }
 
-    .form-group > div {
+    .form-group > .row {
         margin: 20px 0px;
     }
 
@@ -133,7 +135,6 @@ form .radio-inline,
 form .radio {
     padding-left: 0;
 }
-
 
     form .checkbox-inline,
     form .radio-inline,
@@ -343,3 +344,19 @@ form .paragraphElement {
 form .pageBreak {
     margin: 20px 0px;
 }
+
+.form-heading .row,
+.form-paragraph .row{
+    margin:0;
+}
+    .form-heading .row h1, 
+    .form-heading .row h2,
+    .form-heading .row h3,
+    .form-heading .row h4,
+    .form-heading .row h5,
+    .form-heading .row h6{
+        margin:0 0 15px 0;
+    }
+    .form-paragraph .row p{
+        margin:15px 0;
+    }

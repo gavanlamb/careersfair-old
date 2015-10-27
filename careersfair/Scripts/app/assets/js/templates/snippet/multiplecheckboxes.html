@@ -1,31 +1,32 @@
-<!-- Multiple Checkboxes -->
 <div class="form-group <% if(required) {%> required-control <% } %>">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="row">
-            <% if(label.length > 0) { %> <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="<%= id %>"> <%= label %> </label> <% } %>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <% _.each(checkboxes, function(checkbox, i){ %>
-                    <span class="checkbox">
-                        <input type="<%= type %>" name="<%= id %>" id="<%= id+'-'+i %>" value="<%= checkbox %>" <% if (required && i < 1) { %> required<% } %>>
-                        <label class="checkboxlabel" for="<%= id+'-'+i %>"><%= checkbox %></label>
-                    </span>
-                <% }); %>
-                <% if(other){ %>
-                    <span class="checkbox">
-                        <input type="<%= type %>" name="<%= id %>" id="<%= id+'-'%>other" value="" <% if (required) { %> required<% } %>>
-                        <label class="checkboxlabel" for="<%= id+'-'%>other">Other</label>
-                    </span>
-                    <div class="<%= inputsize %> other">
-                        <input type="text" id="<%= id+'-'%>otherinput" name="<%= id+'-'%>otherinput" class="form-control <%= inputheight %> "/>
-                    </div>
-                <% } %>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="row">
+                <% if(label.length > 0) { %> <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="<%= id %>"> <%= label %> </label> <% } %>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <% if(helptext.length > 0) { %><span class="help-block"><%= helptext %></span><% } %>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <% _.each(checkboxes, function(checkbox, i){ %>
+                        <span class="checkbox">
+                            <input type="<%= type %>" name="<%= id %>" id="<%= id+'-'+i %>" value="<%= checkbox %>" <% if (required && i < 1) { %> required<% } %>>
+                            <label class="checkboxlabel" for="<%= id+'-'+i %>"><%= checkbox %></label>
+                        </span>
+                    <% }); %>
+                    <% if(other){ %>
+                        <span class="checkbox">
+                            <input type="<%= type %>" name="<%= id %>" id="<%= id+'-'%>other" value="" <% if (required) { %> required<% } %>>
+                            <label class="checkboxlabel" for="<%= id+'-'%>other">Other</label>
+                        </span>
+                        <div class="<%= inputsize %> other">
+                            <input type="text" id="<%= id+'-'%>otherinput" name="<%= id+'-'%>otherinput" class="form-control <%= inputheight %> "/>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <% if(helptext.length > 0) { %><span class="help-block"><%= helptext %></span><% } %>
+                </div>
             </div>
         </div>
     </div>

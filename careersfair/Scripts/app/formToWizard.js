@@ -1,10 +1,14 @@
 $(document).ready(function () {
-    $("div.pageBreak").each(function () {
-        var boundary = $(this);
-        $("<fieldset>").insertAfter(boundary.parent()).append(boundary.nextAll().andSelf());
-        boundary.remove();
-    });
-    $("#form").formToWizard({ submitButton: 'submit' });
+    var pageBreak = $("div.pageBreak");
+    if (pageBreak.length > 0) {
+        $("div.pageBreak").each(function () {
+            var boundary = $(this);
+            $("<fieldset>").insertAfter(boundary.parent()).append(boundary.nextAll().andSelf());
+            boundary.remove();
+        });
+        $("#form").formToWizard({ submitButton: 'submit' });
+        $("#submit").css("margin-top", "-65px");
+    }
 });
 (function ($) {
     $.fn.formToWizard = function (options) {
@@ -54,7 +58,6 @@ $(document).ready(function () {
                 selectStep(i + 1);
             });
         }
-
         function selectStep(i) {
             $("#steps li").removeClass("current");
             $("#stepDesc" + i).addClass("current");

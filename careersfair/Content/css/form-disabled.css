@@ -1,0 +1,32 @@
+﻿.formDisabled {
+    margin-top: 20%;
+}
+
+    .formDisabled h2 {
+        font-weight: 100;
+        color: #ff6200;
+        line-height: 38px;
+        font-size: 38px;
+    }
+
+    .formDisabled > div {
+        border: solid 1px #ff6200;
+        border-radius: 50%;
+        height: 280px;
+        width: 280px;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        padding: 0;
+        background-color: transparent;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .formDisabled div span:before {
+        display: block;
+        text-align: center;
+        font-size: 250px;
+        line-height: 250px;
+        color: #ff6200;
+    }

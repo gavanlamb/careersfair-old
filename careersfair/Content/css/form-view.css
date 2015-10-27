@@ -1,20 +1,19 @@
 ﻿#linkedinbutton {
-    margin-top:30px;
     text-align:center;
 }
-#submit {
-    margin-top:-50px;
-}
-#submit, 
-.next {
+#submit{
     margin-right:15px;
 }
 .next span {
     margin-left: 4px;
 }
-.previous {
-    margin-left:15px;
-}
 .previous  span {
     margin-left: -4px;
+}
+#submit span::before {
+    font-size:60px;
+}
+fieldset {
+    -webkit-box-shadow: 0 3px 7px #999;
+    padding-bottom: 15px!important;
 }

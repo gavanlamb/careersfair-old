@@ -56,7 +56,7 @@
 
 @media (max-width: 991px) {
     .formListItem {
-        border: 1px solid black;
+        border: 1px solid #ddd;
         padding: 15px 0;
         margin: 15px 0;
     }
@@ -93,11 +93,13 @@
     }
 
     .formListItem {
-        border-bottom: 1px solid black;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        margin-top:-1px;
         padding: 15px 0;
     }
 
-        .formListItem .formListHeading h3 {
+        div.formListItem .formListHeading h3 {
             margin: 0;
             font-size: 30px;
             min-height: 50px;
@@ -131,9 +133,12 @@
 .modal {
     text-align: center;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
 }
-
+.modal-open {
+    margin-bottom:0;
+    margin-right:0;
+}
     .modal:before {
         content: '';
         display: inline-block;
@@ -193,39 +198,6 @@
     display: block;
     font-size: 60px;
 }
-
-.formDisabled {
-    margin-top: 20%;
-}
-
-    .formDisabled h2 {
-        font-weight: 100;
-        color: #ff6200;
-        line-height: 38px;
-        font-size: 38px;
-    }
-
-    .formDisabled > div {
-        border: solid 1px #ff6200;
-        border-radius: 50%;
-        height: 280px;
-        width: 280px;
-        outline: 0;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        padding: 0;
-        background-color: transparent;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .formDisabled div span:before {
-        display: block;
-        text-align: center;
-        font-size: 250px;
-        line-height: 250px;
-        color: #ff6200;
-    }
 
 .radio-div {
     margin: 10px auto;

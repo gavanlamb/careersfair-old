@@ -1,14 +1,19 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300);
 
-body {
-    overflow-y: scroll;
+body * {
+    font-family: 'Source Sans Pro';
+    word-wrap: break-word;
 }
-
-    body * {
-        font-family: 'Source Sans Pro';
-        word-wrap: break-word;
-    }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    color: #ff6200;
+    font-weight:300;
+}
 a,
 a:hover,
 a:active,
@@ -48,4 +53,7 @@ a:focus {
         -webkit-box-shadow: none;
         box-shadow: none;
         color: #ff6200;
+    }
+    .btn.disabled {
+        opacity: 0.2;
     }

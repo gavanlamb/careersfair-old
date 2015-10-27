@@ -339,7 +339,6 @@ body {
     color: #ff6200;
     font-weight: 200;
 }
-
 @media (max-width: 767px) {
     #formbuildertabs {
         border: none;

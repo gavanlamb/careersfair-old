@@ -142,6 +142,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\form-disabled.css" />
     <Content Include="Content\css\form-view.css" />
     <Content Include="Content\css\form.css" />
     <Content Include="Content\css\form-create.css" />
@@ -155,6 +156,7 @@
     </Content>
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\images\fiserv.png" />
+    <Content Include="Content\images\Linkedin_signin.png" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -330,7 +332,7 @@
     </Content>
     <Content Include="Views\Form\ViewForm.cshtml" />
     <Content Include="Views\Form\Delete.cshtml" />
-    <Content Include="Views\FormResults\Details.cshtml" />
+    <Content Include="Views\FormResults\Data.cshtml" />
     <Content Include="Views\Form\EnableDisable.cshtml" />
     <Content Include="Views\FormResults\ThankYou.cshtml" />
     <None Include="Web.test.config">
