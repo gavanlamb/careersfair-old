@@ -44,6 +44,14 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
 <<<<<<< HEAD
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -64,7 +72,13 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
+<<<<<<< HEAD
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+=======
 >>>>>>> refs/remotes/origin/master
+>>>>>>> master
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -135,17 +149,119 @@
 >>>>>>> refs/remotes/origin/master
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
-    <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+<<<<<<< HEAD
+    <Content Include="Content\css\custom.css" />
+    <Content Include="Content\images\fiserv.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\assets\js\app.js" />
+    <Content Include="Scripts\assets\js\collections\my-form-snippets.js" />
+    <Content Include="Scripts\assets\js\collections\snippets.js" />
+    <Content Include="Scripts\assets\js\helper\pubsub.js" />
+    <Content Include="Scripts\assets\js\lib\backbone.js" />
+    <Content Include="Scripts\assets\js\lib\bootstrap.js" />
+    <Content Include="Scripts\assets\js\lib\build.js" />
+    <Content Include="Scripts\assets\js\lib\jquery.js" />
+    <Content Include="Scripts\assets\js\lib\require.js" />
+    <Content Include="Scripts\assets\js\lib\text.js" />
+    <Content Include="Scripts\assets\js\lib\underscore.js" />
+    <Content Include="Scripts\assets\js\main-built.js" />
+    <Content Include="Scripts\assets\js\main.js" />
+    <Content Include="Scripts\assets\js\models\snippet.js" />
+    <Content Include="Scripts\assets\js\templates\app\about.html" />
+    <Content Include="Scripts\assets\js\templates\app\render.html" />
+    <Content Include="Scripts\assets\js\templates\app\renderform.html" />
+    <Content Include="Scripts\assets\js\templates\app\tab-nav.html" />
+    <Content Include="Scripts\assets\js\templates\app\temp.html" />
+    <Content Include="Scripts\assets\js\templates\popover\popover-checkbox.html" />
+    <Content Include="Scripts\assets\js\templates\popover\popover-input.html" />
+    <Content Include="Scripts\assets\js\templates\popover\popover-main.html" />
+    <Content Include="Scripts\assets\js\templates\popover\popover-select.html" />
+    <Content Include="Scripts\assets\js\templates\popover\popover-textarea-split.html" />
+    <Content Include="Scripts\assets\js\templates\popover\popover-textarea.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\appendedcheckbox.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\appendedtext.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\button.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\buttondouble.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\buttondropdown.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\filebutton.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\formname.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\multiplecheckboxes.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\multiplecheckboxesinline.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\multipleradios.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\multipleradiosinline.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\passwordinput.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\prependedcheckbox.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\prependedtext.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\searchinput.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\selectbasic.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\selectmultiple.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\snippet-templates.js" />
+    <Content Include="Scripts\assets\js\templates\snippet\textarea.html" />
+    <Content Include="Scripts\assets\js\templates\snippet\textinput.html" />
+    <Content Include="Scripts\assets\js\views\my-form-snippet.js" />
+    <Content Include="Scripts\assets\js\views\my-form.js" />
+    <Content Include="Scripts\assets\js\views\snippet.js" />
+    <Content Include="Scripts\assets\js\views\tab-snippet.js" />
+    <Content Include="Scripts\assets\js\views\tab.js" />
+    <Content Include="Scripts\assets\js\views\temp-snippet.js" />
+    <Content Include="Content\css\gsdk-base.css" />
+    <Content Include="Content\images\arrow-down.png" />
+    <Content Include="Content\images\arrow-left.png" />
+    <Content Include="Content\images\arrow-right.png" />
+    <Content Include="Content\images\arrow-up.png" />
+=======
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\images\arrow_down.png" />
     <Content Include="Content\images\arrow_left.png" />
     <Content Include="Content\images\arrow_right.png" />
     <Content Include="Content\images\arrow_up.png" />
+>>>>>>> master
     <Content Include="Content\images\fiservLogo.png" />
     <Content Include="Content\css\Site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+<<<<<<< HEAD
+    <Content Include="Content\css\form-builder-custom.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\assets\.editorconfig" />
+    <Content Include="Scripts\assets\.travis.yml" />
+    <Content Include="Scripts\assets\js\data\buttons.json" />
+    <Content Include="Scripts\assets\js\data\input.json" />
+    <Content Include="Scripts\assets\js\data\radio.json" />
+    <Content Include="Scripts\assets\js\data\select.json" />
+    <Content Include="Scripts\assets\js\data\yaml\buttons.yaml" />
+    <Content Include="Scripts\assets\js\data\yaml\input.yaml" />
+    <Content Include="Scripts\assets\js\data\yaml\parse.rb" />
+    <Content Include="Scripts\assets\js\data\yaml\radio.yaml" />
+    <Content Include="Scripts\assets\js\data\yaml\select.yaml" />
+    <Content Include="license\LICENSE" />
+    <Content Include="license\README.md" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Content\images\loader.gif" />
+    <Content Include="Scripts\bootstrap-formbuilder-tabs.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\cldr.js" />
+    <Content Include="Scripts\cldr\event.js" />
+    <Content Include="Scripts\cldr\supplemental.js" />
+    <Content Include="Scripts\cldr\unresolved.js" />
+    <Content Include="Scripts\globalize.js" />
+    <Content Include="Scripts\globalize\currency.js" />
+    <Content Include="Scripts\globalize\date.js" />
+    <Content Include="Scripts\globalize\message.js" />
+    <Content Include="Scripts\globalize\number.js" />
+    <Content Include="Scripts\globalize\plural.js" />
+    <Content Include="Scripts\globalize\relative-time.js" />
+=======
     <Content Include="Icon.png" />
     <Content Include="plugin\formbuilder\assets\css\custom.css" />
     <Content Include="plugin\formbuilder\assets\css\lib\bootstrap-responsive.min.css" />
@@ -217,23 +333,41 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\images\loader.gif" />
     <Content Include="plugin\formbuilder\index.html" />
+>>>>>>> master
     <Content Include="Scripts\jquery-2.0.0.min.js" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
+<<<<<<< HEAD
+=======
     <Content Include="Scripts\jquery.smartWizard.js" />
     <Content Include="Content\css\ribbon_smart_wizard.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+>>>>>>> master
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\require.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+<<<<<<< HEAD
+    <Compile Include="Controllers\FormController.cs" />
+    <Compile Include="DAL\FormContext.cs" />
+    <Compile Include="DAL\FormInitializer.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Form.cs" />
+=======
 <<<<<<< HEAD
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -247,12 +381,18 @@
     <Compile Include="Models\ChangePassword.cs" />
     <Compile Include="Models\Reset.cs" />
     <Compile Include="Models\User.cs" />
+>>>>>>> master
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
       <SubType>Designer</SubType>
     </Content>
+<<<<<<< HEAD
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+=======
     <Content Include="packages.config" />
     <Content Include="plugin\formbuilder\assets\js\data\buttons.json" />
     <Content Include="plugin\formbuilder\assets\js\data\buttons.yaml" />
@@ -263,11 +403,19 @@
     <Content Include="plugin\formbuilder\assets\js\data\radio.yaml" />
     <Content Include="plugin\formbuilder\assets\js\data\select.json" />
     <Content Include="plugin\formbuilder\assets\js\data\select.yaml" />
+>>>>>>> master
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LayoutMenu.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Form\Create.cshtml" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
+<<<<<<< HEAD
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Form\Delete.cshtml" />
+    <Content Include="Views\Form\Details.cshtml" />
+    <Content Include="Views\Form\Edit.cshtml" />
+    <Content Include="Views\Form\Index.cshtml" />
+=======
 <<<<<<< HEAD
     <Content Include="Views\Admin\Admin.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
@@ -280,6 +428,7 @@
     <Content Include="Views\User\Menu.cshtml" />
 =======
 >>>>>>> refs/remotes/origin/master
+>>>>>>> master
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -295,8 +444,14 @@
     </ProjectReference>
 =======
     <Folder Include="App_Data\" />
+<<<<<<< HEAD
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+=======
     <Folder Include="Models\" />
 >>>>>>> refs/remotes/origin/master
+>>>>>>> master
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
