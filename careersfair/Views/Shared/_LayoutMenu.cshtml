@@ -6,6 +6,7 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<<<<<<< HEAD
 @section stylesheet{
     @Styles.Render("~/style/menu")
     @RenderSection("stylesheet", required: false)
@@ -41,4 +42,25 @@
         </div>
     </div>
 </nav>
+<<<<<<< HEAD
 @RenderBody()
+=======
+
+<main class="container">
+=======
+<div id="header">
+    <a href="/" id="logo"><img src="~/Content/images/fiservLogo.png" /></a>
+    @*    <nav>
+            <a href="/">Dashboard</a>
+            <a href="/">Forms</a>
+        </nav>*@
+</div>
+<main>
+>>>>>>> master
+    @RenderBody()
+</main>
+
+<footer class="navbar navbar-fixed-bottom">
+    <ul class="list-unstyled container text-center"><li><p>&copy; @DateTime.Now.Year - Fiserv</p></li></ul>
+</footer>
+>>>>>>> master
