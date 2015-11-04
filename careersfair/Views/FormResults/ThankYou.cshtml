@@ -1,0 +1,49 @@
+﻿@model careersfair.Models.FormResults
+@{
+    ViewBag.Title = "Thank You";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section stylesheet{
+    @Styles.Render("~/style/formresults-thankyou")
+    @Styles.Render("~/style/ionicons")
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-12 col-md-8 col-lg-8 formDisabled">
+            <h2>Thank You!</h2>
+        </div>
+    </div>
+    <div class="row">
+        <hr />
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 text-center">
+            <h3>Follow us for more:</h3>
+            <ul class="list-inline text-center" id="socialmedialist">
+                <li>
+                    <a href="https://www.facebook.com/Fiserv-Auckland-132159693497011/?ref=ts" target="_blank">
+                        <span class="ion-social-facebook-outline"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.linkedin.com/company/132473" target="_blank">
+                        <span class="ion-social-linkedin-outline"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 text-center">
+            <h3 class="orh3">or</h3>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 text-center">
+            <h3>Browse available jobs</h3>
+            <ul class="list-inline text-center" id="socialmedialist">
+                <li>
+                    <a href="http://jobs.fiserv.co.nz/jobs/" target="_blank">
+                        <span>GO</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+

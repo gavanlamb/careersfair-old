@@ -1,0 +1,59 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300);
+
+body * {
+    font-family: 'Source Sans Pro';
+    word-wrap: break-word;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    color: #ff6200;
+    font-weight:300;
+}
+a,
+a:hover,
+a:active,
+a:focus {
+    outline: none;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 100;
+    border: solid 1px #ff6200;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 0;
+    background-color: white;
+}
+
+    .btn span,
+    .btn span:before {
+        display: block;
+        text-align: center;
+        line-height: 50px;
+        font-size: 48px;
+        color: #ff6200;
+    }
+
+    .btn:active,
+    .btn:hover,
+    .btn:focus,
+    .btn:visited {
+        text-decoration: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #ff6200;
+    }
+    .btn.disabled {
+        opacity: 0.2;
+    }

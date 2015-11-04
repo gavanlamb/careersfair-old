@@ -1,0 +1,77 @@
+﻿@model careersfair.Models.Form
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model.Enabled)
+{
+
+    ViewBag.Title = Model.Name;
+    @section stylesheet{
+        @Styles.Render("~/style/form-style")
+        @Styles.Render("~/style/ionicons")
+    }
+    @section scripts{
+        @Scripts.Render("~/script/buttons")
+        @Scripts.Render("~/script/formwizard")
+        @Scripts.Render("~/script/validator")
+        @if (Model.Linkedin != null)
+        {
+            @Scripts.Render("~/script/linkedin")
+            <script type="text/javascript" src="//platform.linkedin.com/in.js">
+                api_key: 7592ej7ul45wno
+                authorize: true
+                onLoad: onLinkedInLoad
+                x-li-format: json
+            </script>
+        }
+    }
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                <h2>@Html.DisplayFor(model => model.Name)</h2>
+                <div id="linkedinbutton">
+                    @if (Model.Linkedin != null)
+                    {
+                        <script type="in/Login"></script>
+                    }
+                </div>
+                <ul class="errorMessages"></ul>
+                @using (Html.BeginForm("SubmitForm", "FormResults", FormMethod.Post, new { enctype = "multipart/form-data", id = "form", @class = "form-horizontal" }))
+                {
+                    <fieldset>
+                        @Html.Raw(Model.HTML)
+                        <input type="hidden" value="@Model.ID" name="formID" />
+                        <input type="hidden" value="@Model.Elements" name="formElements" />
+                        @if (Model.Linkedin != null)
+                        {
+                            <input type="hidden" value="@Model.Linkedin" name="formLinked" id="formLinked" />
+                        }
+                        <input type="hidden" value="@Model.Storage" name="formStorage" />
+                        <button type="submit" class="btn pull-right" value="Upload" id="submit">
+                            <span class="ion-ios-checkmark-empty"></span>
+                        </button>
+                    </fieldset>
+                }
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    ViewBag.Title = "Disabled Form";
+    @section stylesheet{
+        @Styles.Render("~/style/form-disabled")
+        @Styles.Render("~/style/ionicons")
+    }
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-12 col-md-8 col-lg-8 formDisabled">
+                <h2 align="center">Sorry, that form is locked.</h2>
+                <div>
+                    <span class="ion-ios-locked-outline"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

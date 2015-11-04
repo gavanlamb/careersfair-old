@@ -1,46 +1,50 @@
-﻿@{
+﻿@*
+    Created by: Gavan Lamb
+    Version: 1.0
+    Created to as a default admin side look. Creates the navbar and footer so content can be rendered in the "main"
+*@
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <<<<<<< HEAD
 @section stylesheet{
-    @Styles.Render("~/Content/Bootstrap")
-    @Styles.Render("~/Content/Site")
+    @Styles.Render("~/style/menu")
     @RenderSection("stylesheet", required: false)
 }
 @section scripts{
-    @Scripts.Render("~/Bundles/Bootstrap")
     @RenderSection("scripts", required: false)
 }
 <nav class="navbar navbar-default">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            @Html.ActionLink("Careers Fair", "CreateForm", null, new { @class = "navbar-brand" })
+            <a class="navbar-brand" href="@Url.Action("Index", "Form")">
+                <img id="brand-image" src="~/Content/images/fiserv.png" alt="" />
+            </a>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="nav navbar-nav navbar-right">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Home", "CreateForm")</li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Form <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("All Forms", "Index")</li>
-                            <li>@Html.ActionLink("Form Builder", "Create")</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>-->
+        <div id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="@Url.Action("Index", "Form")">
+                        <span class="ion-ios-home-outline"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Create", "Form")">
+                        <span class="ion-ios-plus-empty"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Form")">
+                        <span class="ion-ios-help-empty"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
+<<<<<<< HEAD
+@RenderBody()
+=======
 
 <main class="container">
 =======
@@ -59,3 +63,4 @@
 <footer class="navbar navbar-fixed-bottom">
     <ul class="list-unstyled container text-center"><li><p>&copy; @DateTime.Now.Year - Fiserv</p></li></ul>
 </footer>
+>>>>>>> master

@@ -1,0 +1,39 @@
+﻿@model careersfair.Models.Form
+@if (Model.Enabled)
+{
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal" aria-hidden="true">
+            <span class="ion-ios-close-empty"></span>
+        </a>
+        <h2 class="modal-title">Lock Form</h2>
+    </div>
+    <div class="modal-body">
+        <p>Are you sure you want to lock @Html.DisplayFor(model => model.Name)?</p>
+    </div>
+}
+else
+{
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal" aria-hidden="true">
+            <span class="ion-ios-close-empty"></span>
+        </a>
+        <h2 class="modal-title">Unlock Form</h2>
+    </div>
+    <div class="modal-body">
+        <p>Are you sure you want to unlock @Html.DisplayFor(model => model.Name)?</p>
+    </div>
+}
+<div class="modal-footer">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <button class="btn pull-left" type="button" data-dismiss="modal">
+                <span class="ion-ios-close-empty"></span>
+            </button>
+            <button class="btn pull-right" type="submit" value="Yes">
+                <span class="ion-ios-checkmark-empty"></span>
+            </button>
+        </div>
+    }
+</div>

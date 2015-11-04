@@ -1,64 +1,43 @@
 ﻿@model careersfair.Models.Form
-
-@{
-    ViewBag.Title = "Delete";
-}
-
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Form</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TableName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TableName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Structure)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Structure)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BeforeAction)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BeforeAction)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AfterAction)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AfterAction)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<div class="modal-header">
+    <a class="close" data-dismiss="modal" aria-hidden="true">
+        <span class="ion-ios-close-empty"></span>
+    </a>
+    <h2 class="modal-title">Delete</h2>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    if (Model.FormResults.Count() > 0)
+    {
+        <div class="modal-body">
+            <p>What would you like to delete for form @Html.DisplayFor(model => model.Name)?</p>
+            <div class="radio-div">
+                <span class="radio">
+                    <input type="radio" name="deleteradio" id="deleteradio1" value="formdata">
+                    <label class="radiolabel" for="deleteradio1">Form & Data</label>
+                </span>
+                <span class="radio">
+                    <input type="radio" name="deleteradio" id="deleteradio2" value="data">
+                    <label class="radiolabel" for="deleteradio2">Data Only</label>
+                </span>
+            </div>
         </div>
     }
-</div>
+    else
+    {
+        <div class="modal-body">
+            <p>Are you sure you would like to delete @Html.DisplayFor(model => model.Name)?</p>
+        </div>
+    }
+    <div class="modal-footer">
+        <div class="form-actions no-color">
+            <button class="btn pull-left" data-dismiss="modal">
+                <span class="ion-ios-close-empty"></span>
+            </button>
+            <button class="btn pull-right" type="submit" value="Yes">
+                <span class="ion-ios-checkmark-empty"></span>
+            </button>
+        </div>
+    </div>
+}

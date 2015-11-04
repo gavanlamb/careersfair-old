@@ -1,57 +1,113 @@
 ﻿@model IEnumerable<careersfair.Models.Form>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+@section stylesheet{
+    @Styles.Render("~/style/form-index")
+    @Styles.Render("~/style/ionicons")
+}
+@section scripts{
+    @Scripts.Render("~/script/popup")
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TableName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Structure)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BeforeAction)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AfterAction)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TableName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Structure)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BeforeAction)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AfterAction)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2 class="formPageHeading">All forms</h2>
+        </div>
+    </div>
+    @if (!Model.Any())
+    {
+        <div class="row">
+            <div class="col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <h2 align="center">Sorry, there are no forms to manage.</h2>
+            </div>
+        </div>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <div class="row formListItem">
+                <div class="formListHeading col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                    <h3><a href='@Url.Action("ViewForm", "Form", new { id = item.ID })'>@Html.DisplayFor(modelItem => item.Name)</a></h3>
+                </div>
+                <div class="formActionsList col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                    <ul class="list-inline">
+                        @if (item.Linkedin != null)
+                        {
+                            <li>
+                                <span class="ion-social-linkedin"></span>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="formListButtons col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                    <ul class="buttons list-inline">
+                        <li>
+                            <a class="btn" href='@Url.Action("Delete", "Form", new { id = item.ID })' data-modal="">
+                                <span class="ion-ios-trash-outline"></span>
+                            </a>
+                        </li>
+                        @if (item.FormResults.Count() > 0)
+                        {
+                            <li>
+                                <a class="btn" href="@Url.Action("DownloadData", "FormResults", new { id = item.ID })">
+                                    <span class="ion-ios-cloud-download-outline"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn" href="@Url.Action("Data", "FormResults", new { id = item.ID})" target="_blank">
+                                    <span class="ion-ios-list-outline"></span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a class="btn disabled">
+                                    <span class="ion-ios-cloud-download-outline"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn disabled">
+                                    <span class="ion-ios-list-outline"></span>
+                                </a>
+                            </li>
+                        }
+                        <li>
+                            <a class="btn" href="@Url.Action("GetQRCode", "Form", new { id = item.ID })">
+                                <span class="ion-ios-barcode-outline"></span>
+                            </a>
+                        </li>
+                        @if (item.Enabled)
+                        {
+                            <li>
+                                <a class="btn" href="@Url.Action("EnableDisable", "Form", new { id = item.ID })" data-modal="">
+                                    <span class="ion-ios-locked-outline"></span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a class="btn" href="@Url.Action("EnableDisable", "Form", new { id = item.ID })" data-modal="">
+                                    <span class="ion-ios-unlocked-outline"></span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+        <div id="myModal" class="modal fade in">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id="myModalContent"></div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

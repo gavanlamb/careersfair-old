@@ -1,0 +1,60 @@
+﻿h1, h2, h3, h4, h5, h6 {
+    font-weight: 100;
+    color: #ff6200;
+}
+
+h2 {
+    margin-top: 50px;
+    line-height: 43px;
+    font-size: 43px;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    margin: 20px 0;
+    line-height: 30px;
+    font-size: 30px;
+}
+
+#socialmedialist {
+    display: inline-block;
+    height: 80px;
+    padding: 5px 0px;
+    margin-bottom:0;
+}
+
+    #socialmedialist li {
+        list-style-type: none;
+        width: 100px;
+        float: left;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+        #socialmedialist li a {
+            border: 1px solid #ff6200;
+            display: block;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            margin: 0 auto;
+            text-decoration: none;
+            outline: 0;
+        }
+            #socialmedialist li a span {
+                font-size: 40px;
+                line-height: 68px;
+                vertical-align: middle;
+                text-align: center;
+                text-decoration: none;
+                font-weight: 200;
+                color: #ff6200;
+            }
+.orh3 {
+    padding:50px 0;
+}

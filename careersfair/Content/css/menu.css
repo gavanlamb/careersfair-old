@@ -1,3 +1,86 @@
+<<<<<<< HEAD
+﻿/* CSS Document */
+/* The styling in this file is for all elements that show up commonly on the website as it should always be included. logo etc */
+nav.navbar{
+    border: none !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+nav .navbar-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+nav .navbar-brand {
+    line-height: 65px;
+    height: 65px;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+nav #brand-image {
+    height: 70px;
+    padding: 10px 0 10px 0;
+}
+
+nav .navbar-nav li {
+    height: 50px;
+    width: 50px;
+    margin: 10px 5px;
+}
+
+    nav .navbar-nav li a,
+    nav .navbar-nav li a:link,
+    nav .navbar-nav li a:focus,
+    nav .navbar-nav li a:visited,
+    nav .navbar-nav li a:active {
+        line-height: 50px;
+        height: 50px;
+        padding: 0 0px;
+        text-shadow: none !important;
+        text-align:center;
+    }
+
+        nav .navbar-nav li a:hover {
+            cursor: default;
+            color: #cccccc !important;
+        }
+
+            nav .navbar-nav li a span,
+            nav .navbar-nav li a:link span,
+            nav .navbar-nav li a:focus span,
+            nav .navbar-nav li a:visited span,
+            nav .navbar-nav li a:active span,
+            nav .navbar-nav li a:hover span {
+                font-size: 40px;
+                color: #ff6200;
+            }
+
+                nav .navbar-nav li a span.ion-ios-home-outline,
+                nav .navbar-nav li a:link span.ion-ios-home-outline,
+                nav .navbar-nav li a:focus span.ion-ios-home-outline,
+                nav .navbar-nav li a:visited span.ion-ios-home-outline,
+                nav .navbar-nav li a:active span.ion-ios-home-outline,
+                nav .navbar-nav li a:hover span.ion-ios-home-outline {
+                    font-size: 30px;
+                    color: #ff6200;
+                }
+@media (max-width: 767px) {
+    .navbar-header {
+        display:inline-block;
+        float:left;
+    }
+    .navbar-right {
+        /*display:inline-block;*/
+        float:right;
+    }
+    .nav li {
+        float:left;
+    }
+=======
 ﻿#header {
     width: 100%;
     margin: 0 auto;
@@ -11,4 +94,5 @@
 }
 main {
     width:100%;
+>>>>>>> master
 }

@@ -3,12 +3,20 @@
 <<<<<<< HEAD
     <head>
         @RenderSection("head", required: false)
+
+        @Styles.Render("~/style/bootstrap")
+        @Styles.Render("~/style/main")
         @RenderSection("stylesheet", required: false)
+        
+        @Scripts.Render("~/script/jquery")
+        @Scripts.Render("~/script/modernizr")
+        @Scripts.Render("~/script/bootstrap")
         @RenderSection("scripts", required: false)
+
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>@ViewBag.Title - Careersfair Tool</title>
     </head>
-    <body>
+    <body class="container-fluid">
         @RenderBody()
     </body>
 </html>

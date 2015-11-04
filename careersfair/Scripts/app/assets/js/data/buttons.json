@@ -1,0 +1,54 @@
+[
+  {
+    "title": "File upload",
+    "fields": {
+      "id": {
+        "type": "hidden",
+        "value": "filebutton"
+      },
+      "type": {
+        "type": "hidden",
+        "value": "file"
+      },
+      "linkedin": {
+        "type": "hidden",
+        "value": false
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "File upload"
+      },
+      "filesize": {
+        "type": "hidden",
+        "value": 20485760
+      }
+    }
+  },
+  {
+    "title": "Selfie upload",
+    "fields": {
+      "id": {
+        "type": "hidden",
+        "value": "filebutton"
+      },
+      "type": {
+        "type": "hidden",
+        "value": "file"
+      },
+      "linkedin": {
+        "type": "hidden",
+        "value": false
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Selfie upload"
+      },
+      "filesize": {
+        "type": "hidden",
+        "value": 20485760
+      }
+    }
+  }
+]

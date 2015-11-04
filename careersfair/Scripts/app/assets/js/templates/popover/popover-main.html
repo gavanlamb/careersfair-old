@@ -1,0 +1,14 @@
+<div class='form' id='popover'>
+  <div class='controls'>
+    <% var compiled =  _.reduce(items, function(str, v, k){ %>
+      <% v["name"] = k; %>
+      <% return str + popoverTemplates[v["type"]](v); %>
+    <% }, "") %>
+    <%= compiled %>
+    <hr/>
+    <div class="popover-button-row">
+        <button id="cancel" class='btn pull-left'><span class="ion-ios-close-empty"></span></button>
+        <button id="save" class='btn pull-right'><span class="ion-ios-checkmark-empty"></span></button>
+    </div>
+  </div>
+</div>

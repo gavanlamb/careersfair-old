@@ -1,0 +1,906 @@
+-
+  title  : Text Input
+  fields :
+    id:
+      type   : hidden
+      value  : textinput
+    linkedin:
+      type   : hidden
+      value  : true
+    label:
+      label  : Label Text
+      type   : input
+      value  : Text Input
+    placeholder:
+      label  : Placeholder
+      type   : input
+      value  : placeholder
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
+    type:
+      label  : Type
+      type   : select
+      value  :
+        -
+          value    : text
+          label    : Text
+          selected : true
+        -
+          value    : datetime-local
+          label    : Date time
+          selected : false
+        -
+          value    : date
+          label    : Date
+          selected : false
+        -
+          value    : email
+          label    : Email
+          selected : false
+        -
+          value    : month
+          label    : Month
+          selected : false
+        -
+          value    : number
+          label    : Number
+          selected : false
+        -
+          value    : tel
+          label    : Telephone
+          selected : false
+        -
+          value    : time
+          label    : Time
+          selected : false
+        -
+          value    : week
+          label    : Week
+          selected : false
+    inputheight:
+      label  : Input Height
+      type   : select
+      value  :
+        -
+          value    : input-sm
+          label    : Small
+          selected : false
+        -
+          value    : null
+          label    : Default
+          selected : true
+        -
+          value    : input-lg
+          label    : Large
+          selected : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  :
+        -
+          value    : col-xs-2 col-sm-2 col-md-2 col-lg-2
+          label    : 2
+          selected : false
+        -
+          value    : col-xs-3 col-sm-3 col-md-3 col-lg-3
+          label    : 3
+          selected : false
+        -
+          value    : col-xs-4 col-sm-4 col-md-4 col-lg-4
+          label    : 4
+          selected : false
+        -
+          value    : col-xs-5 col-sm-5 col-md-5 col-lg-5
+          label    : 5
+          selected : false
+        -
+          value    : col-xs-6 col-sm-6 col-md-6 col-lg-6
+          label    : 6
+          selected : false
+        -
+          value    : col-xs-7 col-sm-7 col-md-7 col-lg-7
+          label    : 7
+          selected : false
+        -
+          value    : col-xs-8 col-sm-8 col-md-8 col-lg-8
+          label    : 8
+          selected : false
+        -
+          value    : col-xs-9 col-sm-9 col-md-9 col-lg-9
+          label    : 9
+          selected : false
+        -
+          value    : col-xs-10 col-sm-10 col-md-10 col-lg-10
+          label    : 10
+          selected : false
+        -
+          value    : col-xs-11 col-sm-11 col-md-11 col-lg-11
+          label    : 11
+          selected : false
+        -
+          value    : col-xs-12 col-sm-12 col-md-12 col-lg-12
+          label    : 12
+          selected : true
+-
+  title  : Prepended Text
+  fields :
+    id:
+      type   : hidden
+      value  : prependedtext
+    linkedin:
+      type   : hidden
+      value  : true
+    label:
+      label  : Label Text
+      type   : input
+      value  : Prepended Text
+    prepend:
+      label  : Prepend
+      type   : input
+      value  : prepend
+    placeholder:
+      label  : Placeholder
+      type   : input
+      value  : placeholder
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
+    type:
+      label  : Type
+      type   : select
+      value  :
+        -
+          value    : text
+          label    : Text
+          selected : true
+        -
+          value    : datetime-local
+          label    : Date time
+          selected : false
+        -
+          value    : date
+          label    : Date
+          selected : false
+        -
+          value    : email
+          label    : Email
+          selected : false
+        -
+          value    : month
+          label    : Month
+          selected : false
+        -
+          value    : number
+          label    : Number
+          selected : false
+        -
+          value    : tel
+          label    : Telephone
+          selected : false
+        -
+          value    : time
+          label    : Time
+          selected : false
+        -
+          value    : week
+          label    : Week
+          selected : false
+    inputheight:
+      label  : Input Height
+      type   : select
+      value  :
+        -
+          value    : input-sm
+          label    : Small
+          selected : false
+        -
+          value    : null
+          label    : Default
+          selected : true
+        -
+          value    : input-lg
+          label    : Large
+          selected : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  :
+        -
+          value    : col-xs-2 col-sm-2 col-md-2 col-lg-2
+          label    : 2
+          selected : false
+        -
+          value    : col-xs-3 col-sm-3 col-md-3 col-lg-3
+          label    : 3
+          selected : false
+        -
+          value    : col-xs-4 col-sm-4 col-md-4 col-lg-4
+          label    : 4
+          selected : false
+        -
+          value    : col-xs-5 col-sm-5 col-md-5 col-lg-5
+          label    : 5
+          selected : false
+        -
+          value    : col-xs-6 col-sm-6 col-md-6 col-lg-6
+          label    : 6
+          selected : false
+        -
+          value    : col-xs-7 col-sm-7 col-md-7 col-lg-7
+          label    : 7
+          selected : false
+        -
+          value    : col-xs-8 col-sm-8 col-md-8 col-lg-8
+          label    : 8
+          selected : false
+        -
+          value    : col-xs-9 col-sm-9 col-md-9 col-lg-9
+          label    : 9
+          selected : false
+        -
+          value    : col-xs-10 col-sm-10 col-md-10 col-lg-10
+          label    : 10
+          selected : false
+        -
+          value    : col-xs-11 col-sm-11 col-md-11 col-lg-11
+          label    : 11
+          selected : false
+        -
+          value    : col-xs-12 col-sm-12 col-md-12 col-lg-12
+          label    : 12
+          selected : true
+-
+  title  : Appended Text
+  fields :
+    id:
+      type   : hidden
+      value  : appendedtext
+    linkedin:
+      type   : hidden
+      value  : true
+    label:
+      label  : Label Text
+      type   : input
+      value  : Appended Text
+    append:
+      label  : Append
+      type   : input
+      value  : append
+    placeholder:
+      label  : Placeholder
+      type   : input
+      value  : placeholder
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
+    type:
+      label  : Type
+      type   : select
+      value  :
+        -
+          value    : text
+          label    : Text
+          selected : true
+        -
+          value    : datetime-local
+          label    : Date time
+          selected : false
+        -
+          value    : date
+          label    : Date
+          selected : false
+        -
+          value    : email
+          label    : Email
+          selected : false
+        -
+          value    : month
+          label    : Month
+          selected : false
+        -
+          value    : number
+          label    : Number
+          selected : false
+        -
+          value    : tel
+          label    : Telephone
+          selected : false
+        -
+          value    : time
+          label    : Time
+          selected : false
+        -
+          value    : week
+          label    : Week
+          selected : false
+    inputheight:
+      label  : Input Height
+      type   : select
+      value  :
+        -
+          value    : input-sm
+          label    : Small
+          selected : false
+        -
+          value    : null
+          label    : Default
+          selected : true
+        -
+          value    : input-lg
+          label    : Large
+          selected : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  :
+        -
+          value    : col-xs-2 col-sm-2 col-md-2 col-lg-2
+          label    : 2
+          selected : false
+        -
+          value    : col-xs-3 col-sm-3 col-md-3 col-lg-3
+          label    : 3
+          selected : false
+        -
+          value    : col-xs-4 col-sm-4 col-md-4 col-lg-4
+          label    : 4
+          selected : false
+        -
+          value    : col-xs-5 col-sm-5 col-md-5 col-lg-5
+          label    : 5
+          selected : false
+        -
+          value    : col-xs-6 col-sm-6 col-md-6 col-lg-6
+          label    : 6
+          selected : false
+        -
+          value    : col-xs-7 col-sm-7 col-md-7 col-lg-7
+          label    : 7
+          selected : false
+        -
+          value    : col-xs-8 col-sm-8 col-md-8 col-lg-8
+          label    : 8
+          selected : false
+        -
+          value    : col-xs-9 col-sm-9 col-md-9 col-lg-9
+          label    : 9
+          selected : false
+        -
+          value    : col-xs-10 col-sm-10 col-md-10 col-lg-10
+          label    : 10
+          selected : false
+        -
+          value    : col-xs-11 col-sm-11 col-md-11 col-lg-11
+          label    : 11
+          selected : false
+        -
+          value    : col-xs-12 col-sm-12 col-md-12 col-lg-12
+          label    : 12
+          selected : true
+-
+  title  : Prepended and Appended Text
+  fields :
+    id:
+      type   : hidden
+      value  : prependedappendedtext
+    linkedin:
+      type   : hidden
+      value  : true
+    label:
+      label  : Label Text
+      type   : input
+      value  : Prepended and Appended Text
+    prepend:
+      label  : Prepend
+      type   : input
+      value  : prepend
+    append:
+      label  : Append
+      type   : input
+      value  : append
+    placeholder:
+      label  : Placeholder
+      type   : input
+      value  : placeholder
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
+    type:
+      label  : Type
+      type   : select
+      value  :
+        -
+          value    : text
+          label    : Text
+          selected : true
+        -
+          value    : datetime-local
+          label    : Date time
+          selected : false
+        -
+          value    : date
+          label    : Date
+          selected : false
+        -
+          value    : email
+          label    : Email
+          selected : false
+        -
+          value    : month
+          label    : Month
+          selected : false
+        -
+          value    : number
+          label    : Number
+          selected : false
+        -
+          value    : tel
+          label    : Telephone
+          selected : false
+        -
+          value    : time
+          label    : Time
+          selected : false
+        -
+          value    : week
+          label    : Week
+          selected : false
+    inputheight:
+      label  : Input Height
+      type   : select
+      value  :
+        -
+          value    : input-sm
+          label    : Small
+          selected : false
+        -
+          value    : null
+          label    : Default
+          selected : true
+        -
+          value    : input-lg
+          label    : Large
+          selected : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  :
+        -
+          value    : col-xs-2 col-sm-2 col-md-2 col-lg-2
+          label    : 2
+          selected : false
+        -
+          value    : col-xs-3 col-sm-3 col-md-3 col-lg-3
+          label    : 3
+          selected : false
+        -
+          value    : col-xs-4 col-sm-4 col-md-4 col-lg-4
+          label    : 4
+          selected : false
+        -
+          value    : col-xs-5 col-sm-5 col-md-5 col-lg-5
+          label    : 5
+          selected : false
+        -
+          value    : col-xs-6 col-sm-6 col-md-6 col-lg-6
+          label    : 6
+          selected : false
+        -
+          value    : col-xs-7 col-sm-7 col-md-7 col-lg-7
+          label    : 7
+          selected : false
+        -
+          value    : col-xs-8 col-sm-8 col-md-8 col-lg-8
+          label    : 8
+          selected : false
+        -
+          value    : col-xs-9 col-sm-9 col-md-9 col-lg-9
+          label    : 9
+          selected : false
+        -
+          value    : col-xs-10 col-sm-10 col-md-10 col-lg-10
+          label    : 10
+          selected : false
+        -
+          value    : col-xs-11 col-sm-11 col-md-11 col-lg-11
+          label    : 11
+          selected : false
+        -
+          value    : col-xs-12 col-sm-12 col-md-12 col-lg-12
+          label    : 12
+          selected : true
+-
+  title  : Prepended Checkbox
+  fields :
+    id:
+      type   : hidden
+      value  : prependedcheckbox
+    linkedin:
+      type   : hidden
+      value  : true
+    label:
+      label  : Label Text
+      type   : input
+      value  : Prepended Checkbox
+    placeholder:
+      label  : Placeholder
+      type   : input
+      value  : placeholder
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+    checked:
+      label  : Checked
+      type   : checkbox
+      value  : false
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
+    type:
+      label  : Type
+      type   : select
+      value  :
+        -
+          value    : text
+          label    : Text
+          selected : true
+        -
+          value    : datetime-local
+          label    : Date time
+          selected : false
+        -
+          value    : date
+          label    : Date
+          selected : false
+        -
+          value    : email
+          label    : Email
+          selected : false
+        -
+          value    : month
+          label    : Month
+          selected : false
+        -
+          value    : number
+          label    : Number
+          selected : false
+        -
+          value    : tel
+          label    : Telephone
+          selected : false
+        -
+          value    : time
+          label    : Time
+          selected : false
+        -
+          value    : week
+          label    : Week
+          selected : false
+    inputheight:
+      label  : Input Height
+      type   : select
+      value  :
+        -
+          value    : input-sm
+          label    : Small
+          selected : false
+        -
+          value    : null
+          label    : Default
+          selected : true
+        -
+          value    : input-lg
+          label    : Large
+          selected : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  :
+        -
+          value    : col-xs-2 col-sm-2 col-md-2 col-lg-2
+          label    : 2
+          selected : false
+        -
+          value    : col-xs-3 col-sm-3 col-md-3 col-lg-3
+          label    : 3
+          selected : false
+        -
+          value    : col-xs-4 col-sm-4 col-md-4 col-lg-4
+          label    : 4
+          selected : false
+        -
+          value    : col-xs-5 col-sm-5 col-md-5 col-lg-5
+          label    : 5
+          selected : false
+        -
+          value    : col-xs-6 col-sm-6 col-md-6 col-lg-6
+          label    : 6
+          selected : false
+        -
+          value    : col-xs-7 col-sm-7 col-md-7 col-lg-7
+          label    : 7
+          selected : false
+        -
+          value    : col-xs-8 col-sm-8 col-md-8 col-lg-8
+          label    : 8
+          selected : false
+        -
+          value    : col-xs-9 col-sm-9 col-md-9 col-lg-9
+          label    : 9
+          selected : false
+        -
+          value    : col-xs-10 col-sm-10 col-md-10 col-lg-10
+          label    : 10
+          selected : false
+        -
+          value    : col-xs-11 col-sm-11 col-md-11 col-lg-11
+          label    : 11
+          selected : false
+        -
+          value    : col-xs-12 col-sm-12 col-md-12 col-lg-12
+          label    : 12
+          selected : true
+-
+  title  : Appended Checkbox
+  fields :
+    id:
+      type   : hidden
+      value  : appendedcheckbox
+    linkedin:
+      type   : hidden
+      value  : true
+    label:
+      label  : Label Text
+      type   : input
+      value  : Appended Checkbox
+    placeholder:
+      label  : Placeholder
+      type   : input
+      value  : placeholder
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+    checked:
+      label  : Checked
+      type   : checkbox
+      value  : false
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
+    type:
+      label  : Type
+      type   : select
+      value  :
+        -
+          value    : text
+          label    : Text
+          selected : true
+        -
+          value    : datetime-local
+          label    : Date time
+          selected : false
+        -
+          value    : date
+          label    : Date
+          selected : false
+        -
+          value    : email
+          label    : Email
+          selected : false
+        -
+          value    : month
+          label    : Month
+          selected : false
+        -
+          value    : number
+          label    : Number
+          selected : false
+        -
+          value    : tel
+          label    : Telephone
+          selected : false
+        -
+          value    : time
+          label    : Time
+          selected : false
+        -
+          value    : week
+          label    : Week
+          selected : false
+    inputheight:
+      label  : Input Height
+      type   : select
+      value  :
+        -
+          value    : input-sm
+          label    : Small
+          selected : false
+        -
+          value    : null
+          label    : Default
+          selected : true
+        -
+          value    : input-lg
+          label    : Large
+          selected : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  :
+        -
+          value    : col-xs-2 col-sm-2 col-md-2 col-lg-2
+          label    : 2
+          selected : false
+        -
+          value    : col-xs-3 col-sm-3 col-md-3 col-lg-3
+          label    : 3
+          selected : false
+        -
+          value    : col-xs-4 col-sm-4 col-md-4 col-lg-4
+          label    : 4
+          selected : false
+        -
+          value    : col-xs-5 col-sm-5 col-md-5 col-lg-5
+          label    : 5
+          selected : false
+        -
+          value    : col-xs-6 col-sm-6 col-md-6 col-lg-6
+          label    : 6
+          selected : false
+        -
+          value    : col-xs-7 col-sm-7 col-md-7 col-lg-7
+          label    : 7
+          selected : false
+        -
+          value    : col-xs-8 col-sm-8 col-md-8 col-lg-8
+          label    : 8
+          selected : false
+        -
+          value    : col-xs-9 col-sm-9 col-md-9 col-lg-9
+          label    : 9
+          selected : false
+        -
+          value    : col-xs-10 col-sm-10 col-md-10 col-lg-10
+          label    : 10
+          selected : false
+        -
+          value    : col-xs-11 col-sm-11 col-md-11 col-lg-11
+          label    : 11
+          selected : false
+        -
+          value    : col-xs-12 col-sm-12 col-md-12 col-lg-12
+          label    : 12
+          selected : true
+-
+  title  : Text Area
+  fields :
+    id:
+      type   : hidden
+      value  : textarea
+    type:
+      type   : hidden
+      value  : textarea
+    linkedin:
+      type   : hidden
+      value  : true
+    label:
+      label  : Label Text
+      type   : input
+      value  : Text Area
+    placeholder:
+      label  : Placeholder
+      type   : input
+      value  : placeholder
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
+    inputheight:
+      label  : Input Height
+      type   : select
+      value  :
+        -
+          value    : input-sm
+          label    : Small
+          selected : false
+        -
+          value    : null
+          label    : Default
+          selected : true
+        -
+          value    : input-lg
+          label    : Large
+          selected : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  :
+        -
+          value    : col-xs-2 col-sm-2 col-md-2 col-lg-2
+          label    : 2
+          selected : false
+        -
+          value    : col-xs-3 col-sm-3 col-md-3 col-lg-3
+          label    : 3
+          selected : false
+        -
+          value    : col-xs-4 col-sm-4 col-md-4 col-lg-4
+          label    : 4
+          selected : false
+        -
+          value    : col-xs-5 col-sm-5 col-md-5 col-lg-5
+          label    : 5
+          selected : false
+        -
+          value    : col-xs-6 col-sm-6 col-md-6 col-lg-6
+          label    : 6
+          selected : false
+        -
+          value    : col-xs-7 col-sm-7 col-md-7 col-lg-7
+          label    : 7
+          selected : false
+        -
+          value    : col-xs-8 col-sm-8 col-md-8 col-lg-8
+          label    : 8
+          selected : false
+        -
+          value    : col-xs-9 col-sm-9 col-md-9 col-lg-9
+          label    : 9
+          selected : false
+        -
+          value    : col-xs-10 col-sm-10 col-md-10 col-lg-10
+          label    : 10
+          selected : false
+        -
+          value    : col-xs-11 col-sm-11 col-md-11 col-lg-11
+          label    : 11
+          selected : false
+        -
+          value    : col-xs-12 col-sm-12 col-md-12 col-lg-12
+          label    : 12
+          selected : true
+-
+  title  : Hidden Text Input
+  fields :
+    id:
+      type   : hidden
+      value  : textarea
+    linkedin:
+      type   : hidden
+      value  : true
+    type:
+      type   : hidden
+      value  : hidden
+    label:
+      label  : Label Text
+      type   : input
+      value  : Hidden Field
