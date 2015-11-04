@@ -1,0 +1,226 @@
+#ribbontable {
+    width:100%;
+}
+.swMain {
+    position:relative;
+    overflow:visible;
+    width:100%;
+}
+
+/*Ribbon nav*/
+.swMain .anchor {
+    height: 52px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px 0px;
+    border-bottom: solid 1px orange;
+    border-top: solid 1px orange;
+}
+.swMain .anchor li{
+    list-style-type: none;
+    width:25%;
+    float:left;
+}
+.swMain .anchor li a{
+    display:block;
+    width:50px;
+    height:50px;
+    text-decoration: none;
+    font-family:'Source Sans Pro';
+    line-height:48px;
+    font-weight:100;
+    font-size:24px;
+    border:1px solid orange;
+    border-radius:50%;
+    text-align: center;
+    margin: 0 auto;
+    outline: 0;
+}
+.swMain .anchor li a.selected{
+    color:#F8F8F8;
+    background: orange;  
+    border: 1px solid #EA8511;
+}
+.swMain .anchor li a.selected:hover {
+    color:#F8F8F8;  
+    background: #EA8511;  
+}
+.swMain .anchor li a.done { 
+    position:relative;
+    color:#FFF;  
+    background: #8CC63F;  
+    border: 1px solid #8CC63F;   
+    z-index:99;
+}
+.swMain .anchor li a.done:hover {
+    color:#5A5655;  
+    background: #8CC63F; 
+    border: 1px solid #5A5655;   
+}
+.swMain .anchor li a.disabled {
+    color:#CCCCCC;  
+    background: #F8F8F8;
+    border: 1px solid #CCC;  
+    cursor:text;   
+}
+.swMain .anchor li a.disabled:hover {
+    color:#CCCCCC;  
+    background: #F8F8F8;     
+}
+.swMain .anchor li a.error {
+    color:#6c6c6c !important;  
+    background: #f08f75 !important;
+    border: 1px solid #fb3500 !important;      
+}
+.swMain .anchor li a.error:hover {
+    color:#000 !important;       
+}
+
+/*Body section*/
+.swMain .stepContainer {
+    clear:both;
+    min-height:150px;
+    width:100%;
+    margin-bottom:20px;
+}
+.StepTitle{
+    font-family:'Source Sans Pro';
+    line-height:50px;
+    font-weight:100;
+    font-size:35px;
+}
+
+/*Step 1 related css*/
+#nameField {
+    width:70%;
+    margin:100px auto 20px auto;
+}
+#nameField input{
+    width:100%;
+    height:50px;
+    font-size:35px;
+    font-family:'Source Sans Pro';
+    line-height:50px;
+    font-weight:100;
+}
+
+/*Button styling*/
+.actionBar {
+    width:100%;
+    height:52px;
+}
+.swMain .buttonNext {
+    float:right;
+    display:block;
+    width:50px;
+    height:50px;
+    text-decoration: none;
+    border:1px solid orange;
+    border-radius:50%;
+    margin-right: 30%;    
+    outline: 0;
+}
+.swMain .buttonNext img{
+    height:40px;
+    width:40px;
+    margin: 5px 0px 5px 7px;
+}
+.swMain .buttonDisabled {
+    visibility: hidden;  
+}
+.swMain .buttonPrevious {
+    float:left;
+    display:block;
+    width:50px;
+    height:50px;
+    text-decoration: none;
+    border:1px solid orange;
+    border-radius:50%;
+    text-align: center;
+    margin-left: 30%;
+    outline: 0;
+}
+.swMain .buttonPrevious img{
+    height:40px;
+    width:40px;
+    margin: 5px 7px 5px 0px;
+}
+.swMain .buttonFinish {
+    display:block;
+    width:50px;
+    height:50px;
+    text-decoration: none;
+    font-family:'Source Sans Pro';
+    line-height:48px;
+    font-weight:100;
+    font-size:24px;
+    border:1px solid orange;
+    border-radius:50%;
+    text-align: center;
+    margin: 0 auto;
+    outline: 0;
+    float:left;
+}
+
+/*Message box*/
+.txtBox {
+  border:1px solid #CCCCCC;
+  color:#5A5655;
+  font:13px Verdana,Arial,Helvetica,sans-serif;
+  padding:2px;
+  width:430px;
+}
+.txtBox:focus {
+  border:1px solid #EA8511;
+}
+.swMain .loader {
+  position:relative;  
+  display:none;
+  float:left;  
+  margin: 2px 0 0 2px;
+  padding:8px 10px 8px 40px;
+  border: 1px solid #FFD700; 
+  font: bold 13px Verdana, Arial, Helvetica, sans-serif; 
+  color:#5A5655;       
+  background: #FFF url(../images/loader.gif) no-repeat 5px;  
+  -moz-border-radius  : 5px;
+  -webkit-border-radius: 5px;
+  z-index:998;
+}
+.swMain .msgBox {
+  position:relative;  
+  display:none;
+  float:left;
+  margin: 4px 0 0 5px;
+  padding:5px;
+  border: 1px solid #FFD700; 
+  background-color: #FFFFDD;  
+  font: normal 12px Verdana, Arial, Helvetica, sans-serif; 
+  color:#5A5655;         
+  -moz-border-radius  : 5px;
+  -webkit-border-radius: 5px;
+  z-index:999;
+  min-width:200px;  
+}
+.swMain .msgBox .content {
+  font: normal 12px Verdana,Arial,Helvetica,sans-serif;
+  padding: 0;
+  float:left;
+}
+.swMain .msgBox .close {
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  color: #CCC;
+  display: block;
+  float: right;
+  margin: 0 0 0 5px;
+  outline-style: none;
+  padding: 0 2px 0 2px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+.swMain .msgBox .close:hover{
+  color: #EA8511;
+  border: 1px solid #EA8511;  
+}
