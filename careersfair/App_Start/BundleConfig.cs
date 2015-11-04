@@ -71,8 +71,8 @@ namespace careersfair.App_Start
                     .Include("~/Scripts/app/formToWizard.js"));
 
             bundles.Add(
-                new ScriptBundle("~/script/validtr")
-                    .Include("~/Scripts/library/validatr.js"));
+                new ScriptBundle("~/script/validator")
+                    .Include("~/Scripts/app/validation.js"));
 
             //*****************************************
             //***************CSS BUNDLES***************

@@ -11,7 +11,6 @@
         index = 0;
         form = $("#builderForm");
         doneTypingInterval = 300;
-        form.validate().settings.ignore = [];
         //function calls
         sectionManager();
         buttonManager();

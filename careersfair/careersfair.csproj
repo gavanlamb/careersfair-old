@@ -218,6 +218,7 @@
     <Content Include="Content\ionicons\_ionicons-variables.less" />
     <Content Include="Content\ionicons\_ionicons-icons.less" />
     <Content Include="Content\ionicons\_ionicons-font.less" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\test.pubxml" />
     <Content Include="Scripts\app\assets\js\data\linkedin.json" />
     <Content Include="Scripts\app\assets\js\data\yaml\linkedin.yaml" />
@@ -291,6 +292,7 @@
     <Content Include="Scripts\app\button.js" />
     <Content Include="Scripts\app\formToWizard.js" />
     <Content Include="Scripts\app\linkedin.js" />
+    <Content Include="Scripts\app\validation.js" />
     <Content Include="Scripts\library\bootstrap.js" />
     <Content Include="Scripts\library\bootstrap.min.js" />
     <Content Include="Scripts\app\bootstrap-formbuilder-tabs.js" />

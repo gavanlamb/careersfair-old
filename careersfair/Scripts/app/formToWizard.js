@@ -7,7 +7,6 @@ $(document).ready(function () {
             boundary.remove();
         });
         $("#form").formToWizard({ submitButton: 'submit' });
-        $("#submit").css("margin-top", "-65px");
     }
 });
 (function ($) {
@@ -40,7 +39,7 @@ $(document).ready(function () {
         function createPrevButton(i) {
             var stepName = "step" + i;
             $("#" + stepName + "commands").append("<button type='button' href='#' id='" + stepName + "Prev' class='previous btn pull-left'><span class='ion-ios-arrow-left'></span></button>");
-            $("#" + stepName + "Prev").bind("click", function(e) {
+            $("#" + stepName + "Prev").click(function (e) {
                 $("#" + stepName).hide();
                 $("#step" + (i - 1)).show();
                 $(submmitButtonName).hide();
@@ -50,7 +49,7 @@ $(document).ready(function () {
         function createNextButton(i) {
             var stepName = "step" + i;
             $("#" + stepName + "commands").append("<button type='button' href='#' id='" + stepName + "Next' class='next btn pull-right'><span class='ion-ios-arrow-right'></span></button>");
-            $("#" + stepName + "Next").bind("click", function(e) {
+            $("#" + stepName + "Next").click( function(e) {
                 $("#" + stepName).hide();
                 $("#step" + (i + 1)).show();
                 if (i + 2 == count)

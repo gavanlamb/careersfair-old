@@ -1,9 +1,14 @@
-﻿fieldset {
+﻿body {
+    margin-bottom:30px;
+}
+fieldset {
     padding: 0px !important;
 }
+
 #form fieldset {
     padding: 15px !important;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 100;
     color: #ff6200;
@@ -258,9 +263,14 @@ form .input-group-addon.input-lg .checkbox-pend {
 .form-group.hiddenfield {
     display: none;
 }
+
 .component .form-group.hiddenfield,
-#temp .form-group.hiddenfield{
-    display:block;
+#temp .form-group.hiddenfield {
+    display: block;
+}
+form .hiddenfield .row {
+    margin-top:0;
+    margin-bottom:0;
 }
 form .hiddenfield:before,
 form .hiddenfield:before {
@@ -277,7 +287,7 @@ form .hiddenfield:before {
 }
 
 form .other {
-    padding: 0;
+    padding: 15px 0 0 0;
 }
 
 form .otherinline {
@@ -302,9 +312,9 @@ form .selfie-label:hover {
     text-align: center;
 }
 
-    form .file-label span,
-    form .selfie-label span {
-        display: block;
+    form .file-label span.button-icon,
+    form .selfie-label span.button-icon {
+        display: inline-block;
         width: 100px;
         height: 100px;
         text-align: center;
@@ -316,12 +326,15 @@ form .selfie-label:hover {
         margin: auto;
     }
 
-        form .file-label span:before,
-        form .selfie-label span:before {
+        form .file-label > span.button-icon:before,
+        form .selfie-label > span.button-icon:before {
             font-size: 80px;
             line-height: 100px;
         }
-
+        form .file-label > span.button-labeltext,
+        form .selfie-label > span.button-labeltext{
+            display: block;
+        }
 form label.file-name {
     display: block;
     font-weight: 300;
@@ -332,7 +345,7 @@ form label.file-name {
 form .file-input,
 form .selfie-input {
     visibility: hidden;
-    position: absolute;
+    /*position: absolute;*/
 }
 
 form .paragraphElement {
@@ -345,18 +358,31 @@ form .pageBreak {
     margin: 20px 0px;
 }
 
-.form-heading .row,
-.form-paragraph .row{
-    margin:0;
+.form-heading .row{
+    margin-bottom: 0;
 }
-    .form-heading .row h1, 
+.form-paragraph .row {
+    margin-bottom: 20px;
+}
+.form-heading .row {
+    margin-top:30px;
+}
+    .form-heading .row h1,
     .form-heading .row h2,
     .form-heading .row h3,
     .form-heading .row h4,
     .form-heading .row h5,
-    .form-heading .row h6{
-        margin:0 0 15px 0;
+    .form-heading .row h6 {
+        margin: 0 0 15px 0;
     }
-    .form-paragraph .row p{
-        margin:15px 0;
+
+    .form-paragraph .row p {
+        margin: 0;
     }
+
+fieldset > div.form-group:first-of-type > div {
+    margin-top: 0;
+}
+#form fieldset .btn {
+    margin-top:20px;
+}

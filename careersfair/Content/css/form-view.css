@@ -1,9 +1,6 @@
 ﻿#linkedinbutton {
     text-align:center;
 }
-#submit{
-    margin-right:15px;
-}
 .next span {
     margin-left: 4px;
 }
@@ -16,4 +13,19 @@
 fieldset {
     -webkit-box-shadow: 0 3px 7px #999;
     padding-bottom: 15px!important;
+}
+ul.errorMessages {
+    border-style:solid;
+    border-color: #ff6200;
+    border-width: 2px 1px;
+    margin-bottom:0;
+    list-style:none;
+    background-color: rgba(255, 98, 0, 1);
+    padding:0 10px
+}
+ul.errorMessages li{
+    color:white;
+    line-height:30px;
+    font-size:15px;
+    font-weight:300;
 }

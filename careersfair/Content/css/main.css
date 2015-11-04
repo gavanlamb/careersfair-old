@@ -39,7 +39,7 @@ a:focus {
     .btn span:before {
         display: block;
         text-align: center;
-        line-height: 48px;
+        line-height: 50px;
         font-size: 48px;
         color: #ff6200;
     }

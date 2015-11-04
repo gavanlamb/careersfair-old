@@ -14,11 +14,11 @@
                     <% }); %>
                     <% if(other){ %>
                         <span class="checkbox">
-                            <input type="<%= type %>" name="<%= id %>" id="<%= id+'-'%>other" value="" <% if (required) { %> required<% } %>>
+                            <input type="<%= type %>" name="<%= id %>" id="<%= id+'-'%>other" value="">
                             <label class="checkboxlabel" for="<%= id+'-'%>other">Other</label>
                         </span>
                         <div class="<%= inputsize %> other">
-                            <input type="text" id="<%= id+'-'%>otherinput" name="<%= id+'-'%>otherinput" class="form-control <%= inputheight %> "/>
+                            <input type="text" id="<%= id+'-'%>otherinput" name="<%= id %>" class="form-control <%= inputheight %> "/>
                         </div>
                     <% } %>
                 </div>
