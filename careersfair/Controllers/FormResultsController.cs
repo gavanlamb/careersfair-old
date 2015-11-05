@@ -6,8 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using careersfair.DAL;
-using careersfair.Models;
+using CareersFair.DAL;
+using CareersFair.Models;
 using System.Text;
 using System.Xml;
 using Newtonsoft.Json;
@@ -16,11 +16,11 @@ using System.Diagnostics;
 using System.IO.Compression;
 using System.Text.RegularExpressions;
 
-namespace careersfair.Controllers
+namespace CareersFair.Controllers
 {
     public class FormResultsController : Controller
     {
-        private careersfair.DAL.FormContext db = new careersfair.DAL.FormContext();
+        private CareersFair.DAL.FormContext db = new CareersFair.DAL.FormContext();
 
         public ActionResult ThankYou()
         {

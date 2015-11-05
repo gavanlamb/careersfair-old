@@ -1,5 +1,5 @@
-﻿using careersfair.DAL;
-using careersfair.Models;
+﻿using CareersFair.DAL;
+using CareersFair.Models;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using MessagingToolkit.QRCode.Codec;
@@ -22,7 +22,7 @@ using System.Web.Script.Serialization;
 using System.Xml;
 using System.IO.Compression;
 
-namespace careersfair.Controllers
+namespace CareersFair.Controllers
 {
     /// <summary>
     /// Form object controller
@@ -32,7 +32,7 @@ namespace careersfair.Controllers
     public class FormController : Controller
     {
         public static string rootStorageFolder = "~/App_Data/";
-        private careersfair.DAL.FormContext db = new careersfair.DAL.FormContext();
+        private CareersFair.DAL.FormContext db = new CareersFair.DAL.FormContext();
 
         /// <summary>
         /// Returns the view to create a new form

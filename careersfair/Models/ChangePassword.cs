@@ -6,10 +6,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using careersfair.Controllers;
+using CareersFair.Controllers;
 
 
-namespace careersfair.Models
+namespace CareersFair.Models
 {
     public class ChangePassword
     {
@@ -56,9 +56,6 @@ namespace careersfair.Models
 
             }
             else return false;
-
-
-
         }
     }
 }

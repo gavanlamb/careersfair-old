@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
@@ -12,7 +11,7 @@ using System.Configuration;
 using System.Net;
 using System.Net.Mail;
 
-namespace careersfair.Models
+namespace CareersFair.Models
 {
     public class Reset
     {

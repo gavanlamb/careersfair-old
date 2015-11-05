@@ -1,8 +1,8 @@
-﻿using careersfair.Models;
+﻿using CareersFair.Models;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace careersfair.DAL
+namespace CareersFair.DAL
 {
 
     /// <summary>

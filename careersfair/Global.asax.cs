@@ -1,4 +1,4 @@
-﻿using careersfair.App_Start;
+﻿using CareersFair.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace careersfair
+namespace CareersFair
 {
     public class MvcApplication : System.Web.HttpApplication
     {

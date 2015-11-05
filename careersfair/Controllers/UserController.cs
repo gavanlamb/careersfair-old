@@ -9,10 +9,10 @@ using System.Net;
 using System.Net.Mail;
 using System.Data;
 using System.Data.SqlClient;
-using careersfair.Models;
+using CareersFair.Models;
 
 
-namespace careersfair.Controllers
+namespace CareersFair.Controllers
 {
     public class UserController : Controller
     {
@@ -105,7 +105,7 @@ namespace careersfair.Controllers
             // Gmail Address from where you send the mail
             String fromAddress = "sai.ancha194@gmail.com";
             // any address where the email will be sending
-            String toAddress = "sai.ancha194gmail.com";
+            //String toAddress = "sai.ancha194gmail.com";
             //Password of your gmail address
             const string fromPassword = "Lollol111";
             // Passing the values and make a email formate to display

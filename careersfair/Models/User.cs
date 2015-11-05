@@ -11,7 +11,7 @@ using System.Configuration;
 using System.Net;
 using System.Net.Mail;
 
-namespace careersfair.Models
+namespace CareersFair.Models
 {
     public class User
     {

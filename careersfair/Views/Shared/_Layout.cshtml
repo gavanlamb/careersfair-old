@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html>
-<<<<<<< HEAD
     <head>
         @RenderSection("head", required: false)
 
@@ -20,25 +19,3 @@
         @RenderBody()
     </body>
 </html>
-=======
-<head>
-    <title>@Page.Title</title>
-    @RenderSection("head", required: false)
-    @Styles.Render("~/Content/style")
-    @Scripts.Render("~/Bundles/ribbon")
-    <script type="text/javascript">
-        $(document).ready(function () {
-            // Smart Wizard
-            $('#wizard').smartWizard();
-            function onFinishCallback() {
-                $('#wizard').smartWizard('showMessage', 'Finish Clicked');
-                //alert('Finish Clicked');
-            }
-        });
-    </script>
-</head>
-<body>
-    @RenderBody()
-</body>
-</html>
->>>>>>> master
